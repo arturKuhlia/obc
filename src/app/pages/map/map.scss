@@ -1,15 +1,59 @@
-.map-canvas {
-  position: absolute;
+ :host{
+    overflow: auto;   
+}  
+ 
 
-  height: 100%;
+table {
   width: 100%;
-
-  background-color: transparent;
-
-  opacity: 0;
-  transition: opacity 150ms ease-in;
 }
 
-.show-map {
-  opacity: 1;
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-size: 100%;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #eee;
+}
+
+tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+th {
+  background-color: black;
+  color: white;
+}
+
+
+
+
+
+span.c3 {
+  text-decoration: underline
+}
+
+span.c2 {
+  color: #000000;
+  font-weight: bold
+}
+
+span.c1 {
+  font-weight: bold
+}
+// .mat-expansion-panel-body {
+//  find the style in global css
+// }
+.contentText{
+  padding:10px;
+
 }
