@@ -1,0 +1,39 @@
+ 
+<ion-header [translucent]="false">
+  <ion-toolbar>
+
+<ion-title>All Posts</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+ 
+
+  
+<div *ngIf="blogPost && blogPost.length>0; else emptyblog">
+  <div *ngFor="let post of blogPost | paginate: config">
+   <ion-card class="blog-card ion-elevation-z2">
+    <a class="blog-title" [routerLink]="['/blog/', post.postId, post.title | slug]">
+      
+      <ion-card-content>
+          <ion-title>{{ post.title}} </ion-title>
+         <div *ngIf= "post.hasOwnProperty('codeId')"><p>Section: {{post.codeId}}</p></div>
+      </ion-card-content>
+      <ion-card-content>
+        <div [innerHTML]="post.content | excerpt"></div>
+      </ion-card-content> 
+    </a>
+      <p>
+        
+        <ng-container *ngIf="appUser?.isAdmin">
+          <ion-button   size="small"  [routerLink]="['/editpost',post.postId]">Edit</ion-button>
+          <ion-button  size="small" color="danger" (click)="delete(post.postId)">Delete</ion-button>
+        </ng-container>
+        
+      </p>
+    </ion-card> 
+  </div> 
+  <app-paginator [pageSizeOptions]="pageSizeOptions" [config]="config"></app-paginator>
+</div>
+ 

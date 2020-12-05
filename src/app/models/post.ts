@@ -1,0 +1,15 @@
+export class Post {
+    postId: string;
+    parentId:string;
+    title: string;
+    content: string;
+    author: string;
+    associated: string;
+    createdDate: any;
+    type: any;
+
+    constructor() {
+        this.title = '';
+        this.content = '';
+    }
+}

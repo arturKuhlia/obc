@@ -1,3 +1,6 @@
+import { BlogComponent } from './../../../../../site/src/app/components/blog/blog.component';
+import { BlogEditorComponent } from './../../../../../site/src/app/components/blog-editor/blog-editor.component';
+import { BlogCardComponent } from './../../../../../site/src/app/components/blog-card/blog-card.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
@@ -24,6 +27,10 @@ import { DocModule } from '../doc/doc.module';
   ],
   declarations: [
     TabsPage,
+    BlogCardComponent,
+    BlogEditorComponent,
+    BlogComponent
+
   ]
 })
 export class TabsModule { }
