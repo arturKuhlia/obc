@@ -1,3 +1,4 @@
+import { DocPage } from './../doc/doc';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs-page';
@@ -22,16 +23,21 @@ const routes: Routes = [
           }
         ]
       },
-       
       {
-        path: 'map',
+        path: 'doc',
         children: [
           {
             path: '',
-            loadChildren: () => import('../map/map.module').then(m => m.MapModule)
+            component: DocPage,
+          },
+          {
+            path: ':id',
+            loadChildren: () => import('../doc-detail/doc-detail.module').then(m => m.DocDetailModule)
           }
         ]
       },
+      
+      
       {
         path: 'about',
         children: [

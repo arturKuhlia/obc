@@ -5,11 +5,11 @@ import { ConferenceData } from '../../providers/conference-data';
 
 
 @Component({
-  selector: 'page-schedule-filter',
-  templateUrl: 'schedule-filter.html',
-  styleUrls: ['./schedule-filter.scss'],
+  selector: 'page-doc-filter',
+  templateUrl: 'doc-filter.html',
+  styleUrls: ['./doc-filter.scss'],
 })
-export class ScheduleFilterPage {
+export class DocFilterPage {
   ios: boolean;
 
   tracks: {name: string, icon: string, isChecked: boolean}[] = [];
