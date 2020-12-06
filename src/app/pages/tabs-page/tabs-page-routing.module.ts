@@ -1,11 +1,21 @@
+import { BlogCardComponent } from './../blog-card/blog-card.component';
+import { BlogComponent } from './../blog/blog.component';
+import { BlogEditorComponent } from './../blog-editor/blog-editor.component';
 import { DocPage } from './../doc/doc';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs-page';
 import { SchedulePage } from '../schedule/schedule';
+import { AuthGuard } from '../../guards/auth.guard';
+import { AdminAuthGuard } from '../../guards/admin-auth.guard';
+
 
 
 const routes: Routes = [
+  { path: 'addpost', component: BlogEditorComponent, canActivate: [AuthGuard] },
+  { path: 'editpost/:id', component: BlogEditorComponent, canActivate: [AdminAuthGuard] },
+  { path: 'blog/:id/:slug', component: BlogComponent },
+  { path: '**', component: BlogCardComponent },
   {
     path: 'tabs',
     component: TabsPage,

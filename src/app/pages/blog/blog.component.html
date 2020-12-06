@@ -8,7 +8,7 @@
 
 <div><ion-card><ion-title >{{postData.title}}</ion-title>
 
-  <ion-subtitle *ngIf="post.hasOwnProperty('codeId')">{{ post.codeId}} </ion-subtitle>
+  <p *ngIf="post.hasOwnProperty('codeId')">{{ post.codeId}} </p>
   <ion-card-subtitle >
     <i  aria-hidden="true"></i> {{postData.createdDate | date:'longDate'}}
     <i  aria-hidden="true"></i> {{postData.author}}

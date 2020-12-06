@@ -1,3 +1,9 @@
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { PaginatorComponent } from './pages/paginator/paginator.component';
+import { SlugPipe } from './customPipes/slug.pipe';
+import { ExcerptPipe } from './customPipes/excerpt.pipe';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AngularFireModule } from '@angular/fire';
@@ -26,11 +32,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-
+    NgxPaginationModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    
+    MatSnackBarModule,
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
@@ -38,8 +44,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     }),
     BrowserAnimationsModule
   ],
-  declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar],
+  declarations: [AppComponent,   
+    // ExcerptPipe,
+    // SlugPipe,
+    // PaginatorComponent,
+  ],
+  providers: [InAppBrowser, SplashScreen, StatusBar, AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

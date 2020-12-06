@@ -1,3 +1,10 @@
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { NgMaterialModule } from './../ng-material/ng-material.module';
+import { CommentsComponent } from './../comments/comments.component';
+import { ExcerptPipe } from './../../customPipes/excerpt.pipe';
+import { SlugPipe } from './../../customPipes/slug.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { PaginatorComponent } from './../paginator/paginator.component';
   import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
    import { environment } from '../../../environments/environment';
@@ -7,8 +14,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
  import { HttpClientModule } from '@angular/common/http'; 
- import { ExcerptPipe } from './../../customPipes/excerpt.pipe';
-import { SlugPipe } from './../../customPipes/slug.pipe'; 
+  
 import { MatExpansionModule } from '@angular/material/expansion';
 
 
@@ -49,7 +55,7 @@ import { DocModule } from '../doc/doc.module';
     TabsPageRoutingModule,
  
     IonicModule.forRoot(),
- 
+    NgxPaginationModule,
     HttpClientModule, 
     MatExpansionModule,
     Ng2SearchPipeModule,
@@ -57,20 +63,29 @@ import { DocModule } from '../doc/doc.module';
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
- 
+   
     CKEditorModule,
     FormsModule,
+    NgMaterialModule,
+    MatSnackBarModule
+
   ],
   declarations: [
+    ExcerptPipe,
+    SlugPipe,
     TabsPage,
     BlogCardComponent,
     BlogEditorComponent,
-    BlogComponent
-
+    BlogComponent,
+    PaginatorComponent,
+    CommentsComponent,
+    
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    AngularFireModule,
+   
      ]
 })
 export class TabsModule { }

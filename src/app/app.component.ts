@@ -1,3 +1,5 @@
+import { AuthService } from './services/auth.service';
+import { AppUser } from './models/appuser';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { SwUpdate } from '@angular/service-worker';
@@ -18,6 +20,11 @@ import { UserData } from './providers/user-data';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
+
+  public selectedIndex = 0;
+  appUser: AppUser;
+
+
   appPages = [
     {
       title: 'Schedule',
@@ -44,6 +51,9 @@ export class AppComponent implements OnInit {
   dark = false;
 
   constructor(
+   
+    private authService: AuthService,
+   
     private menu: MenuController,
     private platform: Platform,
     private router: Router,
@@ -58,9 +68,8 @@ export class AppComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.checkLoginStatus();
-    this.listenForLoginEvents();
 
+    
     this.swUpdate.available.subscribe(async res => {
       const toast = await this.toastCtrl.create({
         message: 'Update available!',
@@ -80,6 +89,24 @@ export class AppComponent implements OnInit {
         .then(() => this.swUpdate.activateUpdate())
         .then(() => window.location.reload());
     });
+    this.authService.appUser$.subscribe(appUser => this.appUser = appUser);
+  
+    this.authService.appUser$.subscribe(user => {
+      if (!user) {
+        return;
+      } else {
+        /*
+         * If the user is logged in fetch the return URL from local storage.
+         * Navigate to the return URL if available.
+         */
+        const returnUrl = localStorage.getItem('returnUrl');
+        if (!returnUrl) {
+          return;
+        }
+        localStorage.removeItem('returnUrl');
+        this.router.navigateByUrl(returnUrl);
+      }
+    });
   }
 
   initializeApp() {
@@ -89,37 +116,18 @@ export class AppComponent implements OnInit {
     });
   }
 
-  checkLoginStatus() {
-    return this.userData.isLoggedIn().then(loggedIn => {
-      return this.updateLoggedInStatus(loggedIn);
-    });
-  }
+  
 
-  updateLoggedInStatus(loggedIn: boolean) {
-    setTimeout(() => {
-      this.loggedIn = loggedIn;
-    }, 300);
-  }
-
-  listenForLoginEvents() {
-    window.addEventListener('user:login', () => {
-      this.updateLoggedInStatus(true);
-    });
-
-    window.addEventListener('user:signup', () => {
-      this.updateLoggedInStatus(true);
-    });
-
-    window.addEventListener('user:logout', () => {
-      this.updateLoggedInStatus(false);
-    });
+ 
+  login() {
+    this.authService.login();
   }
 
   logout() {
-    this.userData.logout().then(() => {
-      return this.router.navigateByUrl('/app/tabs/schedule');
-    });
+    this.authService.logout();
   }
+
+   
 
   // openTutorial() {
   //   this.menu.enable(false);
