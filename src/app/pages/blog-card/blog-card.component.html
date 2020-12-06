@@ -1,4 +1,4 @@
- 
+<ion-content fullscreen="true">
 <ion-header [translucent]="false">
   <ion-toolbar>
 
@@ -14,7 +14,7 @@
 <div *ngIf="blogPost && blogPost.length>0; else emptyblog">
   <div *ngFor="let post of blogPost | paginate: config">
    <ion-card class="blog-card ion-elevation-z2">
-    <a class="blog-title" [routerLink]="['/blog/', post.postId, post.title | slug]">
+    <a class="blog-title" routerLink="/app/tabs/blog/{{post.postId}}/{{post.title | slug}}">
       
       <ion-card-content>
           <ion-title>{{ post.title}} </ion-title>
@@ -36,4 +36,4 @@
   </div> 
   <app-paginator [pageSizeOptions]="pageSizeOptions" [config]="config"></app-paginator>
 </div>
- 
+ </ion-content> 

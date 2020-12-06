@@ -6,22 +6,26 @@
   </ion-toolbar>
 </ion-header>
 
-<div><ion-card><ion-title >{{postData.title}}</ion-title>
+<div>
+  <ion-card *ngIf = "post">
+    <ion-title>{{postData.title}}</ion-title>
 
-  <p *ngIf="post.hasOwnProperty('codeId')">{{ post.codeId}} </p>
-  <ion-card-subtitle >
-    <i  aria-hidden="true"></i> {{postData.createdDate | date:'longDate'}}
-    <i  aria-hidden="true"></i> {{postData.author}}
-    
-  </ion-card-subtitle>
- <ion-card-content><div >
-    <div [innerHTML]="postData.content">
-    </div> 
-  </div></ion-card-content>
-  </ion-card></div>
- 
-  
- 
- 
+    <p *ngIf="post.hasOwnProperty('codeId')">{{ post.codeId}} </p>
+    <ion-card-subtitle>
+      <i aria-hidden="true"></i> {{postData.createdDate | date:'longDate'}}
+      <i aria-hidden="true"></i> {{postData.author}}
+
+    </ion-card-subtitle>
+    <ion-card-content>
+      <div>
+        <div [innerHTML]="postData.content">
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+
+
+
 <app-comments [blogId]="postId"></app-comments>
- 

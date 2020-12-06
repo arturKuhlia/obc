@@ -1,9 +1,7 @@
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { PaginatorComponent } from './pages/paginator/paginator.component';
-import { SlugPipe } from './customPipes/slug.pipe';
-import { ExcerptPipe } from './customPipes/excerpt.pipe';
+
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AngularFireModule } from '@angular/fire';
