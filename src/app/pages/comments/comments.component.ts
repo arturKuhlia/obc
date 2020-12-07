@@ -21,6 +21,7 @@ export class CommentsComponent implements OnInit, OnDestroy {
   email;
   commentedBy;
   appUser: AppUser;
+  userEmail: any;
   public comments = new Comments();
   commentList: Comments[] = [];
   private unsubscribe$ = new Subject<void>();
@@ -35,7 +36,12 @@ export class CommentsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.authService.appUser$.subscribe(appUser => this.appUser = appUser);
+    this.authService.appUser$.subscribe(appUser=>{
+      if(appUser)
+        this.userEmail = appUser.email;
+    })
     this.getAllComments();
+    console.log(this.userEmail)
 
   }
 
@@ -55,6 +61,10 @@ export class CommentsComponent implements OnInit, OnDestroy {
       .subscribe(result => {
         this.commentList = result;
       });
+      
+
+
+
   }
 
   deleteComment(commentId) {

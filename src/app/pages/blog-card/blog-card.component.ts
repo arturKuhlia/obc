@@ -39,15 +39,17 @@ export class BlogCardComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-
     this.authService.appUser$.subscribe(appUser => this.appUser = appUser);
 
     this.route.params.subscribe(
       params => {
         this.config.currentPage = +params['pagenum'];
         this.getBlogPosts();
+      
       }
+
     );
+ 
   }
 
   getBlogPosts() {

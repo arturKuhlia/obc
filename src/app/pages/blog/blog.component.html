@@ -1,31 +1,39 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleFavorite()">
+        <ion-icon *ngIf="!isFavorite" slot="icon-only" name="star-outline"></ion-icon>
+        <ion-icon *ngIf="isFavorite" slot="icon-only" name="star"></ion-icon>
+      </ion-button>
+     
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<div>
-  <ion-card *ngIf = "post">
-    <ion-title>{{postData.title}}</ion-title>
+<ion-content>
 
-    <p *ngIf="post.hasOwnProperty('codeId')">{{ post.codeId}} </p>
-    <ion-card-subtitle>
-      <i aria-hidden="true"></i> {{postData.createdDate | date:'longDate'}}
-      <i aria-hidden="true"></i> {{postData.author}}
+ 
+    <div *ngIf="postData" class="ion-padding">
+      <h1>{{postData.title}}</h1>
+      <ion-text  color="medium">  
+        {{postData.createdDate | date:'longDate'}}
+          {{postData.author}}
+          <ion-chip *ngIf="postData.hasOwnProperty('codeId')">{{ postData.codeId}} </ion-chip>
+   
+      </ion-text>
+        <br /> 
+      <ion-text>
+        
+       
+        <p [innerHTML]="postData.content">
+      </ion-text>
+    
+    </div>
+ 
+   
+  <app-comments [blogId]="postId"></app-comments>
 
-    </ion-card-subtitle>
-    <ion-card-content>
-      <div>
-        <div [innerHTML]="postData.content">
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
-</div>
-
-
-
-
-<app-comments [blogId]="postId"></app-comments>
+</ion-content>

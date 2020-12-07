@@ -1,77 +1,62 @@
-<ng-template #anonymousUser>
-  <ion-card class="comment-card ion-elevation-z2">
+<ion-content><ng-template #anonymousUser>
+  <span class="comment-card ion-elevation-z2">
     <a (click)="login()">Login with Google</a> to post comments
-  </ion-card>
+  </span>
 </ng-template>
-<ion-card
-  *ngIf="appUser; else anonymousUser"
-  class="comment-card ion-elevation-z2"
->
-  <ion-card-title> LEAVE A REPLY </ion-card-title>
-  <ion-card-subtitle>
-    Your email address will not be published. Required fields are marked *
-  </ion-card-subtitle>
-  <ion-card-content>
-    <form
-      #commentForm="ngForm"
-      (ngSubmit)="commentForm.form.valid && onCommentPost(commentForm)"
-      novalidate
-    >
-
-
-      <mat-form-field class="full-width">
-        <ion-textarea
-          ionInput
-          placeholder="Comment"
-          name="content"
-          [(ngModel)]="comments.content"
-          #content="ngModel"
-          required
-        ></ion-textarea>
-        <p *ngIf="commentForm.submitted && content.errors?.required"
-          >Comment is required</p
-        >
-      </mat-form-field>
-      <p>
-        <ion-button
-          type="
-            submit"
-          ion-raised-button
-          color="primary"
-        >
-          Post Comment
-        </ion-button>
-      </p>
-    </form>
-  </ion-card-content>
-</ion-card>
-
-<ion-card
-  *ngFor="let comment of commentList"
-  class="comment-card ion-elevation-z2"
->
-  <ion-card-title>
-    <div  >
-      
-      <div *ngIf="appUser?.isAdmin">
-        <ion-button
-          ion-icon-button
-          ionTooltip="Delete comment"
-          ionTooltipPosition="before"
-          color="danger"
-          size="small"
-          (click)="deleteComment(comment.commentId)"
-        >
-        <ion-icon name="trash-outline"></ion-icon>
-        </ion-button>
-      </div>
-    </div>
-  </ion-card-title>
-
-  <ion-card-subtitle> Commented by <a>{{ comment.commentedBy }}</a>  on {{
-    comment.commentDate | date: "medium"
-  }}</ion-card-subtitle>
-  <ion-card-content>
-    <p>{{ comment.content }}</p>
-  </ion-card-content>
-</ion-card>
+<ion-item lines="full" *ngIf="appUser; else anonymousUser" class="comment-card ion-elevation-z2">
+  <ion-label>
+   </ion-label>
+   <form #commentForm="ngForm" (ngSubmit)="commentForm.form.valid && onCommentPost(commentForm)" novalidate>
+   <ion-textarea ionInput placeholder="Comment" name="content" [(ngModel)]="comments.content" #content="ngModel"
+        required></ion-textarea>
+      <p *ngIf="commentForm.submitted && content.errors?.required">Comment is required</p>
+      <ion-button type="
+            submit" ion-raised-button color="primary">
+        Post Comment
+      </ion-button>
+  </form>
+</ion-item>
+<ion-item lines= "inset"  *ngFor="let comment of commentList"  >
+  <ion-label>
+    <p>
+      <ion-chip>
+        <ion-avatar>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+        <ion-label>{{comment.commentedBy}}  </ion-label>
+      </ion-chip>
+      <ion-chip outline color="secondary">
+        <ion-icon name="thumbs-up-outline"></ion-icon>
+        <ion-label>5</ion-label>
+      </ion-chip>
+      <ion-chip outline color="tertiary">
+        <ion-icon name="thumbs-down-outline"></ion-icon> <ion-label>2</ion-label>
+      </ion-chip>
+    </p>
+    <p>{{
+      comment.commentDate | date: "short"
+    }}</p>
+    <ion-text color="full"> {{ comment.content }} </ion-text>
+   
+    <p *ngIf="appUser?.isAdmin || userEmail == comment.email">
+        <ion-icon color="danger" size="small"
+        (click)="deleteComment(comment.commentId)" name="trash-outline"></ion-icon>
+    </p>
+  </ion-label>
+  </ion-item>
+ </ion-content>
+<!-- 
+  <div   *ngFor="let comment of commentList"  >
+      <p>{{
+        comment.commentDate | date: "short"
+      }}</p>
+      <ion-text> 
+         {{ comment.content }} 
+            </ion-text>
+  <p *ngIf="appUser?.isAdmin">
+    <ion-chip ion-icon-button ionTooltip="Delete comment" ionTooltipPosition="before" color="danger" size="small"
+      (click)="deleteComment(comment.commentId)">
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-chip>
+  </p>
+  </div> -->

@@ -1,39 +1,75 @@
-<ion-content fullscreen="true">
-<ion-header [translucent]="false">
+<ion-header translucent="true">
   <ion-toolbar>
-
-<ion-title>All Posts</ion-title>
-    <ion-buttons slot="start">
+    <ion-buttons *ngIf="!showSearchbar" slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+    <ion-segment *ngIf="ios" [(ngModel)]="segment" (ionChange)="updateSchedule()">
+      <ion-segment-button value="all">
+        All
+      </ion-segment-button>
+      <ion-segment-button value="favorites">
+        Favorites
+      </ion-segment-button>
+    </ion-segment>
+    <ion-title *ngIf="!ios && !showSearchbar">Posts</ion-title>
+    <ion-searchbar *ngIf="showSearchbar" showCancelButton="always" [(ngModel)]="queryText"
+      (ionChange)="updateSchedule()" (ionCancel)="showSearchbar = false" placeholder="Search"></ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="!ios && !showSearchbar" (click)="showSearchbar = true">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="!showSearchbar" (click)="presentFilter()">
+        <span *ngIf="ios">Filter</span>
+        <span *ngIf="!ios">
+          <ion-icon slot="icon-only" name="options"></ion-icon>
+        </span>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="!ios">
+    <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
+      <ion-segment-button value="all">
+        All
+      </ion-segment-button>
+      <ion-segment-button value="favorites">
+        Favorites
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
- 
-
-  
-<div *ngIf="blogPost && blogPost.length>0; else emptyblog">
-  <div *ngFor="let post of blogPost | paginate: config">
-   <ion-card class="blog-card ion-elevation-z2">
-    <a class="blog-title" routerLink="/app/tabs/blog/{{post.postId}}/{{post.title | slug}}">
-      
-      <ion-card-content>
-          <ion-title>{{ post.title}} </ion-title>
-         <div *ngIf= "post.hasOwnProperty('codeId')"><p>Section: {{post.codeId}}</p></div>
-      </ion-card-content>
-      <ion-card-content>
-        <div [innerHTML]="post.content | excerpt"></div>
-      </ion-card-content> 
-    </a>
-      <p>
-        
-        <ng-container *ngIf="appUser?.isAdmin">
-          <ion-button   size="small"  [routerLink]="['/editpost',post.postId]">Edit</ion-button>
-          <ion-button  size="small" color="danger" (click)="delete(post.postId)">Delete</ion-button>
-        </ng-container>
-        
+<ion-content fullscreen="true">
+  <div *ngIf="blogPost && blogPost.length>0; else emptyblog">
+    <ion-item lines= "inset" *ngFor="let post of blogPost | paginate: config"
+      routerLink="/app/tabs/blog/{{post.postId}}/{{post.title | slug}}">
+      <ion-label>
+        <h1>{{post.title}}</h1>
+        <h2 *ngIf="post.hasOwnProperty('link')">
+          {{post.link}}
+        </h2>
+        <p>{{post.createdDate}} </p>
+        <p>
+          <ion-chip>
+            <ion-avatar>
+              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+            </ion-avatar>
+            <ion-label>{{post.author}}</ion-label>
+          </ion-chip>
+          <ion-chip outline color="secondary">
+            <ion-icon name="thumbs-up-outline"></ion-icon>
+            <ion-label>5</ion-label>
+          </ion-chip>
+          <ion-chip outline color="tertiary">
+            <ion-icon name="thumbs-down-outline"></ion-icon> <ion-label>2</ion-label>
+          </ion-chip>
+        </p>
+      <p *ngIf="appUser?.isAdmin || appUser.name == blogPost.author">
+        <ion-chip size="small" [routerLink]="['/editpost',post.postId]">Edit</ion-chip>
+        <ion-chip size="small" color="danger" (click)="delete(post.postId)">Delete</ion-chip>
       </p>
-    </ion-card> 
-  </div> 
-  <app-paginator [pageSizeOptions]="pageSizeOptions" [config]="config"></app-paginator>
-</div>
- </ion-content> 
+      </ion-label>
+    </ion-item>
+    <app-paginator [pageSizeOptions]="pageSizeOptions" [config]="config"></app-paginator>
+  </div>
+  <ion-list-header [hidden]="blogPost && blogPost.length > 0">
+    No Posts Found
+  </ion-list-header>
