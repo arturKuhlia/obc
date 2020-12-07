@@ -36,7 +36,7 @@
     <p>{{
       comment.commentDate | date: "short"
     }}</p>
-    <ion-text color="full"> {{ comment.content }} </ion-text>
+    <p color="full" style = " white-space: break-spaces;"> {{ comment.content }} </p>
    
     <p *ngIf="appUser?.isAdmin || userEmail == comment.email">
         <ion-icon color="danger" size="small"

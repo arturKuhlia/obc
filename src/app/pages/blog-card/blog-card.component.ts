@@ -30,7 +30,7 @@ export class BlogCardComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     private route: ActivatedRoute,
     private snackBarService: SnackbarService) {
-    this.pageSizeOptions = [5, 10, 15];
+    this.pageSizeOptions = [10, 20, 30];
     const pageSize = sessionStorage.getItem('pageSize');
     this.config = {
       currentPage: 1,
