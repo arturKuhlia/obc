@@ -1,0 +1,23 @@
+ 
+<h3>Reviews</h3>
+ 
+
+<div class="votebox">
+  <ion-icon  name="chevron-up-outline"
+  class="  vote up"
+  (click)="upvote()"
+        [ngClass]="{'active' : userVote > 0 }"
+  >
+  </ion-icon>
+  <span class="vote-count">
+    {{ avgRating | async }}</span>
+
+     
+  <ion-icon class="  vote down"
+  name="chevron-down-outline"
+  (click)="downvote()"
+  [ngClass]="{'active' : userVote < 0 }"
+   >
+</ion-icon>
+</div>
+ 

@@ -49,6 +49,8 @@ export class AuthService {
     });
   }
 
+
+ 
   // Save the user data to firestore on login
   private updateUserData(user) {
     const userRef = this.db.doc(`appusers/${user.uid}`);

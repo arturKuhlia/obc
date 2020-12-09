@@ -5,7 +5,12 @@
       <ion-content>
         <ion-list lines="none">
           <ion-list-header>
-            Conference
+            <ion-item *ngIf="appUser; else anonymousUser">
+              <ion-avatar slot="start">
+                <img src={{appUser.photoURL}}>
+              </ion-avatar>
+              <ion-label>{{appUser.name}} </ion-label>
+            </ion-item>
           </ion-list-header>
           <ion-menu-toggle autoHide="false" *ngFor="let p of appPages; let i = index">
             <ion-item [routerLink]="p.url" routerLinkActive="selected" routerDirection="root" detail="false">
@@ -58,12 +63,26 @@
           </ion-list-header>
 
           <ion-menu-toggle autoHide="false">
-            <ion-item routerLink="/login" routerLinkActive="active" routerDirection="root" detail="false">
+           
+
+            <ion-item *ngIf="appUser; else anonymousUser" (click)="logout()" routerLinkActive="active"   detail="false">
               <ion-icon slot="start" name="log-in"></ion-icon>
-              <ion-label>
-                Login
+              <ion-label >
+                Logout
               </ion-label>
             </ion-item>
+            <ng-template #anonymousUser > <ion-item  (click)="login()" routerLinkActive="active"   detail="false">
+              <ion-icon slot="start" name="log-in"></ion-icon>
+              <ion-label >
+                Login with Google
+              </ion-label>
+            </ion-item>
+</ng-template>
+           
+
+
+
+             
           </ion-menu-toggle>
 
           <ion-menu-toggle autoHide="false">
@@ -75,14 +94,7 @@
             </ion-item>
           </ion-menu-toggle>
 
-          <ion-menu-toggle autoHide="false">
-            <ion-item routerLink="/signup" routerLinkActive="active" routerDirection="root" detail="false">
-              <ion-icon slot="start" name="person-add"></ion-icon>
-              <ion-label>
-                Signup
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
+           
 
           <ion-item>
             <ion-icon slot="start" name="moon-outline"></ion-icon>

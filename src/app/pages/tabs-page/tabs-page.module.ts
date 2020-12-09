@@ -1,3 +1,6 @@
+import { VoteComponent } from './../vote/vote.component';
+import { VoteService } from './../../services/vote.service';
+ 
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgMaterialModule } from './../ng-material/ng-material.module';
 import { CommentsComponent } from './../comments/comments.component';
@@ -76,16 +79,16 @@ import { DocModule } from '../doc/doc.module';
     TabsPage,
     BlogCardComponent,
     BlogEditorComponent,
-    BlogComponent,
+    BlogComponent, 
     PaginatorComponent,
     CommentsComponent,
-    
+    VoteComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
     AngularFireModule,
-   
+   VoteService
      ]
 })
 export class TabsModule { }

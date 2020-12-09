@@ -6,8 +6,9 @@ import { AppUser } from '../../models/appuser';
 import { AuthService } from '../../services/auth.service';
 import { CommentService } from '../../services/comment.service';
 import { SnackbarService } from '../../services/snackbar.service';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { AngularFirestoreDocument,AngularFirestore } from '@angular/fire/firestore';
 
  
 
@@ -17,10 +18,12 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./blog-card.component.scss']
 })
 export class BlogCardComponent implements OnInit, OnDestroy {
+  
+  
 
   config: any;
   pageSizeOptions = [];
-
+  
   blogPost: Post[] = [];
   appUser: AppUser;
   private unsubscribe$ = new Subject<void>();
@@ -29,6 +32,7 @@ export class BlogCardComponent implements OnInit, OnDestroy {
     private commentService: CommentService,
     private authService: AuthService,
     private route: ActivatedRoute,
+     
     private snackBarService: SnackbarService) {
     this.pageSizeOptions = [10, 20, 30];
     const pageSize = sessionStorage.getItem('pageSize');
@@ -39,6 +43,9 @@ export class BlogCardComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+
+     
+
     this.authService.appUser$.subscribe(appUser => this.appUser = appUser);
 
     this.route.params.subscribe(
@@ -51,6 +58,7 @@ export class BlogCardComponent implements OnInit, OnDestroy {
     );
  
   }
+  
 
   getBlogPosts() {
     this.blogService.getAllPosts()
