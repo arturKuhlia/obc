@@ -27,13 +27,23 @@ export class VoteService {
   }
 
   
+ 
+  getUserStarOld(userId,movieId){
+  
+     const starsRef = this.afs.collection('stars', ref => ref.where('userId', '==', userId).where('movieId', '==', movieId) );
+     console.log(starsRef, "service")
+  return starsRef.valueChanges();
 
+    
+  }
 
   getUserStar(userId,movieId){
-
-    const starsRef = this.afs.collection('stars', ref => ref.where('userId', '==', userId).where('movieId', '==', movieId) );
-    return starsRef.valueChanges();
-
+    const starPath = `${userId}_${movieId}`
+    
+    const starsRef = this.afs.collection('stars').doc(starPath).valueChanges() ;
+    console.log(starsRef, "service")
+    return starsRef ;
+    
   }
 
   // Get all stars that belog to a Movie

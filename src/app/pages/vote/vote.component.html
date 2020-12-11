@@ -1,12 +1,16 @@
 <h3>Reviews</h3>
-<div ><div class="votebox">
+<div  *ngIf="
+{
+  avgRating: avgRating | async,
+  usrVote: usrVote | async
+} as obs"><div class="votebox">
   <ion-icon name="chevron-up-outline" class="  vote up" (click)="upvote()"
-    [ngClass]="{'active' : userVote  > 0 }">
+    [ngClass]="{'active' : obs.usrVote  > 0 }">
   </ion-icon>
   <span class="vote-count">
-    {{ avgRating | async }}</span>
- {{userVote}}
+    {{obs.avgRating}} avg</span>
+ {{obs.usrVote}} usr
   <ion-icon class="vote down" name="chevron-down-outline" (click)="downvote() "
-    [ngClass]="{'active' : userVote < 0 }">
+    [ngClass]="{'active' : obs.usrVote < 0 }">
   </ion-icon>
 </div></div>
