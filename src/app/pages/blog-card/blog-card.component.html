@@ -3,10 +3,8 @@
     <ion-buttons *ngIf="!showSearchbar" slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    
     <ion-title *ngIf="!ios && !showSearchbar">Posts</ion-title>
     <ion-buttons slot="end">
-       
       <ion-button *ngIf="!showSearchbar" (click)="presentFilter()">
         <span *ngIf="ios">Filter</span>
         <span *ngIf="!ios">
@@ -14,15 +12,14 @@
         </span>
       </ion-button>
     </ion-buttons>
-   
   </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true">
   <div *ngIf="blogPost && blogPost.length>0; else emptyblog">
-    <ion-item lines= "inset" *ngFor="let post of blogPost | paginate: config"
-     >
+    <ion-item lines="inset" *ngFor="let post of blogPost | paginate: config">
       <ion-label>
-        <h2 style = " white-space: break-spaces;"  routerLink="/app/tabs/blog/{{post.postId}}/{{post.title | slug}}">{{post.title}}</h2> 
+        <h2 style=" white-space: break-spaces;" routerLink="/app/tabs/blog/{{post.postId}}/{{post.title | slug}}">
+          {{post.title}}</h2>
         <h3 *ngIf="post.hasOwnProperty('link')">
           {{post.link}}
         </h3>
@@ -34,19 +31,21 @@
             </ion-avatar>
             <ion-label>{{post.author}}</ion-label>
           </ion-chip>
-          <ion-chip outline color="secondary">
+          <!-- <ion-chip outline color="secondary">
             <ion-icon name="thumbs-up-outline"></ion-icon>
             <ion-label>5</ion-label>
           </ion-chip>
           <ion-chip outline color="tertiary">
             <ion-icon name="thumbs-down-outline"></ion-icon> <ion-label>2</ion-label>
-          </ion-chip> 
-          <app-vote [movieId]='post.postId' [userId]='appUser.name'></app-vote>
+          </ion-chip>  -->
+          <app-vote [movieId]='post.postId' [userId]='appUser?.name'></app-vote>
         </p>
-      <p *ngIf="appUser?.isAdmin || appUser.name == blogPost.author">
-        <ion-chip size="small" [routerLink]="['/editpost',post.postId]">Edit</ion-chip>
-        <ion-chip size="small" color="danger" (click)="delete(post.postId)">Delete</ion-chip>
-      </p>
+         
+          <p *ngIf="appUser?.isAdmin || appUser?.name == blogPost.author">
+            <ion-chip size="small" [routerLink]="['/editpost',post.postId]">Edit</ion-chip>
+            <ion-chip size="small" color="danger" (click)="delete(post.postId)">Delete</ion-chip>
+          </p>
+       
       </ion-label>
     </ion-item>
     <app-paginator [pageSizeOptions]="pageSizeOptions" [config]="config"></app-paginator>

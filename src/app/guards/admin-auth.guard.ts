@@ -1,3 +1,4 @@
+import { SnackbarService } from './../services/snackbar.service';
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -11,6 +12,7 @@ import { AppUser } from '../models/appuser';
 export class AdminAuthGuard implements CanActivate {
 
   constructor(
+    private snackbarService:SnackbarService,
     private router: Router,
     private authService: AuthService) { }
 
@@ -21,6 +23,7 @@ export class AdminAuthGuard implements CanActivate {
       if (user && user.isAdmin) {
         return true;
       }
+      this.snackbarService.showSnackBar('Not an admin');
       this.router.navigate(['/'], { queryParams: { returnUrl: state.url } });
       return false;
     }));

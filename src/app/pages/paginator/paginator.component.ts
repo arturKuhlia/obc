@@ -17,7 +17,7 @@ export class PaginatorComponent {
   constructor(private router: Router) { }
 
   pageChange(newPage: number) {
-    this.router.navigate(['/page/', newPage]);
+    this.router.navigate(['/app/tabs/allblogs/', newPage]);
   }
 
   changePageItemCount(selectedItem) {

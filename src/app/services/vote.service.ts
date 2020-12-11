@@ -1,6 +1,6 @@
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Injectable } from '@angular/core';
-
+import { Observable } from 'rxjs';
 
 export interface Star {
   userId: any;
@@ -26,6 +26,9 @@ export class VoteService {
     return starsRef.valueChanges();
   }
 
+  
+
+
   getUserStar(userId,movieId){
 
     const starsRef = this.afs.collection('stars', ref => ref.where('userId', '==', userId).where('movieId', '==', movieId) );
@@ -47,22 +50,12 @@ export class VoteService {
     
     // Custom doc ID for relationship
     const starPath = `stars/${userId}_${movieId}`;
-   
-    this.afs.firestore.doc(starPath).get()
-      .then(docSnapshot => {
-        if (docSnapshot.exists) {
-          console.log("exits")
+    
           let star: Star = { userId, movieId, value };
           
           return this.afs.doc(starPath).set(star)
-        }
-        else{
-           
-          let star: Star = { userId, movieId, value };
-          
-          return this.afs.doc(starPath).set(star)
-        }
-      });
+       
+            
     // Set the data, return the promise
     
   }

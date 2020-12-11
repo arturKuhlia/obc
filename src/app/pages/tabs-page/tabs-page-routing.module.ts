@@ -26,7 +26,18 @@ const routes: Routes = [
       },
       { path: "blog/:id/:slug", component: BlogComponent },
 
-      { path: "allblogs", component: BlogCardComponent },
+      { path: "allblogs",
+      children: [
+        {
+          path: "",
+          component: BlogCardComponent,
+        },
+        {
+          path: ":pagenum",
+          component: BlogCardComponent
+            
+        },
+      ],},
       {
         path: "schedule",
         children: [

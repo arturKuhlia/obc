@@ -1,3 +1,4 @@
+import { SnackbarService } from './../services/snackbar.service';
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -10,6 +11,7 @@ import { map } from 'rxjs/operators';
 export class AuthGuard implements CanActivate {
 
   constructor(
+    private snackbarService:SnackbarService,
     private router: Router,
     private authService: AuthService) { }
 
@@ -20,6 +22,8 @@ export class AuthGuard implements CanActivate {
       if (user) {
         return true;
       }
+      this.snackbarService.showSnackBar('Login to ask');
+     
       this.router.navigate(['/'], { queryParams: { returnUrl: state.url } });
       return false;
     }));
