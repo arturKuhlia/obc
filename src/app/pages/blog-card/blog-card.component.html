@@ -18,28 +18,24 @@
   <div *ngIf="blogPost && blogPost.length>0; else emptyblog">
     <ion-item lines="inset" *ngFor="let post of blogPost | paginate: config">
       <ion-label>
-        <h2 style=" white-space: break-spaces;" routerLink="/app/tabs/blog/{{post.postId}}/{{post.title | slug}}">
-          {{post.title}}</h2>
-        <h3 *ngIf="post.hasOwnProperty('link')">
-          {{post.link}}
-        </h3>
-        <p>{{post.createdDate}} </p>
-        <p>
+        <p> <app-vote [movieId]='post.postId' [userId]='appUser?.name'></app-vote>
           <ion-chip>
             <ion-avatar>
               <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
             </ion-avatar>
             <ion-label>{{post.author}}</ion-label>
           </ion-chip>
-          <!-- <ion-chip outline color="secondary">
-            <ion-icon name="thumbs-up-outline"></ion-icon>
-            <ion-label>5</ion-label>
-          </ion-chip>
-          <ion-chip outline color="tertiary">
-            <ion-icon name="thumbs-down-outline"></ion-icon> <ion-label>2</ion-label>
-          </ion-chip>  -->
-          <app-vote [movieId]='post.postId' [userId]='appUser?.name'></app-vote>
-        </p>
+         
+         
+        </p > 
+        <div routerLink="/app/tabs/blog/{{post.postId}}/{{post.title | slug}}">   <h2 style=" white-space: break-spaces;" >
+          {{post.title}}</h2>
+        <h3 *ngIf="post.hasOwnProperty('link')">
+          {{post.link}}
+        </h3>
+        <p>{{post.createdDate}} </p>
+       </div>
+     
          
           <p *ngIf="appUser?.isAdmin || appUser?.name == blogPost.author">
             <ion-chip size="small" [routerLink]="['/editpost',post.postId]">Edit</ion-chip>

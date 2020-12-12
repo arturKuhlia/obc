@@ -1,11 +1,4 @@
-.votebox {
-  height: 120px;
-  width: 120px;
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  font-size: 2em;
-
+ 
   .vote {
     cursor: pointer;
     &:hover {
@@ -15,10 +8,12 @@
 
   .active.up {
       color: green;
+      font-weight: bold;
     }
 
   .active.down {
      color: red;
+     font-weight: bold;
    }
 
-}
+ 
