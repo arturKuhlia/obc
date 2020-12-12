@@ -29,27 +29,27 @@ export class VoteComponent implements OnInit, OnDestroy {
     private snackBarService: SnackbarService) {}
 
   ngOnInit() {
-
-    this.userStars = this.starService.getUserStarOld(this.userId, this.movieId);
+ 
     this.stars = this.starService.getMovieStars(this.movieId);
     this.avgRating = this.stars.pipe(
       map((arr) => {
+        let result =[]
         const ratings = arr.map((v) => v.value);
-        return ratings.length
+        const avg= ratings.length
           ? ratings.reduce((total, val) => total + val)  
           : "not reviewed";
-      })
-    );
-    this.usrVote = this.userStars.pipe(
-      map((arr) => {
-        const ratings = arr.map((v) => v.value);
-        return ratings.length
-          ? ratings.reduce((total, val) => total + val)  
-          : "not reviewed";
-      })
+        const  foundArr = arr.map((v) => v)
+        const found = foundArr.find(element => element.userId == this.userId).value;
 
+
+         result.push(avg, found)
+        console.log(result)  
+        return result
+        
+      })
     );
-      this.voteData.push(this.usrVote,this.avgRating)
+   
+    
     
   }
   ngOnDestroy() {
@@ -58,9 +58,9 @@ export class VoteComponent implements OnInit, OnDestroy {
 
    
 
-  upvote() {
+  upvote(val) {
     if(this.userId){
-      let vote = this.userVote == 1 ? 0 : 1;
+      let vote = val == 1 ? 0 : 1;
       
       this.starService.setStar(this.userId, this.movieId, vote);
     
@@ -69,10 +69,10 @@ export class VoteComponent implements OnInit, OnDestroy {
     };
   }
 
-  downvote() {
+  downvote(val) {
    
     if(this.userId){
-      let vote =  this.userVote == -1 ? 0 : -1;
+      let vote =  val == -1 ? 0 : -1;
     
       this.starService.setStar(this.userId, this.movieId, vote);
     }else{
