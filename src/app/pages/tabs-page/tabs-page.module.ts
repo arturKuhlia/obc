@@ -1,3 +1,5 @@
+import { SearchComponent } from './../search/search.component';
+ 
 import { VoteComponent } from './../vote/vote.component';
 import { VoteService } from './../../services/vote.service';
  
@@ -77,6 +79,7 @@ import { DocModule } from '../doc/doc.module';
     ExcerptPipe,
     SlugPipe,
     TabsPage,
+    SearchComponent,
     BlogCardComponent,
     BlogEditorComponent,
     BlogComponent, 

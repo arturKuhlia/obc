@@ -1,3 +1,4 @@
+import { SearchComponent } from './../search/search.component';
 import { BlogCardComponent } from "./../blog-card/blog-card.component";
 import { BlogComponent } from "./../blog/blog.component";
 import { BlogEditorComponent } from "./../blog-editor/blog-editor.component";
@@ -52,6 +53,15 @@ const routes: Routes = [
                 (m) => m.SessionDetailModule
               ),
           },
+        ],
+      },
+      {
+        path: "search",
+        children: [
+          {
+            path: "",
+            component: SearchComponent,
+          }
         ],
       },
       {
