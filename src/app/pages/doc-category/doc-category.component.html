@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let item of childTree; let i = index"> <ion-segment-button  *ngIf="item.children.length > 0" (click)="onTabClick(i)"><span>{{item.title}} </span> </ion-segment-button>
+    <ion-segment-button  *ngIf="item.children.length < 1" routerLink="/app/tabs/doc/{{item.id}}">  <span>{{item.title}} →</span></ion-segment-button>
+    
+
+      <app-doc-category *ngIf="tabIndex === i && item.children.length > 0" [childTree]="item.children"></app-doc-category>
+ 
+  </li>
+</ul>

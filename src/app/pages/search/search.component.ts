@@ -60,17 +60,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
 
-
-  delete(postId: string) {
-    if (confirm('Are you sure')) {
-      this.blogService.deletePost(postId).then(
-        () => {
-          this.commentService.deleteAllCommentForBlog(postId);
-          this.snackBarService.showSnackBar('Blog post deleted successfully');
-        }
-      );
-    }
-  }
+ 
 
   ngOnDestroy() {
     this.unsubscribe$.next();

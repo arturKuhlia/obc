@@ -8,12 +8,17 @@ import { AccordionData } from '../../../assets/data/accordion';
   styleUrls: ['./doc.scss'],
 })
 export class DocPage implements OnInit {
-  
-  term: string;
+  display = false;
+ onPress() {
+   this.display = true;
+   
+ }
+
+ 
 
 
   SecTree:any= AccordionData;
-  Sections: any = TextData; 
+  
   constructor() { }
   
 

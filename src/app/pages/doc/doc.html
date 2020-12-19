@@ -13,7 +13,7 @@
     </ion-segment>
     <ion-title *ngIf="!ios && !showSearchbar">Schedule</ion-title>
     <ion-searchbar *ngIf="showSearchbar" showCancelButton="always" (ionCancel)="showSearchbar = false" type="text"
-    class="form-control" [(ngModel)]="term" placeholder="Search"></ion-searchbar>
+      class="form-control" [(ngModel)]="term" placeholder="Search"></ion-searchbar>
     <ion-buttons slot="end">
       <ion-button *ngIf="!ios && !showSearchbar" (click)="showSearchbar = true">
         <ion-icon slot="icon-only" name="search"></ion-icon>
@@ -39,36 +39,9 @@
 </ion-header>
 
 <ion-content fullscreen="true">
+
+   
+      <app-doc-category [childTree]="SecTree"></app-doc-category>
+     
  
-
-
-
-  <mat-accordion>
-    <mat-expansion-panel *ngFor="let sec of SecTree | filter:term" hideToggle>
-      <mat-expansion-panel-header>
-        {{sec.title}}
-      </mat-expansion-panel-header>
-      <mat-accordion>
-        <mat-expansion-panel *ngFor="let subsect of sec.children" hideToggle>
-          <mat-expansion-panel-header>
-            {{subsect.title}}
-          </mat-expansion-panel-header>
-          <mat-accordion>
-            <ion-list>
-              <ion-item *ngFor="let subsubsect of subsect.children" routerLink="/app/tabs/doc/{{subsubsect.id}}"
-                hideToggle>
-
-                {{subsubsect.title}}
-              </ion-item>
-            </ion-list>
-
-          </mat-accordion>
-        </mat-expansion-panel>
-      </mat-accordion>
-
-    </mat-expansion-panel>
-  </mat-accordion>
-
-
-
 </ion-content>

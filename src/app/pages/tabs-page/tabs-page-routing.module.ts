@@ -78,6 +78,7 @@ const routes: Routes = [
                 (m) => m.DocDetailModule
               ),
           },
+           
         ],
       },
 

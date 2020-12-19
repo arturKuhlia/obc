@@ -1,3 +1,4 @@
+import { DocCategoryComponent } from './../doc-category/doc-category.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { NgModule } from '@angular/core';
@@ -20,7 +21,8 @@ import { DocPageRoutingModule } from './doc-routing.module';
   ],
   declarations: [
     DocPage,
-    DocFilterPage
+    DocFilterPage,
+    DocCategoryComponent
   ],
   entryComponents: [
     DocFilterPage
