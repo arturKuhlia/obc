@@ -1,3 +1,4 @@
+import { BookmarkComponent } from './../bookmark/bookmark.component';
  
 import { NgModule } from '@angular/core';
 import { CommonModule, NgIf } from '@angular/common';
@@ -15,6 +16,7 @@ import { IonicModule } from '@ionic/angular';
   ],
   declarations: [
     DocDetailPage,
+    BookmarkComponent
   ]
 })
 export class DocDetailModule { }

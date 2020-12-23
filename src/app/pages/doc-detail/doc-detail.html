@@ -4,19 +4,35 @@
       <ion-back-button [defaultHref]="docs"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button (click)="toggleFavorite()">
-        <ion-icon *ngIf="!isFavorite" slot="icon-only" name="star-outline"></ion-icon>
-        <ion-icon *ngIf="isFavorite" slot="icon-only" name="star"></ion-icon>
-      </ion-button>
+      <app-bookmark [type]="doc" [itemId]="SectionId"></app-bookmark>
+      
+        <ion-button color="secondary">
+          <ion-icon name="help-outline">
+    
+          </ion-icon>
+    
+        </ion-button>
+       
+        <ion-button color="secondary">
+          <ion-icon name="create-outline"></ion-icon>
+    
+        </ion-button>
      
+
     </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div *ngIf="doc" class="ion-padding">  
-    <ion-text [outerHTML]= "doc">
+
+ 
+
+  <div *ngIf="doc" class="ion-padding">
+    <ion-text [outerHTML]="doc">
     </ion-text>
   </div>
- 
+<br>  
+<br>
 </ion-content>
+ 

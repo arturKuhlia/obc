@@ -64,7 +64,7 @@ export class VoteComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
   upvote(val) {
-     
+    console.log("pushed up", val)
     if (this.userId) {
       let vote = val == 1 ? 0 : 1;
       console.log("pushed up vote", vote)
@@ -74,7 +74,7 @@ export class VoteComponent implements OnInit, OnDestroy {
     }
   }
   downvote(val) {
-    
+    console.log("pushed down", val)
     if (this.userId) {
       let vote = val == -1 ? 0 : -1;
        console.log("pushed up vote", vote)

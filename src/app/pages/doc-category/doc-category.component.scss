@@ -1,20 +1,23 @@
+ 
 
 ul{
+ 
     margin: 5px;
-    margin-left: 10px;
+    margin-left: 15px;
     padding: 2px;
     list-style-type: none;
-   width: 100%;
-     
+ 
+     overflow: wrap;
    
      
 
 }
- span{
+ p{
      
     cursor:pointer;
+    padding: 4px;
     
-    
+    overflow-wrap: normal;
      width: 100%;
      text-align: start; 
  }
@@ -22,7 +25,7 @@ ul{
  
 
 li {
-    width: 100%;
+    
     text-align: start; 
     font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
     border-bottom: 1px solid #ccc;
@@ -30,4 +33,11 @@ li {
    
   li:last-child {
     border: none;
+  }
+  ion-button {
+   
+    
+     
+    white-space: normal;
+    height: fit-content;
   }

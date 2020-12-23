@@ -1,3 +1,5 @@
+import { BookmarkComponent } from './../bookmark/bookmark.component';
+import { BookmarkService } from './../../services/bookmark.service';
 import { SearchComponent } from './../search/search.component';
  
 import { VoteComponent } from './../vote/vote.component';
@@ -85,13 +87,14 @@ import { DocModule } from '../doc/doc.module';
     BlogComponent, 
     PaginatorComponent,
     CommentsComponent,
-    VoteComponent
+    VoteComponent, 
   ],
   providers: [
     StatusBar,
     SplashScreen,
     AngularFireModule,
-   VoteService
+   VoteService,
+   BookmarkService
      ]
 })
 export class TabsModule { }

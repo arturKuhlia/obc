@@ -1,0 +1,5 @@
+<ion-button (click)="bookmarkThis()" color="secondary"  >
+  <ion-icon *ngIf= "isMarked == undefined"   name="star-outline"></ion-icon>
+  <ion-icon   *ngIf= "isMarked !== undefined"  name="star"></ion-icon>
+ 
+</ion-button>
