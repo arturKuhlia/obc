@@ -19,7 +19,7 @@ export class VoteComponent implements OnInit, OnDestroy {
   usrVote: Observable<any>;
   voteData = [];
   userVote: number = 0;
-  subscription;
+ 
   constructor(
     private starService: VoteService,
     private snackBarService: SnackbarService
@@ -61,7 +61,7 @@ export class VoteComponent implements OnInit, OnDestroy {
     );
   }
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    
   }
   upvote(val) {
     console.log("pushed up", val)

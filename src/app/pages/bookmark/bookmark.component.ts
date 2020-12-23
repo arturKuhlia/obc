@@ -19,8 +19,8 @@ export class BookmarkComponent implements OnInit {
   @Input() type;
   appUser: AppUser; 
   isMarked :any
-  
-  bookmark: Observable<any>;
+  one$;
+  two$;
      
   constructor(
     private authService: AuthService,
@@ -30,10 +30,10 @@ export class BookmarkComponent implements OnInit {
 
   ngOnInit() {
     
-    this.authService.appUser$.subscribe(appUser => { 
-      this.appUser=appUser
+    this.one$ =this.authService.appUser$.subscribe(appUser => { 
+     this.appUser=appUser
        
-      this.bookmarkSerice.getBookmark(appUser.email, this.itemId).subscribe(res => {  
+      this.two$=this.bookmarkSerice.getBookmark(appUser.email, this.itemId).subscribe(res => {  
         this.isMarked = res;
       console.log("result!!!!!!!!!!!!!!!!!!!!!",this.isMarked)
       });
@@ -63,7 +63,8 @@ if (  this.isMarked !== undefined){
 }
 
   ngOnDestroy() {
- 
+    this.one$.unsubscribe();
+    this.two$.unsubscribe();
   }
   
 

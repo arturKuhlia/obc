@@ -27,7 +27,7 @@ export class BlogCardComponent implements OnInit, OnDestroy {
   blogPost: Post[] = [];
   appUser: AppUser;
   private unsubscribe$ = new Subject<void>();
-
+ one$;
   constructor(private blogService: BlogService,
     private commentService: CommentService,
     private authService: AuthService,
@@ -59,8 +59,8 @@ export class BlogCardComponent implements OnInit, OnDestroy {
   
 
   getBlogPosts() {
-    this.blogService.getAllPosts()
-      .pipe(takeUntil(this.unsubscribe$))
+   this.one$=  this.blogService.getAllPosts()
+      .pipe()
       .subscribe(result => {
         this.blogPost = result;
       });
@@ -78,7 +78,6 @@ export class BlogCardComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
+    this.one$.unsubscribe(); 
   }
 }
