@@ -28,41 +28,13 @@
     <ion-button size="small" type=" button" mat-raised-button color="danger" (click)="cancel()">CANCEL</ion-button>
   </div>
   <br />
-  <mat-accordion>
-    <mat-expansion-panel hideToggle>
-      <mat-expansion-panel-header>
-
-        <h1>Chose a section</h1>
-      </mat-expansion-panel-header>
-      <mat-accordion>
-        <mat-expansion-panel *ngFor="let sec of SecTree" hideToggle>
-          <mat-expansion-panel-header>
-            {{sec.title}}
-          </mat-expansion-panel-header>
-          <mat-accordion>
-            <mat-expansion-panel *ngFor="let subsect of sec.children" hideToggle>
-              <mat-expansion-panel-header>
-                {{subsect.title}}
-              </mat-expansion-panel-header>
-
-              <ion-list  hideToggle>
-                 
-
-
-                <ion-item *ngFor="let subsubsect of subsect.children">
-                 
-                  <input id="subsect{{subsubsect.id}}" [value]='subsubsect.id' type="radio" name="subsect"
-                  [(ngModel)]="postData.codeId">
-                </ion-item>
-              </ion-list>
-
-
-            </mat-expansion-panel>
-          </mat-accordion>
-        </mat-expansion-panel>
-
-      </mat-accordion>
-    </mat-expansion-panel>
-
-  </mat-accordion>
+    
+    <select name="CodeId-{{rowIndex}}" #codeId="ngModel" [(ngModel)]="postData.codeId" >
+       
+      <option  *ngFor="let item of Sections " [value]="item.id" >{{item.id}}</option>
+  </select>
+  
+      
+   
+ 
 </form>

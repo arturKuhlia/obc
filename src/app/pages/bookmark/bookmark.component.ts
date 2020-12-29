@@ -32,12 +32,10 @@ export class BookmarkComponent implements OnInit {
     
     this.one$ =this.authService.appUser$.subscribe(appUser => { 
      this.appUser=appUser
-       
+       if (appUser !== null){
       this.two$=this.bookmarkSerice.getBookmark(appUser.email, this.itemId).subscribe(res => {  
-        this.isMarked = res;
-      console.log("result!!!!!!!!!!!!!!!!!!!!!",this.isMarked)
-      });
-    console.log(this.isMarked)
+        this.isMarked = res; 
+      });}
     
     
     
@@ -51,12 +49,12 @@ export class BookmarkComponent implements OnInit {
 }
 bookmarkThis(){
   console.log("component onclick function")
-  
+  if (this.appUser !== null){
 if (  this.isMarked !== undefined){
   this.bookmarkSerice.deleteBookmark(this.appUser.email, this.itemId)
 }else{
   this.bookmarkSerice.setBookmark(this.appUser.email, this.itemId, this.type)
-  }
+  }}
 
   
 
@@ -64,7 +62,7 @@ if (  this.isMarked !== undefined){
 
   ngOnDestroy() {
     this.one$.unsubscribe();
-    this.two$.unsubscribe();
+    this.two$?this.two$.unsubscribe():false;
   }
   
 

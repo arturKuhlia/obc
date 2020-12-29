@@ -1,3 +1,5 @@
+import { PopComponent } from './../pop/pop.component';
+ 
 import { BookmarkComponent } from './../bookmark/bookmark.component';
  
 import { NgModule } from '@angular/core';
@@ -16,7 +18,9 @@ import { IonicModule } from '@ionic/angular';
   ],
   declarations: [
     DocDetailPage,
-    BookmarkComponent
-  ]
+    BookmarkComponent,
+   PopComponent
+  ],
+  entryComponents: [PopComponent],
 })
 export class DocDetailModule { }

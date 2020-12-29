@@ -30,8 +30,8 @@
         </p > 
         <div routerLink="/app/tabs/blog/{{post.postId}}/{{post.title | slug}}">   <h2 style=" white-space: break-spaces;" >
           {{post.title}}</h2>
-        <h3 *ngIf="post.hasOwnProperty('link')">
-          {{post.link}}
+        <h3 *ngIf="post.hasOwnProperty('codeId')">
+          {{post.codeId}}
         </h3>
         <p>{{post.createdDate}} </p>
        </div>

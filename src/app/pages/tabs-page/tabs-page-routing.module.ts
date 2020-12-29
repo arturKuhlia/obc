@@ -21,6 +21,11 @@ const routes: Routes = [
         canActivate: [AuthGuard],
       },
       {
+        path: "addpost/:docId",
+        component: BlogEditorComponent,
+        canActivate: [AuthGuard],
+      },
+      {
         path: "editpost/:id",
         component: BlogEditorComponent,
         canActivate: [AdminAuthGuard],

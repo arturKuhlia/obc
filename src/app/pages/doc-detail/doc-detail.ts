@@ -1,10 +1,13 @@
+import { PopComponent } from './../pop/pop.component';
+import { PopoverController } from '@ionic/angular';
  
 import { Component } from '@angular/core';
- 
+
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import {TextData}  from '../../../assets/data/html';
-
+ 
+ 
 
 @Component({
   selector: 'page-doc-detail',
@@ -19,8 +22,23 @@ export class DocDetailPage    {
   SectionId:any;
  
   
-  constructor(private route: ActivatedRoute ) {
+
+
+  constructor(private route: ActivatedRoute,
+    public popoverController: PopoverController ) {
      
+  }
+
+ 
+
+  async presentPopover(ev: any) {
+    const popover = await this.popoverController.create({
+      component: PopComponent,
+      componentProps:{docId:this.SectionId},
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
   }
 
   ionViewWillEnter() {

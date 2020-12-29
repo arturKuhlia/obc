@@ -1,3 +1,4 @@
+import { PopComponent } from './../pop/pop.component';
 import { BookmarkComponent } from './../bookmark/bookmark.component';
 import { BookmarkService } from './../../services/bookmark.service';
 import { SearchComponent } from './../search/search.component';
@@ -88,8 +89,10 @@ import { DocModule } from '../doc/doc.module';
     PaginatorComponent,
     CommentsComponent,
     VoteComponent, 
+   
   ],
   providers: [
+    
     StatusBar,
     SplashScreen,
     AngularFireModule,

@@ -4,7 +4,7 @@ export class Post {
     title: string;
     content: string;
     author: string;
-    link: string;
+    codeId: string;
     createdDate: any;
     type: any;
 

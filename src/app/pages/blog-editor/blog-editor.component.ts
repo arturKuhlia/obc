@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Post } from '../../models/post';
 import { DatePipe } from '@angular/common';
@@ -10,7 +10,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import {TextData}  from '../../../assets/data/html';
-import { AccordionData } from '../../../assets/data/accordion';
+ 
 
 
 @Component({
@@ -23,7 +23,8 @@ export class BlogEditorComponent implements OnInit, OnDestroy {
 
 
 
-  SecTree:any= AccordionData;
+ 
+   
   Sections: any = TextData;
 
 
@@ -32,6 +33,9 @@ export class BlogEditorComponent implements OnInit, OnDestroy {
   postData = new Post();
   formTitle = 'Add';
   postId;
+  docId;
+  
+  term: string;
   appUser: AppUser;
   private unsubscribe$ = new Subject<void>();
 
@@ -43,11 +47,15 @@ export class BlogEditorComponent implements OnInit, OnDestroy {
     if (this.route.snapshot.params['id']) {
       this.postId = this.route.snapshot.paramMap.get('id');
     }
+    if (this.route.snapshot.params['docId']) {
+      this.postData.codeId = this.route.snapshot.paramMap.get('docId');
+    }
   }
 
-  ngOnInit() {
+  ngOnInit() { 
     this.authService.appUser$.subscribe(appUser => this.appUser = appUser);
     this.setEditorConfig();
+   
     if (this.postId) {
       this.formTitle = 'Edit';
       this.blogService.getPostbyId(this.postId)
