@@ -14,7 +14,7 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content fullscreen="true">
+<ion-content>
   <div *ngIf="blogPost && blogPost.length>0; else emptyblog">
     <ion-item lines="inset" *ngFor="let post of blogPost | paginate: config">
       <ion-label>
@@ -35,12 +35,14 @@
         </h3>
         <p>{{post.createdDate}} </p>
        </div>
+    
+         <p *ngIf="appUser?.isAdmin || post && post.author == appUser?.name" >  
+        
+          <ion-chip size="small" [routerLink]="['/editpost',post.postId]">Edit</ion-chip>
+          <ion-chip size="small" color="danger" (click)="delete(post.postId)">Delete</ion-chip>
      
+      </p>
          
-          <p *ngIf="appUser?.isAdmin || appUser?.name == blogPost.author">
-            <ion-chip size="small" [routerLink]="['/editpost',post.postId]">Edit</ion-chip>
-            <ion-chip size="small" color="danger" (click)="delete(post.postId)">Delete</ion-chip>
-          </p>
        
       </ion-label>
     </ion-item>

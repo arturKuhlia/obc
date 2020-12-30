@@ -8,33 +8,41 @@
   </ion-toolbar>
 </ion-header>
 
-
-
-<hr />
-<form #myForm="ngForm" (ngSubmit)="myForm.form.valid && saveBlogPost()" accept-charset="UTF-8" novalidate>
-
-  <input type="text" class="blogHeader" placeholder="Add title..." class="form-control" name="postTitle"
-    [(ngModel)]="postData.title" #postTitle="ngModel" required />
-  <span class="text-danger" *ngIf="myForm.submitted && postTitle.errors?.required">
-    Title is required
-  </span>
-  <br />
-  <div class="form-group">
-    <ckeditor class="editor" name="myckeditor" [config]="ckeConfig" [(ngModel)]="postData.content" #myckeditor="ngModel"
-      debounce="300" [editor]="Editor"></ckeditor>
-  </div>
-  <div class="form-group">
-    <ion-button size="small" type="submit" mat-raised-button>Save</ion-button>
-    <ion-button size="small" type=" button" mat-raised-button color="danger" (click)="cancel()">CANCEL</ion-button>
-  </div>
-  <br />
-    
-    <select name="CodeId-{{rowIndex}}" #codeId="ngModel" [(ngModel)]="postData.codeId" >
-       
-      <option  *ngFor="let item of Sections " [value]="item.id" >{{item.id}}</option>
-  </select>
+<ion-content >
+<ion-card>
+  <hr />
+  <form #myForm="ngForm" (ngSubmit)="myForm.form.valid && saveBlogPost()" accept-charset="UTF-8" novalidate>
   
-      
+    <input type="text" class="blogHeader" placeholder="Add title..." class="form-control" name="postTitle"
+      [(ngModel)]="postData.title" #postTitle="ngModel" required />
+    <span class="text-danger" *ngIf="myForm.submitted && postTitle.errors?.required">
+      Title is required
+    </span>
+    <br />
+    <div class="form-group">
+      <ckeditor class="editor" name="myckeditor" [config]="ckeConfig" [(ngModel)]="postData.content" #myckeditor="ngModel"
+        debounce="300" [editor]="Editor"></ckeditor>
+    </div>
+  
+    <br />
+    
+      <ion-title>Select Section</ion-title>
+      <ion-searchbar type="text" name="termSearch" placeholder="Filter Sections" [(ngModel)]="term"></ion-searchbar>
+  
+       
+      <select name="CodeId-{{rowIndex}}" #codeId="ngModel" [(ngModel)]="postData.codeId">
+       
+        <option *ngFor="let item of Sections | filter:term " [value]="item.id">{{item.id}}</option>
+      </select>
    
- 
-</form>
+  
+    <br />
+  
+    <div class="form-group">
+  
+      <ion-button size="small" type="submit" mat-raised-button>Save</ion-button>
+      <ion-button size="small" type=" button" mat-raised-button color="danger" (click)="cancel()">CANCEL</ion-button>
+    </div>
+  
+  </form></ion-card>
+</ion-content>

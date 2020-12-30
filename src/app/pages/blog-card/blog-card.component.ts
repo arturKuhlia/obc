@@ -54,7 +54,9 @@ export class BlogCardComponent implements OnInit, OnDestroy {
       }
 
     );
- 
+  
+
+    
   }
   
 

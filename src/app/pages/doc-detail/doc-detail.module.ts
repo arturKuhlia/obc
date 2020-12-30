@@ -1,3 +1,4 @@
+import { CommentsModule } from './../comments/comments.module';
 import { PopComponent } from './../pop/pop.component';
  
 import { BookmarkComponent } from './../bookmark/bookmark.component';
@@ -14,12 +15,14 @@ import { IonicModule } from '@ionic/angular';
   imports: [
     CommonModule,
     IonicModule,
-    DocDetailPageRoutingModule
+    DocDetailPageRoutingModule,
+    CommentsModule
   ],
   declarations: [
     DocDetailPage,
     BookmarkComponent,
    PopComponent
+   
   ],
   entryComponents: [PopComponent],
 })

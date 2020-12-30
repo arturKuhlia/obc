@@ -16,8 +16,7 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class CommentsComponent implements OnInit, OnDestroy {
 
-  @Input()
-  blogId;
+  @Input() blogId;
   email;
   commentedBy;
   appUser: AppUser;
@@ -68,10 +67,10 @@ export class CommentsComponent implements OnInit, OnDestroy {
   }
 
   deleteComment(commentId) {
-    if (confirm('Do you want to delete this comment!!!')) {
+    if (confirm('Do you want to delete this comment?')) {
       this.commentService.deleteSingleComment(commentId).then(
         () => {
-          this.snackBarService.showSnackBar('Comment Deleted successfully');
+          this.snackBarService.showSnackBar('Comment Deleted');
         }
       );
     }

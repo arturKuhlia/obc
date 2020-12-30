@@ -18,15 +18,12 @@ export class BlogComponent implements OnInit, OnDestroy {
 
   constructor(private route: ActivatedRoute,
     private blogService: BlogService) {
-    if (this.route.snapshot.params['id']) {
-       
+    if (this.route.snapshot.params['id']) {       
       this.postId = this.route.snapshot.paramMap.get('id');
-
     }
   }
 
-  ngOnInit() {
-    console.log(this.postId)
+  ngOnInit() { 
     this.blogService.getPostbyId(this.postId)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(

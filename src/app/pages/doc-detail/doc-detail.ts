@@ -1,7 +1,7 @@
 import { PopComponent } from './../pop/pop.component';
 import { PopoverController } from '@ionic/angular';
  
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
@@ -14,13 +14,13 @@ import {TextData}  from '../../../assets/data/html';
   styleUrls: ['./doc-detail.scss'],
   templateUrl: 'doc-detail.html'
 })
-export class DocDetailPage    {
+export class DocDetailPage  implements OnInit  {
   doc: any;
   isFavorite = false;
   defaultHref = '';
   Sections: any = TextData;
   SectionId:any;
- 
+ CommentSectionId:any;
   
 
 
@@ -29,7 +29,13 @@ export class DocDetailPage    {
      
   }
 
- 
+ ngOnInit(){
+  this.SectionId = this.route.snapshot.paramMap.get('id');
+  console.log(this.SectionId)
+  this.doc = this.getSectionById(this.SectionId)
+  console.log(typeof(this.doc))
+  this.CommentSectionId = this.SectionId.replace(/\s/g, '');
+ }
 
   async presentPopover(ev: any) {
     const popover = await this.popoverController.create({
@@ -42,10 +48,7 @@ export class DocDetailPage    {
   }
 
   ionViewWillEnter() {
-     this.SectionId = this.route.snapshot.paramMap.get('id');
-     console.log(this.SectionId)
-     this.doc = this.getSectionById(this.SectionId)
-     console.log(typeof(this.doc))
+    
         
   }
 

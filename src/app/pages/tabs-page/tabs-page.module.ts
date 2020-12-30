@@ -1,3 +1,5 @@
+import { CommentsModule } from './../comments/comments.module';
+import { DocDetailModule } from './../doc-detail/doc-detail.module';
 import { PopComponent } from './../pop/pop.component';
 import { BookmarkComponent } from './../bookmark/bookmark.component';
 import { BookmarkService } from './../../services/bookmark.service';
@@ -56,10 +58,11 @@ import { DocModule } from '../doc/doc.module';
     AboutModule,
     CommonModule,
     IonicModule,
-    
+    CommentsModule,
     ScheduleModule,
     SessionDetailModule,
     DocModule,
+    DocDetailModule,
     TabsPageRoutingModule,
  
     IonicModule.forRoot(),
@@ -86,11 +89,10 @@ import { DocModule } from '../doc/doc.module';
     BlogCardComponent,
     BlogEditorComponent,
     BlogComponent, 
-    PaginatorComponent,
-    CommentsComponent,
+    PaginatorComponent, 
     VoteComponent, 
    
-  ],
+  ], 
   providers: [
     
     StatusBar,

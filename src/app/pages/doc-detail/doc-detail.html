@@ -2,33 +2,21 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button routerLink="/app/tabs/doc" [defaultHref]="doc"  ></ion-back-button>
-     
-     
-    </ion-buttons>
-    
-
-    <ion-buttons slot="end">
+  </ion-buttons>
+  <ion-buttons slot="end">
       <app-bookmark [type]="doc" [itemId]="SectionId"></app-bookmark>
       <ion-button   (click)="presentPopover($event)">
         <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
       </ion-button>
     </ion-buttons>
-     
-     
- 
-
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
- 
-
-  <div *ngIf="doc" class="ion-padding">
+ <div *ngIf="doc" class="ion-padding">
     <ion-text [outerHTML]="doc">
     </ion-text>
   </div>
-<br>  
-<br>
+  <app-comments [blogId]="CommentSectionId"></app-comments>
+  
 </ion-content>
  
