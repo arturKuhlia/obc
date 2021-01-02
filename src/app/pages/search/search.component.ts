@@ -5,9 +5,11 @@ import { AppUser } from './../../models/appuser';
 import { Post } from './../../models/post';
 import { BlogService } from './../../services/blog.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-  import { ActivatedRoute } from '@angular/router';  
+import { ActivatedRoute } from '@angular/router';  
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+ 
+ 
  
 
 @Component({
@@ -16,7 +18,8 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit, OnDestroy {
-
+  public fuse: any;
+  public fuseResults: any[];
   config: any;
   pageSizeOptions = [];
  
@@ -39,6 +42,8 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+ //instantiate Fuse with your object and options
+  
 
     this.authService.appUser$.subscribe(appUser => this.appUser = appUser);
 
@@ -49,7 +54,10 @@ export class SearchComponent implements OnInit, OnDestroy {
       }
     );
   }
-
+  public search(evt: KeyboardEvent): void {
+    const target = evt.target as HTMLInputElement;
+    this.fuseResults = this.fuse.search(target.value);
+  }
   getBlogPosts() {
     this.blogService.getAllPosts()
       .pipe(takeUntil(this.unsubscribe$))

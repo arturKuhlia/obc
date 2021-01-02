@@ -25,13 +25,7 @@
         </ion-avatar>
         <ion-label>{{comment.commentedBy}}  </ion-label>
       </ion-chip>
-      <ion-chip outline color="secondary">
-        <ion-icon name="thumbs-up-outline"></ion-icon>
-        <ion-label>5</ion-label>
-      </ion-chip>
-      <ion-chip outline color="tertiary">
-        <ion-icon name="thumbs-down-outline"></ion-icon> <ion-label>2</ion-label>
-      </ion-chip>
+      <app-vote [movieId]='comment.commentId' [userId]='appUser?.name'></app-vote>
     </p>
     <p>{{
       comment.commentDate | date: "short"

@@ -1,3 +1,5 @@
+import { AppUser } from './../../models/appuser';
+import { AuthService } from './../../services/auth.service';
 import { BlogService } from '../../services/blog.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Post } from '../../models/post';
@@ -11,12 +13,12 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit, OnDestroy {
-
+  appUser: AppUser;
   postData: Post = new Post();
   postId;
   private unsubscribe$ = new Subject<void>();
-
-  constructor(private route: ActivatedRoute,
+  constructor(  private authService: AuthService,
+    private route: ActivatedRoute,
     private blogService: BlogService) {
     if (this.route.snapshot.params['id']) {       
       this.postId = this.route.snapshot.paramMap.get('id');
@@ -24,6 +26,9 @@ export class BlogComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() { 
+
+    this.authService.appUser$.subscribe(appUser => this.appUser = appUser);
+
     this.blogService.getPostbyId(this.postId)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(

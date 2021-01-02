@@ -6,10 +6,7 @@ import { AppUser } from '../../models/appuser';
 import { AuthService } from '../../services/auth.service';
 import { CommentService } from '../../services/comment.service';
 import { SnackbarService } from '../../services/snackbar.service';
-import { Subject, Observable } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
-import { AngularFirestoreDocument,AngularFirestore } from '@angular/fire/firestore';
-
+import { Subject, Observable } from 'rxjs'; 
  
 
 @Component({

@@ -1,3 +1,5 @@
+import { BookmarkModule } from './../bookmark/bookmark.module';
+import { VoteModule } from './../vote/vote.module';
 import { CommentsModule } from './../comments/comments.module';
 import { DocDetailModule } from './../doc-detail/doc-detail.module';
 import { PopComponent } from './../pop/pop.component';
@@ -52,19 +54,20 @@ import { ScheduleModule } from '../schedule/schedule.module';
 import { SessionDetailModule } from '../session-detail/session-detail.module';
 import { DocModule } from '../doc/doc.module';
  
-
 @NgModule({
-  imports: [
+  imports: [ 
     AboutModule,
     CommonModule,
     IonicModule,
     CommentsModule,
+    VoteModule,
+    BookmarkModule,
     ScheduleModule,
     SessionDetailModule,
     DocModule,
     DocDetailModule,
     TabsPageRoutingModule,
- 
+    VoteModule,
     IonicModule.forRoot(),
     NgxPaginationModule,
     HttpClientModule, 
@@ -78,8 +81,8 @@ import { DocModule } from '../doc/doc.module';
     CKEditorModule,
     FormsModule,
     NgMaterialModule,
-    MatSnackBarModule
-
+    MatSnackBarModule,
+   
   ],
   declarations: [
     ExcerptPipe,
@@ -90,7 +93,7 @@ import { DocModule } from '../doc/doc.module';
     BlogEditorComponent,
     BlogComponent, 
     PaginatorComponent, 
-    VoteComponent, 
+    
    
   ], 
   providers: [

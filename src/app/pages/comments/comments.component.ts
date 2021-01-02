@@ -40,7 +40,7 @@ export class CommentsComponent implements OnInit, OnDestroy {
         this.userEmail = appUser.email;
     })
     this.getAllComments();
-    console.log(this.userEmail)
+ 
 
   }
 

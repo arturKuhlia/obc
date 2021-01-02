@@ -1,6 +1,5 @@
-import { VoteModule } from './../vote/vote.module'; 
- 
-import { CommentsComponent } from './comments.component';
+import { BookmarkComponent } from './bookmark.component';
+
 import { FormsModule }   from '@angular/forms';
 
 import { NgModule } from '@angular/core';
@@ -12,13 +11,12 @@ import { IonicModule } from '@ionic/angular';
   imports: [
     CommonModule,
     IonicModule, 
-    FormsModule,
-    VoteModule
+    FormsModule
   ],
   declarations: [ 
-    CommentsComponent
+    BookmarkComponent
   
 ],
-exports: [CommentsComponent]
+exports: [BookmarkComponent]
 })
-export class CommentsModule { }
+export class BookmarkModule { }

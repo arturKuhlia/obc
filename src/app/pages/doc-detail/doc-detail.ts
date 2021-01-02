@@ -7,7 +7,8 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import {TextData}  from '../../../assets/data/html';
  
- 
+import {Location} from '@angular/common';
+
 
 @Component({
   selector: 'page-doc-detail',
@@ -24,10 +25,12 @@ export class DocDetailPage  implements OnInit  {
   
 
 
-  constructor(private route: ActivatedRoute,
+  constructor(private _location: Location,
+    private route: ActivatedRoute,
     public popoverController: PopoverController ) {
      
   }
+
 
  ngOnInit(){
   this.SectionId = this.route.snapshot.paramMap.get('id');
@@ -46,17 +49,16 @@ export class DocDetailPage  implements OnInit  {
     });
     return await popover.present();
   }
-
-  ionViewWillEnter() {
-    
-        
-  }
+ 
 
   ionViewDidEnter() {
-    this.defaultHref = `/app/tabs/schedule`;
+    this.defaultHref = `/app/tabs/doc`;
   }
    
   
+  backClicked() {
+    this._location.back();
+  }
 
   getSectionById(searchVal:any) {
     let result

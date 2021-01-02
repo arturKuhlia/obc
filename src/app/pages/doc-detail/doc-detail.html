@@ -1,10 +1,10 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button routerLink="/app/tabs/doc" [defaultHref]="doc"  ></ion-back-button>
+      <ion-button  (click)= "backClicked()"  ><ion-icon name="chevron-back-outline"></ion-icon></ion-button>
   </ion-buttons>
   <ion-buttons slot="end">
-      <app-bookmark [type]="doc" [itemId]="SectionId"></app-bookmark>
+      <app-bookmark [type]="'doc'" [itemId]="SectionId"></app-bookmark>
       <ion-button   (click)="presentPopover($event)">
         <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
       </ion-button>

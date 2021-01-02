@@ -4,36 +4,36 @@
       <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button (click)="toggleFavorite()">
-        <ion-icon *ngIf="!isFavorite" slot="icon-only" name="star-outline"></ion-icon>
-        <ion-icon *ngIf="isFavorite" slot="icon-only" name="star"></ion-icon>
-      </ion-button>
-     
+      <app-bookmark [type]="'post'" [itemId]="postId"></app-bookmark>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-item><div> <h1>{{postData.title}}</h1>
+    <ion-text  color="medium">  
+      {{postData.createdDate | date:'longDate'}}
+        {{postData.author}}
+        <ion-chip *ngIf="postData.hasOwnProperty('codeId')"  routerLink="/app/tabs/doc/{{postData.codeId}}" >{{ postData.codeId}} </ion-chip>
+      </ion-text></div>
+   
+      
+ </ion-item>
+ <ion-item>
+  <div *ngIf="postData"  class="ion-padding">
+    
+    <ion-text>
+      
+     
+      <p [innerHTML]="postData.content">
+    </ion-text>
+  
+    
+  </div></ion-item>
 
  
-    <div *ngIf="postData" class="ion-padding">
-      <h1>{{postData.title}}</h1>
-      <ion-text  color="medium">  
-        {{postData.createdDate | date:'longDate'}}
-          {{postData.author}}
-          <ion-chip *ngIf="postData.hasOwnProperty('codeId')">{{ postData.codeId}} </ion-chip>
-   
-      </ion-text>
-        <br /> 
-      <ion-text>
-        
-       
-        <p [innerHTML]="postData.content">
-      </ion-text>
-    
-    </div>
- 
-   
+   <ion-item><app-vote [movieId]='postId' [userId]='appUser?.name'></app-vote>
+   </ion-item> 
   <app-comments [blogId]="postId"></app-comments>
 
 </ion-content>

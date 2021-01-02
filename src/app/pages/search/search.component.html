@@ -17,16 +17,12 @@
 
 
 <ion-content [fullscreen]="true">
-
+<!-- 
   <ion-searchbar type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term"></ion-searchbar>
 
-
-
-
-
-
-  <div *ngFor="let post of blogPost | filter:term">
-
+ 
+ 
+  <div *ngFor="let post of (blogPost | ngFuse:term:{keys: ['title', 'content']})">
     <ion-card>
       <ion-item>
         <ion-icon name="help" slot="start"></ion-icon>
@@ -35,28 +31,40 @@
         <ion-button [routerLink]="['/blog/', post.postId, post.title | slug]" fill="outline" slot="end">View
         </ion-button>
       </ion-item>
-
-
-
-
       <ion-card-content>
         <p [innerHTML]="post.content | excerpt"></p>
       </ion-card-content>
-
-
       <ng-container *ngIf="appUser?.isAdmin">
         <ion-button fill="outline" slot="end" size="small" [routerLink]="['/editpost',post.postId]">Edit</ion-button>
         <ion-button fill="outline" slot="end" size="small" color="danger" (click)="delete(post.postId)">Delete
         </ion-button>
       </ng-container>
     </ion-card>
+  </div>   -->
 
 
-
- 
+  <div class="row">
+    <div class="input-field col s12 m4">
+      <input id="fuzzy-player" type="text" (input)="search($event)">
+      <label for="fuzzy-player">Search...</label>
+    </div>
   </div>
-
-
+  
+  //displaying results
+  <div id="search-results" class="row left">
+    <div class="collection col s12" 
+         [ngClass]="fuseResults && fuseResults.length > 0 ? '' : 'hide'">
+  
+      <ng-template [ngIf]="fuseResults && fuseResults.length > 0">
+  //showing top 5 results but can be changed to "let i of fuseResults"
+        <a class='collection-item sortable' *ngFor="let i of [0, 1, 2, 3, 4]" (click)="filteredSelected($event)">
+          {{ fuseResults[i].title }}
+        </a>
+      </ng-template>
+    </div>
+  </div>
+  <div style="clear: both"></div>
+  
 
 
 
