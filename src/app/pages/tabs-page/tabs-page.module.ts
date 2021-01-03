@@ -1,3 +1,4 @@
+import { FavoritesModule } from './../favorites/favorites.module';
 import { BookmarkModule } from './../bookmark/bookmark.module';
 import { VoteModule } from './../vote/vote.module';
 import { CommentsModule } from './../comments/comments.module';
@@ -48,22 +49,18 @@ import { IonicModule } from '@ionic/angular';
 import { TabsPage } from './tabs-page';
 import { TabsPageRoutingModule } from './tabs-page-routing.module';
 
-import { AboutModule } from '../about/about.module';
- 
-import { ScheduleModule } from '../schedule/schedule.module';
-import { SessionDetailModule } from '../session-detail/session-detail.module';
+import { AboutModule } from '../about/about.module'; 
 import { DocModule } from '../doc/doc.module';
  
 @NgModule({
   imports: [ 
+    FavoritesModule,
     AboutModule,
     CommonModule,
     IonicModule,
     CommentsModule,
     VoteModule,
     BookmarkModule,
-    ScheduleModule,
-    SessionDetailModule,
     DocModule,
     DocDetailModule,
     TabsPageRoutingModule,

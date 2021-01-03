@@ -2,9 +2,7 @@ import { BookmarkModule } from './../bookmark/bookmark.module';
 import { VoteModule } from './../vote/vote.module';
 import { CommentsModule } from './../comments/comments.module';
 import { PopComponent } from './../pop/pop.component';
- 
-import { BookmarkComponent } from './../bookmark/bookmark.component';
- 
+  
 import { NgModule } from '@angular/core';
 import { CommonModule, NgIf } from '@angular/common';
 
@@ -18,7 +16,7 @@ import { IonicModule } from '@ionic/angular';
     CommonModule,
     IonicModule,
     DocDetailPageRoutingModule,
-    CommentsModule,
+ 
     VoteModule,
     BookmarkModule,
     CommentsModule

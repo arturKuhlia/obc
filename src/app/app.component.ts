@@ -27,25 +27,26 @@ export class AppComponent implements OnInit {
 
   appPages = [
     {
-      title: 'first',
-      url: '/app/tabs/schedule',
-      icon: 'calendar'
-    },
-    {
-      title: 'second',
-      url: '/app/tabs/speakers',
-      icon: 'people'
-    },
-    {
-      title: 'third',
-      url: '/app/tabs/map',
-      icon: 'map'
-    },
-    {
-      title: 'fourth',
-      url: '/app/tabs/about',
+      title: 'Home',
+      url: '/app/tabs/allblogs',
       icon: 'information-circle'
-    }
+    },
+    {
+      title: 'Explore',
+      url: '/app/tabs/doc',
+      icon: 'document-text'
+    },
+    {
+      title: 'Ask',
+      url: '/app/tabs/addblog',
+      icon: 'help-circle'
+    },
+    {
+      title: 'Bookmarks',
+      url: '/app/tabs/bookmarks',
+      icon: 'bookmark'
+    },
+  
   ];
   loggedIn = false;
   dark = false;

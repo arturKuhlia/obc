@@ -25,8 +25,7 @@
     </div>
   
     <br />
-    
-      <ion-title>Select Section</ion-title>
+     
       <ion-searchbar type="text" name="termSearch" placeholder="Filter Sections" [(ngModel)]="term"></ion-searchbar>
   
        
@@ -40,8 +39,8 @@
   
     <div class="form-group">
   
-      <ion-button size="small" type="submit" mat-raised-button>Save</ion-button>
-      <ion-button size="small" type=" button" mat-raised-button color="danger" (click)="cancel()">CANCEL</ion-button>
+      <ion-chip  outline size="small" type="submit"  >SAVE</ion-chip>
+      <ion-chip  outline size="small" type=" button"   (click)="cancel()">CANCEL</ion-chip>
     </div>
   
   </form></ion-card>

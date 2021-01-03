@@ -1,7 +1,7 @@
 import { PopComponent } from './../pop/pop.component';
 import { PopoverController } from '@ionic/angular';
  
-import { Component, OnInit } from '@angular/core';
+import { Component,ViewEncapsulation, OnInit } from '@angular/core';
 
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
@@ -13,7 +13,8 @@ import {Location} from '@angular/common';
 @Component({
   selector: 'page-doc-detail',
   styleUrls: ['./doc-detail.scss'],
-  templateUrl: 'doc-detail.html'
+  templateUrl: 'doc-detail.html',
+  encapsulation: ViewEncapsulation.None
 })
 export class DocDetailPage  implements OnInit  {
   doc: any;

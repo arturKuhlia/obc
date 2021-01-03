@@ -1,4 +1,5 @@
-<ion-content><ng-template #anonymousUser>
+<ion-content scrollY="false">
+  <ng-template #anonymousUser>
   <span class="comment-card ion-elevation-z2">
     <a (click)="login()">Login with Google</a> to post comments
   </span>
@@ -39,18 +40,3 @@
   </ion-label>
   </ion-item>
  </ion-content>
-<!-- 
-  <div   *ngFor="let comment of commentList"  >
-      <p>{{
-        comment.commentDate | date: "short"
-      }}</p>
-      <ion-text> 
-         {{ comment.content }} 
-            </ion-text>
-  <p *ngIf="appUser?.isAdmin">
-    <ion-chip ion-icon-button ionTooltip="Delete comment" ionTooltipPosition="before" color="danger" size="small"
-      (click)="deleteComment(comment.commentId)">
-      <ion-icon name="trash-outline"></ion-icon>
-    </ion-chip>
-  </p>
-  </div> -->
