@@ -35,14 +35,8 @@
 @import "./app/app.scss";
 
 
-.mat-expansion-panel-body {
-    padding: 0 0 0 10px  !important;
-   p{
-       padding:5px!important;
-   }
-}
 
-ion-item, mat-expansion-panel-header:not([aria-disabled=true]) {
-     
-         height: fit-content;
-   }
+
+.toolbar-background-md{
+    background-color: '#df7411';
+  }

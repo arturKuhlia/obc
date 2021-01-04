@@ -1,11 +1,11 @@
-<ion-app [class.dark-theme]="dark">
+<ion-app [class.dark-theme]="dark" >
   <ion-split-pane contentId="main-content">
 
     <ion-menu  contentId="main-content">
       <ion-content>
         <ion-list lines="none">
           <ion-list-header>
-            <ion-item *ngIf="appUser; else anonymousUser">
+            <ion-item *ngIf="appUser">
               <ion-avatar slot="start">
                 <img src={{appUser.photoURL}}>
               </ion-avatar>

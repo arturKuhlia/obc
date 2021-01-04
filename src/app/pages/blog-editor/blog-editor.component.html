@@ -29,7 +29,7 @@
       <ion-searchbar type="text" name="termSearch" placeholder="Filter Sections" [(ngModel)]="term"></ion-searchbar>
   
        
-      <select name="CodeId-{{rowIndex}}" #codeId="ngModel" [(ngModel)]="postData.codeId">
+      <select name="CodeId-" #codeId="ngModel" [(ngModel)]="postData.codeId">
        
         <option *ngFor="let item of Sections | filter:term " [value]="item.id">{{item.id}}</option>
       </select>

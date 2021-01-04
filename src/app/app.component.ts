@@ -13,6 +13,7 @@ import { Storage } from '@ionic/storage';
 
 import { UserData } from './providers/user-data';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -69,6 +70,12 @@ export class AppComponent implements OnInit {
   }
 
   async ngOnInit() {
+    // this.statusBar.overlaysWebView(false);
+    // this.statusBar.styleBlackOpaque();
+    // this.statusBar.styleDefault();
+    
+    this.statusBar.backgroundColorByHexString("#df7411");
+// this.statusBar.backgroundColorByName("red");
 
     
     this.swUpdate.available.subscribe(async res => {
