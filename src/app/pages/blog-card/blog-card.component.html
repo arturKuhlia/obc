@@ -1,39 +1,41 @@
-<ion-header translucent="true">
-  <ion-toolbar  color="primary">
-    <ion-buttons  slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title >Posts</ion-title>
-     
-  </ion-toolbar>
-</ion-header>
+<ion-item translucent>
+  <ion-menu-button></ion-menu-button>
+  <ion-title>Questions</ion-title>
+</ion-item>
+
 <ion-content>
+
+
+  <ion-fab vertical="top" edge="true" horizontal="end" slot="fixed">
+    <ion-fab-button color="light" href="/app/tabs/addpost">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <br />
   <div *ngIf="blogPost && blogPost.length>0;">
     <ion-item lines="inset" *ngFor="let post of blogPost | paginate: config">
+
+      <app-vote [movieId]='post.postId' [userId]='appUser?.name'></app-vote>
+
       <ion-label>
-        <p> <app-vote [movieId]='post.postId' [userId]='appUser?.name'></app-vote>
-          <ion-chip>
-            <ion-label>{{post.author}}</ion-label>
-          </ion-chip>
-         
-         
-        </p > 
-        <div routerLink="/app/tabs/allblogs/{{post.postId}}/{{post.title | slug}}">   <h2 style=" white-space: break-spaces;" >
+        <h2 routerLink="/app/tabs/allblogs/{{post.postId}}/{{post.title | slug}}" style=" white-space: break-spaces;">
           {{post.title}}</h2>
-        <h3 *ngIf="post.hasOwnProperty('codeId')">
-          {{post.codeId}}
-        </h3>
-        <p>{{post.createdDate}} </p>
-       </div>
-    
-         <p *ngIf="appUser?.isAdmin || post && post.author == appUser?.name" >  
-        
-          <ion-chip size="small" [routerLink]="['/editpost',post.postId]">Edit</ion-chip>
-          <ion-chip size="small" color="danger" (click)="delete(post.postId)">Delete</ion-chip>
-     
-      </p>
-         
-       
+
+        <ion-text color="medium">
+          <h3 *ngIf="post.hasOwnProperty('codeId')">
+            {{post.codeId}}
+          </h3>
+          <h4>by {{post.author}}</h4>
+
+
+          <p *ngIf="appUser?.isAdmin || post && post.author == appUser?.name">
+
+            <ion-chip size="small" [routerLink]="['/editpost',post.postId]">Edit</ion-chip>
+            <ion-chip size="small" color="danger" (click)="delete(post.postId)">Delete</ion-chip>
+
+          </p>
+        </ion-text>
+
       </ion-label>
     </ion-item>
     <app-paginator [pageSizeOptions]="pageSizeOptions" [config]="config"></app-paginator>

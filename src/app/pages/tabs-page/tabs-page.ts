@@ -19,11 +19,11 @@ export class TabsPage {
     tab: 'doc',
     icon: 'document-text'
   },
-  {
-    title: 'Ask',
-    tab: 'addpost',
-    icon: 'help-circle'
-  },
+  // {
+  //   title: 'Ask',
+  //   tab: 'addpost',
+  //   icon: 'help-circle'
+  // },
   {
     title: 'Bookmarks',
     tab: 'bookmarks',

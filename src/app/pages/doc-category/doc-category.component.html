@@ -1,6 +1,6 @@
 <ul>
-  <li *ngFor="let item of childTree; let i = index"> <ion-button clear color= "secondary" expand="full"  *ngIf="item.children.length > 0" (click)="onTabClick(i)"><p>{{item.title}} </p> </ion-button>
-    <ion-button  clear color= "secondary"expand="full" *ngIf="item.children.length < 1" routerLink="/app/tabs/doc/{{item.id}}">  <p>{{item.title}} →</p></ion-button>
+  <li *ngFor="let item of childTree; let i = index"> <ion-button   color= "light" expand="full"  *ngIf="item.children.length > 0" (click)="onTabClick(i)"><p>{{item.title}} </p> </ion-button>
+    <ion-button    color= "light"expand="full" *ngIf="item.children.length < 1" routerLink="/app/tabs/doc/{{item.id}}">  <p>{{item.title}} →</p></ion-button>
     
 
       <app-doc-category *ngIf="tabIndex === i && item.children.length > 0" [childTree]="item.children"></app-doc-category>

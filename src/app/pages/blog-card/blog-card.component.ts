@@ -61,7 +61,7 @@ export class BlogCardComponent implements OnInit, OnDestroy {
    this.one$=  this.blogService.getAllPosts()
       .pipe()
       .subscribe(result => {
-        this.blogPost = result;
+        this.blogPost = result
       });
   }
 

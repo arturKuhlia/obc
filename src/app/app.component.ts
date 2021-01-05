@@ -74,8 +74,8 @@ export class AppComponent implements OnInit {
     // this.statusBar.styleBlackOpaque();
     // this.statusBar.styleDefault();
     
-    this.statusBar.backgroundColorByHexString("#df7411");
-// this.statusBar.backgroundColorByName("red");
+    // this.statusBar.backgroundColorByHexString("#ec9e32");
+this.statusBar.backgroundColorByName("white");
 
     
     this.swUpdate.available.subscribe(async res => {
