@@ -1,9 +1,11 @@
-<ion-app [class.dark-theme]="dark" >
+<ion-app [class.dark-theme]="dark">
   <ion-split-pane contentId="main-content">
 
-    <ion-menu  contentId="main-content">
-      <ion-item><ion-title>OBC</ion-title></ion-item>
-       
+    <ion-menu contentId="main-content">
+      <ion-item>
+        <ion-title>OBC</ion-title>
+      </ion-item>
+
       <ion-content>
         <ion-list lines="none">
           <ion-list-header>
@@ -30,7 +32,7 @@
             Account
           </ion-list-header>
 
-          
+
           <ion-menu-toggle autoHide="false">
             <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
               <ion-icon slot="start" name="help"></ion-icon>
@@ -65,28 +67,31 @@
             </ion-item>
           </ion-menu-toggle>
 
-          <ion-menu-toggle autoHide="false">
-           
+          <ion-menu-toggle *ngIf="appUser" autoHide="false">
 
-            <ion-item *ngIf="appUser; else anonymousUser" (click)="logout()" routerLinkActive="active"   detail="false">
+
+            <ion-item  routerLink="" (click)="logout()" routerLinkActive="active" detail="false">
               <ion-icon slot="start" name="log-in"></ion-icon>
-              <ion-label >
+              <ion-label>
                 Logout
               </ion-label>
             </ion-item>
-            <ng-template #anonymousUser > <ion-item  (click)="login()" routerLinkActive="active"   detail="false">
-              <ion-icon slot="start" name="log-in"></ion-icon>
-              <ion-label >
-                Login with Google
-              </ion-label>
-            </ion-item>
-</ng-template>
-           
 
-
-
-             
+          </ion-menu-toggle> 
+          <ion-menu-toggle *ngIf="!appUser"  autoHide="false"> 
+              <ion-item routerLink=""(click)="login()" routerLinkActive="active" detail="false">
+                <ion-icon slot="start" name="log-in"></ion-icon>
+                <ion-label>
+                  Login with Google
+                </ion-label>
+              </ion-item>
           </ion-menu-toggle>
+      
+
+
+
+
+
 
           <ion-menu-toggle autoHide="false">
             <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
@@ -97,7 +102,7 @@
             </ion-item>
           </ion-menu-toggle>
 
-           
+
 
           <ion-item>
             <ion-icon slot="start" name="moon-outline"></ion-icon>
@@ -108,7 +113,7 @@
           </ion-item>
         </ion-list>
 
-        
+
       </ion-content>
     </ion-menu>
 

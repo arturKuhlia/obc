@@ -1,39 +1,49 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start"> <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <app-bookmark [type]="'post'" [itemId]="postId"></app-bookmark>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<ion-item translucent>
+  <ion-menu-button></ion-menu-button>
+
+  <ion-buttons slot="end">
+    <app-bookmark [type]="'post'" [itemId]="postId"></app-bookmark>
+  </ion-buttons>
+
+</ion-item>
+
+
 
 <ion-content>
-  
-  <ion-item><div> <h1>{{postData.title}}</h1>
-    <ion-text  color="medium">  
-      {{postData.createdDate | date:'longDate'}}
-        {{postData.author}}
-        <ion-chip *ngIf="postData.hasOwnProperty('codeId')"  routerLink="/app/tabs/doc/{{postData.codeId}}" >{{ postData.codeId}} </ion-chip>
-      </ion-text></div>
-   
-      
- </ion-item>
- <ion-item>
-  <div *ngIf="postData"  class="ion-padding">
+
+  <ion-item>
+    <app-vote [movieId]='postId' [userId]='appUser?.name'></app-vote>
+    <div>
+      <h1>{{postData.title}}</h1>
+      <ion-text color="medium">
+        {{postData.createdDate | date:'longDate'}}
     
-    <ion-text>
-      
-     
-      <p [innerHTML]="postData.content">
-    </ion-text>
-  
-    
-  </div></ion-item>
+        <ion-chip outline ><ion-icon name="person-circle-outline"></ion-icon>
+          <ion-label>    {{postData.author}}</ion-label>
+        </ion-chip>
+        <ion-chip outline *ngIf="postData.hasOwnProperty('codeId')" routerLink="/app/tabs/doc/{{postData.codeId}}">
+          <ion-icon name="open-outline"></ion-icon>
+          <ion-label>{{ postData.codeId}}</ion-label>
+        </ion-chip>
+      </ion-text>
+    </div>
+
+
+  </ion-item>
+  <ion-item>
+    <div *ngIf="postData" class="ion-padding">
+
+      <ion-text>
+
+
+        <p [innerHTML]="postData.content">
+      </ion-text>
+
+
+    </div>
+  </ion-item>
 
  
-   <ion-item><app-vote [movieId]='postId' [userId]='appUser?.name'></app-vote>
-   </ion-item> 
   <app-comments [blogId]="postId"></app-comments>
 
 </ion-content>
