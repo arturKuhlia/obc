@@ -22,9 +22,9 @@ export class FavoritesComponent implements OnInit, OnDestroy {
 
 allBookmarks
 
-allDocs;
-allComments;
-allQuestions;
+allDocs=[];
+allComments=[];
+allQuestions =[];
 
   config: any;
   pageSizeOptions = [];
@@ -32,11 +32,12 @@ allQuestions;
   
   blogPost: Post[] = [];
   appUser: AppUser;
+  type = 'doc';
   private unsubscribe$ = new Subject<void>();
 
 
  one$;
-
+  
   constructor(private blogService: BlogService,
     private bookmarkSerice: BookmarkService,
      
@@ -52,14 +53,21 @@ allQuestions;
       itemsPerPage: pageSize ? +pageSize : this.pageSizeOptions[0]
     };
   }
-  ngOnInit() {
+  ngOnInit() { 
 
-    this.authService.appUser$.subscribe(appUser => this.appUser = appUser);
+    this.authService.appUser$.subscribe(appUser =>{
+       this.appUser = appUser
+       this.getBookmarks();
+
+    } 
+      
+      
+      );
 
     this.route.params.subscribe(
       params => {
         this.config.currentPage = +params['pagenum'];
-        this.getBookmarks();
+      
       
       }
 
@@ -68,15 +76,24 @@ allQuestions;
 
 
 
-  getBookmarks() {
-    this.one$=  this.bookmarkSerice.getBookmarks(this.appUser)
+  async getBookmarks() {
+    
+    this.one$=  this.bookmarkSerice.getBookmarks(this.appUser.email)
        .pipe()
        .subscribe(result => {
-         this.allBookmarks = result
-         let docs:any = result.filter(el => el.type == "doc")
-        this.allComments= 
-        this.allQuestions=
-        this.allDocs=
+        this.allBookmarks = result 
+       this.allBookmarks.forEach(el => {
+         el.type == "doc"? this.allDocs.push(el):false;
+         
+         el.type == "comment"? this.allDocs.push(el):false;
+         console.log(this.allDocs, "docodoc"          );
+         
+         el.type == "doc"? this.allDocs.push(el):false;
+       });
+        
+       this.allDocs.forEach(element => {
+         
+       });
        });
    }
   

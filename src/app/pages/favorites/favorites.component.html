@@ -2,27 +2,41 @@
   <ion-menu-button></ion-menu-button>
 
   <ion-buttons slot="end">
-    
+
   </ion-buttons>
 
 </ion-item>
 
 <ion-toolbar>
-  <ion-segment value="Documents">
-    <ion-segment-button value="Documents">
+  <ion-segment   [(ngModel)]="type"   scrollable>
+    <ion-segment-button value="doc">
       Documents
     </ion-segment-button>
-    <ion-segment-button value="Questions">
+    <ion-segment-button value="qs">
       Questions
-    </ion-segment-button> <ion-segment-button value="Comments">
+    </ion-segment-button>
+    <ion-segment-button value="com">
       Comments
-    </ion-segment-button> 
+    </ion-segment-button>
   </ion-segment>
 </ion-toolbar>
- 
-
 <ion-content>
-  
+
+
+  <div [ngSwitch]="type"> 
+      <ion-list  *ngSwitchCase="'doc'">
+        <ion-item *ngFor="let item of allDocs">
+          <ion-icon name="document-text"></ion-icon>
+          <ion-label    routerLink="/app/tabs/doc/{{item.itemId}}">
+            <p>{{item.itemId}} →</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+
+
+
+  </div>
+
 
 
 </ion-content>

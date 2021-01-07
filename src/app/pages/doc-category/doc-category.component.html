@@ -1,9 +1,9 @@
-<ul>
-  <li *ngFor="let item of childTree; let i = index"> <ion-button   color= "light" expand="full"  *ngIf="item.children.length > 0" (click)="onTabClick(i)"><p>{{item.title}} </p> </ion-button>
-    <ion-button    color= "light"expand="full" *ngIf="item.children.length < 1" routerLink="/app/tabs/doc/{{item.id}}">  <p>{{item.title}} →</p></ion-button>
+<ion-list>
+  <ion-item *ngFor="let item of childTree; let i = index">  <ion-label  text-wrap   expand="full"  *ngIf="item.children.length > 0"><p   (click)="onTabClick(i)">{{item.title}} </p>  <app-doc-category *ngIf="tabIndex === i && item.children.length > 0" [childTree]="item.children"></app-doc-category>
+  </ion-label>
+    <ion-label     text-wrap  *ngIf="item.children.length < 1">  <p  routerLink="/app/tabs/doc/{{item.id}}">{{item.title}}</p> 
+      </ion-label>
     
 
-      <app-doc-category *ngIf="tabIndex === i && item.children.length > 0" [childTree]="item.children"></app-doc-category>
- 
-  </li>
-</ul>
+  </ion-item>
+</ion-list>
