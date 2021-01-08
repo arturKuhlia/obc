@@ -25,14 +25,38 @@
 
   <div [ngSwitch]="type"> 
       <ion-list  *ngSwitchCase="'doc'">
-        <ion-item *ngFor="let item of allDocs">
+        <ion-item *ngFor="let item of allDocs"> 
+          <ion-label    routerLink="/app/tabs/doc/{{item}}">
+            <p>{{item}} </p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+
+      <ion-list  *ngSwitchCase="'qs'">
+        <ion-item *ngFor="let post of allQuestions">
+   
+      <ion-label>
+        <h2 routerLink="/app/tabs/allblogs/{{post.postId}}/{{post.title | slug}}" style=" white-space: break-spaces;">
+          {{post.title}}</h2>
+        <ion-text color="medium">
+          <h3 *ngIf="post.hasOwnProperty('codeId')">
+            {{post.codeId}}
+          </h3>
+          <h4>by {{post.author}}</h4>
+        </ion-text>
+
+      </ion-label>
+        </ion-item>
+      </ion-list>
+
+      <ion-list  *ngSwitchCase="'com'">
+        <ion-item *ngFor="let item of allComments">
           <ion-icon name="document-text"></ion-icon>
           <ion-label    routerLink="/app/tabs/doc/{{item.itemId}}">
             <p>{{item.itemId}} →</p>
           </ion-label>
         </ion-item>
       </ion-list>
-
 
 
   </div>

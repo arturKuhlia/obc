@@ -51,9 +51,12 @@ import { TabsPageRoutingModule } from './tabs-page-routing.module';
 
 import { AboutModule } from '../about/about.module'; 
 import { DocModule } from '../doc/doc.module';
+import { SlugModule } from '../../customPipes/slug.module';
+import { AccountComponent } from '../account/account.component';
  
 @NgModule({
   imports: [ 
+    SlugModule,
     FavoritesModule,
     AboutModule,
     CommonModule,
@@ -83,7 +86,7 @@ import { DocModule } from '../doc/doc.module';
   ],
   declarations: [
     ExcerptPipe,
-    SlugPipe,
+     AccountComponent,
     TabsPage,
     SearchComponent,
     BlogCardComponent,

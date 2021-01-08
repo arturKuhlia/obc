@@ -8,12 +8,18 @@ import { RouterModule, Routes } from "@angular/router";
 import { TabsPage } from "./tabs-page"; 
 import { AuthGuard } from "../../guards/auth.guard";
 import { AdminAuthGuard } from "../../guards/admin-auth.guard";
+import { AccountComponent } from '../account/account.component';
 
 const routes: Routes = [
   {
     path: "tabs",
     component: TabsPage,
     children: [
+            
+      {
+        path: "account",
+        component: AccountComponent, 
+      },
       {
         path: "addpost",
         component: BlogEditorComponent,

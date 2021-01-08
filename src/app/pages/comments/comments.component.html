@@ -18,6 +18,7 @@
   </form>
 </ion-item>
 <ion-item lines= "inset"  *ngFor="let comment of commentList"  >
+  <app-vote [movieId]='comment.commentId' [userId]='appUser?.name'></app-vote>
   <ion-label>
     <p>
       <ion-chip>
@@ -26,7 +27,7 @@
         </ion-avatar>
         <ion-label>{{comment.commentedBy}}  </ion-label>
       </ion-chip>
-      <app-vote [movieId]='comment.commentId' [userId]='appUser?.name'></app-vote>
+     
     </p>
     <p>{{
       comment.commentDate | date: "short"

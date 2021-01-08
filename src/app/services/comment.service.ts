@@ -30,6 +30,13 @@ export class CommentService {
     return comments;
   }
 
+  getCommentById(id: string): Observable<Comments> {
+    const blogDetails = this.db.doc<Comments>('blogs/' + id).valueChanges();
+    return blogDetails;
+  }
+
+
+
   deleteAllCommentForBlog(blogId: string) {
     const commentsToDelete = this.db.collection('comments', ref => ref.where('blogId', '==', blogId)).snapshotChanges();
 

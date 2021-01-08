@@ -34,4 +34,7 @@
 
 @import "./app/app.scss";
 
- 
+.ngx-pagination .current { 
+    background: grey !important;
+  
+}

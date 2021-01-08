@@ -54,8 +54,7 @@ export class VoteComponent implements OnInit, OnDestroy {
             .find((element) => element.userId == this.userId);
           foundArr ? total = foundArr.value : total = 0;
         }
-        result={up,down, total} ;
-        console.log(result);
+        result={up,down, total} ; 
         return result;
       })
     );
@@ -63,21 +62,17 @@ export class VoteComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     
   }
-  upvote(val) {
-    console.log("pushed up", val)
+  upvote(val) { 
     if (this.userId) {
-      let vote = val == 1 ? 0 : 1;
-      console.log("pushed up vote", vote)
+      let vote = val == 1 ? 0 : 1; 
       this.starService.setStar(this.userId, this.movieId, vote);
     } else {
       this.snackBarService.showSnackBar("Login to vote");
     }
   }
-  downvote(val) {
-    console.log("pushed down", val)
+  downvote(val) { 
     if (this.userId) {
-      let vote = val == -1 ? 0 : -1;
-       console.log("pushed up vote", vote)
+      let vote = val == -1 ? 0 : -1; 
       this.starService.setStar(this.userId, this.movieId, vote);
     } else {
       this.snackBarService.showSnackBar("Login to vote");
