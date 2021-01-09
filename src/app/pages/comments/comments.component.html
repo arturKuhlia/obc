@@ -11,20 +11,17 @@
    <ion-textarea ionInput placeholder="Comment" name="content" [(ngModel)]="comments.content" #content="ngModel"
         required></ion-textarea>
       <p *ngIf="commentForm.submitted && content.errors?.required">Comment is required</p>
-      <ion-button type="
+      <ion-chip type="
             submit" ion-raised-button color="primary">
         Post Comment
-      </ion-button>
+      </ion-chip>
   </form>
 </ion-item>
 <ion-item lines= "inset"  *ngFor="let comment of commentList"  >
   <app-vote [movieId]='comment.commentId' [userId]='appUser?.name'></app-vote>
   <ion-label>
     <p>
-      <ion-chip>
-        <ion-avatar>
-          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-        </ion-avatar>
+      <ion-chip> 
         <ion-label>{{comment.commentedBy}}  </ion-label>
       </ion-chip>
      

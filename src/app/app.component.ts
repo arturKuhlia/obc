@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Ask',
-      url: '/app/tabs/addblog',
+      url: '/app/tabs/addpost',
       icon: 'help-circle'
     },
     {
