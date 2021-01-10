@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
       if (user) {
         return true;
       }
-      this.snackbarService.showSnackBar('Login to ask');
+      this.snackbarService.showSnackBar('Login required');
      
       this.router.navigate(['/'], { queryParams: { returnUrl: state.url } });
       return false;

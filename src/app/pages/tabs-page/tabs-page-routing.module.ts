@@ -52,6 +52,7 @@ const routes: Routes = [
       
       {
         path: "bookmarks",
+        canActivate: [AuthGuard],
         children: [
           {
             path: "",

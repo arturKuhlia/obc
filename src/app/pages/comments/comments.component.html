@@ -1,8 +1,8 @@
 <ion-content scrollY="false">
   <ng-template #anonymousUser>
-  <span class="comment-card ion-elevation-z2">
-    <a (click)="login()">Login with Google</a> to post comments
-  </span>
+  <ion-item   class="comment-card ion-elevation-z2">
+    <div><a (click)="login()">Login with Google</a> to post comments</div>
+  </ion-item>
 </ng-template>
 <ion-item lines="full" *ngIf="appUser; else anonymousUser" class="comment-card ion-elevation-z2">
   <ion-label>

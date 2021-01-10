@@ -11,14 +11,15 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <br />
+  <ion-item lines= "false">  <br /></ion-item>
+
   <div *ngIf="blogPost && blogPost.length>0;">
     <ion-item lines="inset" *ngFor="let post of blogPost | paginate: config">
 
       <app-vote [movieId]='post.postId' [userId]='appUser?.name'></app-vote>
 
-      <ion-label>
-        <h2 routerLink="/app/tabs/allblogs/{{post.postId}}/{{post.title | slug}}" style=" white-space: break-spaces;">
+      <ion-label routerLink="/app/tabs/allblogs/{{post.postId}}/post" >
+        <h2 style=" white-space: break-spaces;">
           {{post.title}}</h2>
 
         <ion-text color="medium">
