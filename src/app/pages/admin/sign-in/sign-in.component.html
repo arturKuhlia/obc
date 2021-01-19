@@ -1,0 +1,25 @@
+ 
+   <ion-content  class="ion-padding">
+      
+    
+      <h3>Sign In</h3>
+      <ion-item >
+        <ion-input type="email" class="formControl" placeholder="Email" #userEmail required></ion-input>
+      </ion-item>
+
+      <ion-item >
+        <ion-input type="password" class="formControl" placeholder="Password" #userPassword required></ion-input>
+      </ion-item>
+      
+
+      <!-- Calling SignIn Api from AuthService -->
+     
+        <ion-chip color="primary"    (click)="signIn(userEmail.value, userPassword.value)">Log in</ion-chip>
+     
+  <p> <ion-chip outline    routerLink="/app/tabs/forgot-password">Forgot Password?</ion-chip>
+      
+ 
+    <span>Don't have an account?<ion-chip outline    routerLink="/app/tabs/register-user"> Sign Up</ion-chip></span>
+   </p>
+       
+ </ion-content>  

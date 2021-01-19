@@ -53,6 +53,11 @@ import { AboutModule } from '../about/about.module';
 import { DocModule } from '../doc/doc.module';
 import { SlugModule } from '../../customPipes/slug.module';
 import { AccountComponent } from '../account/account.component';
+import { SignInComponent } from '../admin/sign-in/sign-in.component';
+import { SignUpComponent } from '../admin/sign-up/sign-up.component';
+import { DashboardComponent } from '../admin/dashboard/dashboard.component';
+import { ForgotPasswordComponent } from '../admin/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from '../admin/verify-email/verify-email.component';
  
 @NgModule({
   imports: [ 
@@ -94,6 +99,11 @@ import { AccountComponent } from '../account/account.component';
     BlogComponent, 
     PaginatorComponent, 
     
+    SignInComponent,
+    SignUpComponent,
+    DashboardComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent
    
   ], 
   providers: [
