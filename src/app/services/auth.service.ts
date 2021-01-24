@@ -8,14 +8,38 @@ import { switchMap } from 'rxjs/operators';
 import { AppUser } from '../models/appuser';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { async } from '@angular/core/testing';
+import { BehaviorSubject } from 'rxjs';
 
+
+
+export class User {
+
+  uid: string;
+  username: string = "";
+
+  constructor(auth) {
+    this.uid = auth.uid
+  }
+
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+
+
+
+  currentUser: User;
   appUser$: Observable<AppUser>;
+
+
+  private eventAuthError = new BehaviorSubject<string>("");
+  eventAuthError$ = this.eventAuthError.asObservable();
+
+  newUser: any;
+
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -28,7 +52,9 @@ export class AuthService {
       switchMap(user => {
         // If the user is logged in, return the user details.
         if (user) {
+        
           return this.db.doc<AppUser>(`appusers/${user.uid}`).valueChanges();
+          
         } else {
           // If the user is NOT logged in, return null.
           return of(null);
@@ -38,40 +64,69 @@ export class AuthService {
   }
 
 
+  get hasUsername() {
+    return this.appUser$.subscribe(usr=> usr.displayName) ? true : false
+  }
 
+  checkUsername(username: string) {
+    username = username.toLowerCase()
+    return this.db.doc(`usernames/${username}`)
+  }
 
+  updateUsername(username: string) {
 
-  // SignIn(email, password) {
-  //   return this.afAuth.auth.signInWithEmailAndPassword(email, password)
-  //     .then((result) => {
-  //       this.ngZone.run(() => {
-  //         this.router.navigate(['dashboard']);
-  //       });
-  //       this.SetUserData(result.user);
-  //     }).catch((error) => {
-  //       window.alert(error.message)
-  //     })
-  // }
- 
-  // SignUp(email, password) {
-  //   return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
-  //     .then((result) => {
-  //       /* Call the SendVerificaitonMail() function when new user sign 
-  //       up and returns promise */
-  //       this.SendVerificationMail();
-  //       this.SetUserData(result.user);
-  //     }).catch((error) => {
-  //       window.alert(error.message)
-  //     })
-  // }
+    let data = {}
+    data[username] = this.appUser$.subscribe(usr=> usr)
 
- 
-  async signup(email: string, password: string) {
-    this.afAuth.auth
-      .createUserWithEmailAndPassword(email, password)
-     
+    this.db.doc(`/users/${this.appUser$.subscribe(usr=> usr.uid)}`).update({"username": username})
+    this.db.doc(`/usernames`).update(data)
+  }
+
+  async googleLogin() {
+    // Store the return URL in localstorage, to be used once the user logs in successfully
+    const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || this.router.url;
+    localStorage.setItem('returnUrl', returnUrl);
+
+    const credential = await this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    return this.updateUserData(credential.user);
 
   }
+ 
+
+ 
+
+    async signup(user) {
+    console.log(user);
+    this.afAuth.auth.createUserWithEmailAndPassword( user.email, user.password)
+      .then( userCredential => {
+        this.newUser = user;
+        console.log(userCredential);
+        userCredential.user.updateProfile( {
+          displayName: user.displayName
+        });
+
+        this.insertUserData(userCredential)
+          .then(() => {
+            this.router.navigate(['/home']);
+          });
+      })
+      .catch( error => {
+        this.eventAuthError.next(error);
+      });
+  }
+
+  insertUserData(userCredential: firebase.auth.UserCredential) {
+    return this.db.doc(`appusers/${userCredential.user.uid}`).set({
+      email: this.newUser.email,
+      displayName: this.newUser.displayName
+  
+    })
+  }
+
+
+
+
+
 
 
 
@@ -128,7 +183,8 @@ export class AuthService {
     const data = {
       name: user.displayName,
       email: user.email,
-      photoURL: user.photoURL
+      photoURL: user.photoURL,
+      uid: user.uid
     };
     return userRef.set(data, { merge: true });
   }
