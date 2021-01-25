@@ -2,6 +2,41 @@
   <ion-menu-button></ion-menu-button>
   <ion-title>ACCOUNT</ion-title>
 </ion-item>
-<ion-content has-header="true">
+<ion-content >
   
+  <div  >
+    <h3>Sign Up</h3>
+
+    <div >
+      <input type="email"   placeholder="Email Address" #userEmail required>
+    </div>
+
+    <div >
+      <input type="password"   placeholder="Password" #userPwd required>
+    </div>
+    <div >
+      <input type="username"   placeholder="username" #userName required>
+    </div>
+
+    <div >
+      <input type="button"  value="Sign Up" (click)="authService.emailSignUp(userEmail.value, userPwd.value,userName.value)">
+    </div>
+
+    <div >
+      <span ><span >Or</span></span>
+    </div>
+
+    <!-- Continue with Google -->
+    <div >
+      <button   (click)="authService.login()">
+        <i ></i>
+        Continue with Google
+      </button>
+    </div>
+    
+  </div>
+
+
+
+
 </ion-content>

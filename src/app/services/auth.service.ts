@@ -34,6 +34,46 @@ export class AuthService {
     );
   }
 
+
+
+  async emailSignUp(email:string,password:string, name:string) {
+     
+
+    const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || this.router.url;
+    localStorage.setItem('returnUrl', returnUrl);
+
+
+    return await  this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+    .then((result) => {
+      /* Call the SendVerificaitonMail() function when new user sign
+      up and returns promise */
+      this.SendVerificationMail();
+
+      var userInfo = Object.assign({}, result.user) 
+
+      
+      userInfo.displayName=  name 
+      this.updateUserData(userInfo);
+    }).catch((error) => {
+      window.alert(error.message)
+    });
+
+
+    
+
+   
+    
+    return 
+  }
+
+
+  SendVerificationMail() {
+    return this.afAuth.auth.currentUser.sendEmailVerification()
+    .then(() => {
+      this.router.navigate(['verify-email-address']);
+    })
+  }
+
   async login() {
     // Store the return URL in localstorage, to be used once the user logs in successfully
     const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || this.router.url;
@@ -57,7 +97,8 @@ export class AuthService {
     const data = {
       name: user.displayName,
       email: user.email,
-      photoURL: user.photoURL
+      photoURL: user.photoURL,
+      uid:user.uid
     };
     return userRef.set(data, { merge: true });
   }

@@ -11,10 +11,9 @@
    <ion-textarea ionInput placeholder="Comment" name="content" [(ngModel)]="comments.content" #content="ngModel"
         required></ion-textarea>
       <p *ngIf="commentForm.submitted && content.errors?.required">Comment is required</p>
-      <ion-chip type="
-            submit" ion-raised-button color="primary">
-        Post Comment
-      </ion-chip>
+      <ion-button  type="submit"  shape="round"  color="secondary"  >
+       Post Comment 
+      </ion-button>
   </form>
 </ion-item>
 <ion-item lines= "inset"  *ngFor="let comment of commentList"  >
@@ -27,7 +26,7 @@
      
     </p>
     <p>{{
-      comment.commentDate | date: "short"
+      comment.commentDate 
     }}</p>
     <p color="full" style = " white-space: break-spaces;"> {{ comment.content }} </p>
    

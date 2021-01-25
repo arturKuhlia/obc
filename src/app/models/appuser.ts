@@ -3,4 +3,5 @@ export class AppUser {
     email: string;
     isAdmin: boolean;
     photoURL: string;
+    uid:string;
 }

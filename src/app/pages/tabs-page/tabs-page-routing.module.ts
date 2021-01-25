@@ -20,6 +20,7 @@ const routes: Routes = [
         path: "account",
         component: AccountComponent, 
       },
+      
       {
         path: "addpost",
         component: BlogEditorComponent,
