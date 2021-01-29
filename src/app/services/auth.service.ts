@@ -6,6 +6,7 @@ import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { AppUser } from '../models/appuser';
 import { AngularFirestore } from '@angular/fire/firestore';
+ 
 
 @Injectable({
   providedIn: 'root'
@@ -41,30 +42,97 @@ export class AuthService {
 
     const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || this.router.url;
     localStorage.setItem('returnUrl', returnUrl);
+   var nameAvailable:boolean
+    this.checkUsername(name).then(res =>{
+  
+      if ( res ){ 
+        
+        return   this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+      .then((result) => {
+        this.updateUsername(name, result.user)
+  
+        this.SendVerificationMail()
+  
+        var userInfo = Object.assign({}, result.user) 
+        
+  
+        userInfo.displayName=  name 
+        this.updateUserData(userInfo);
+      }).catch((error) => {
+        window.alert(error.message)
+      });
+      }else{
+        window.alert("This username is already taken")
+      }
+    }
+      );
+    
+  }
 
+  ForgotPassword(passwordResetEmail) {
+    return this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail)
+    .then(() => {
+      window.alert('Password reset email sent, check your inbox.');
+    }).catch((error) => {
+      window.alert(error)
+    })
+  }
+  
+  async emailSignIn(email:string,password:string) {
+     
 
-    return await  this.afAuth.auth.createUserWithEmailAndPassword(email, password)
-    .then((result) => {
-      /* Call the SendVerificaitonMail() function when new user sign
-      up and returns promise */
-      this.SendVerificationMail();
-
-      var userInfo = Object.assign({}, result.user) 
-
+    const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || this.router.url;
+    localStorage.setItem('returnUrl', returnUrl);
+  
       
+    return await  this.afAuth.auth.signInWithEmailAndPassword(email, password)
+    .then((result) => {
+       
+      var userInfo = Object.assign({}, result.user) 
+      
+
       userInfo.displayName=  name 
       this.updateUserData(userInfo);
     }).catch((error) => {
       window.alert(error.message)
     });
-
-
-    
-
-   
-    
-    return 
   }
+
+  
+
+ async checkUsername(username: string): Promise<boolean>  {
+    username = username.toLowerCase()
+    
+    let k = await this.db.doc(`usernames/${username}`).get().toPromise() 
+    .then(docSnapshot => {
+      let b: boolean = true;
+      if (docSnapshot.exists) { 
+         b = false
+      }
+      return b
+    });
+      return  k
+  }
+
+
+  updateUsername(username: string,currentUser:any) {
+    let data = {
+      email: currentUser.email,
+      uid: currentUser.uid,
+    } 
+    this.db.doc(`/usernames/${username}`).set(data, { merge: true })
+  }
+
+  
+  validateEmail(email:string) {
+
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+
+
+
 
 
   SendVerificationMail() {
@@ -74,8 +142,7 @@ export class AuthService {
     })
   }
 
-  async login() {
-    // Store the return URL in localstorage, to be used once the user logs in successfully
+  async login() { 
     const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || this.router.url;
     localStorage.setItem('returnUrl', returnUrl);
 
@@ -89,9 +156,7 @@ export class AuthService {
     });
   }
 
-
  
-  // Save the user data to firestore on login
   private updateUserData(user) {
     const userRef = this.db.doc(`appusers/${user.uid}`);
     const data = {
