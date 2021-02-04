@@ -1,0 +1,64 @@
+<ng-template #emptyblog>
+  <div class="spinner-container">
+    <ion-spinner name="dots"></ion-spinner>
+  </div>
+</ng-template>
+
+<ion-header [translucent]="false">
+  <ion-toolbar>
+
+    <ion-title>Search</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true">
+
+  <ion-searchbar type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term"></ion-searchbar>
+
+
+
+
+
+
+  <div *ngFor="let post of blogPost | filter:term">
+
+    <ion-card>
+      <ion-item>
+        <ion-icon name="help" slot="start"></ion-icon>
+        <ion-label>{{ post.title}} <p *ngIf="post.hasOwnProperty('codeId')">Section: {{post.codeId}}</p>
+        </ion-label>
+        <ion-button [routerLink]="['/blog/', post.postId, post.title | slug]" fill="outline" slot="end">View
+        </ion-button>
+      </ion-item>
+
+
+
+
+      <ion-card-content>
+        <p [innerHTML]="post.content | excerpt"></p>
+      </ion-card-content>
+
+
+      <ng-container *ngIf="appUser?.isAdmin">
+        <ion-button fill="outline" slot="end" size="small" [routerLink]="['/editpost',post.postId]">Edit</ion-button>
+        <ion-button fill="outline" slot="end" size="small" color="danger" (click)="delete(post.postId)">Delete
+        </ion-button>
+      </ng-container>
+    </ion-card>
+
+
+
+ 
+  </div>
+
+
+
+
+
+
+</ion-content>
