@@ -18,12 +18,13 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit, OnDestroy {
-  public fuse: any;
-  public fuseResults: any[];
+  
   config: any;
   pageSizeOptions = [];
  
   term: string;
+  comments =[]
+
   blogPost: Post[] = [];
   appUser: AppUser;
   private unsubscribe$ = new Subject<void>();
@@ -41,8 +42,7 @@ export class SearchComponent implements OnInit, OnDestroy {
     };
   }
 
-  ngOnInit() {
- //instantiate Fuse with your object and options
+  ngOnInit() { 
   
 
     this.authService.appUser$.subscribe(appUser => this.appUser = appUser);
@@ -54,10 +54,7 @@ export class SearchComponent implements OnInit, OnDestroy {
       }
     );
   }
-  public search(evt: KeyboardEvent): void {
-    const target = evt.target as HTMLInputElement;
-    this.fuseResults = this.fuse.search(target.value);
-  }
+ 
   getBlogPosts() {
     this.blogService.getAllPosts()
       .pipe(takeUntil(this.unsubscribe$))

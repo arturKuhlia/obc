@@ -11,12 +11,8 @@
     <h3>Login</h3>
       <input type="email"   placeholder="Email Address" #userEmail required>
       <input type="password"   placeholder="Password" #userPwd required> 
-      <input type="button"  value="Sign Up" (click)="authService.emailSignIn  (userEmail.value, userPwd.value)">
-      <span ><span >Or</span></span>
-
-      <button   (click)="authService.login()">        
-        Continue with Google
-      </button>
+      <input type="button"  value="Log in" (click)="authService.emailSignIn(userEmail.value, userPwd.value)">
+     
   </div>
 
 

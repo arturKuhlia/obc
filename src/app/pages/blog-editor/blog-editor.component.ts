@@ -80,7 +80,7 @@ export class BlogEditorComponent implements OnInit, OnDestroy {
         }
       );
     } else {
-      this.postData.createdDate = this.datePipe.transform(Date.now(), 'MM-dd-yyyy HH:mm');
+      this.postData.createdDate =  Date.now() ;
       this.postData.author = this.appUser.name;
       this.blogService.createPost(this.postData).then(
         () => {

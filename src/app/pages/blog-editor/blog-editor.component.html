@@ -10,7 +10,7 @@
   <hr />
   <form #myForm="ngForm" (ngSubmit)="myForm.form.valid && saveBlogPost()" accept-charset="UTF-8" novalidate>
   
-    <input type="text" class="blogHeader" placeholder="Add title..." class="form-control" name="postTitle"
+    <input type="text"   placeholder="Add title..."   name="postTitle"
       [(ngModel)]="postData.title" #postTitle="ngModel" required />
     <span class="text-danger" *ngIf="myForm.submitted && postTitle.errors?.required">
       Title is required
@@ -20,23 +20,20 @@
       <ckeditor class="editor" name="myckeditor" [config]="ckeConfig" [(ngModel)]="postData.content" #myckeditor="ngModel"
         debounce="300" [editor]="Editor"></ckeditor>
     </div>
-  
-    <br />
-     
-      <ion-searchbar type="text" name="termSearch" placeholder="Filter Sections" [(ngModel)]="term"></ion-searchbar>
-  
-       
-      <select name="CodeId-" #codeId="ngModel" [(ngModel)]="postData.codeId">
-       
-        <option *ngFor="let item of Sections | filter:term " [value]="item.id">{{item.id}}</option>
-      </select>
-   
+ 
+
+      <ion-item>
+        <ion-label>Chose OBC Section</ion-label>
+        <ion-select   name="CodeId-" #codeId="ngModel" [(ngModel)]="postData.codeId">
+          <ion-select-option *ngFor="let item of Sections"  [value]="item.id">{{item.id}}</ion-select-option>
+        </ion-select>
+      </ion-item>
   
     <br />
   
     <div class="form-group">
   
-      <ion-button  outline size="small" type="submit"  >SAVE</ion-button>
+      <ion-button  outline size="small" type="submit" >SAVE</ion-button>
       <ion-button  outline size="small" type=" button"   (click)="cancel()">CANCEL</ion-button>
     </div>
   

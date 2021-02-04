@@ -48,6 +48,10 @@ import { AboutModule } from '../about/about.module';
 import { DocModule } from '../doc/doc.module';
 import { SlugModule } from '../../customPipes/slug.module';
 import { AccountComponent } from '../account/account.component';
+import { SignInComponent } from '../sign-in/sign-in.component';
+import { SignUpComponent } from '../sign-up/sign-up.component';
+import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from '../verify-email/verify-email.component';
  
 @NgModule({
   imports: [ 
@@ -88,6 +92,10 @@ import { AccountComponent } from '../account/account.component';
     BlogEditorComponent,
     BlogComponent, 
     PaginatorComponent, 
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent
     
    
   ], 

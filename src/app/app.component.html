@@ -16,9 +16,7 @@
         
           <ion-menu-toggle *ngIf="appUser" autoHide="false" >
             <ion-item *ngIf="appUser"  routerLink="/app/tabs/account"  routerLinkActive="active" detail="false">
-              <ion-avatar slot="start">
-                <img src={{appUser.photoURL}}>
-              </ion-avatar>
+            
               <ion-label>{{appUser.name}} </ion-label>
             </ion-item>
           </ion-menu-toggle>
@@ -33,13 +31,16 @@
             </ion-item>
           </ion-menu-toggle> 
           
-          <ion-menu-toggle *ngIf="!appUser"  autoHide="false"> 
-              <ion-item routerLink=""(click)="login()" routerLinkActive="active" detail="false">
-                <ion-icon slot="start" name="log-in"></ion-icon>
-                <ion-label>
-                  Login with Google
-                </ion-label>
-              </ion-item>
+       
+
+
+          <ion-menu-toggle *ngIf="!appUser" autoHide="false">
+            <ion-item routerLink="app/tabs/sign-in" routerLinkActive="active" routerDirection="root" detail="false">
+              <ion-icon slot="start" name="log-in"></ion-icon>
+              <ion-label>
+                Log In
+              </ion-label>
+            </ion-item>
           </ion-menu-toggle>
 
 
@@ -87,7 +88,7 @@
       </ion-content>
     </ion-menu>
 
-    <ion-router-outlet id="main-content"></ion-router-outlet>
+    <ion-router-outlet align-self-center  justify-content-center id="main-content"></ion-router-outlet>
 
   </ion-split-pane>
 
