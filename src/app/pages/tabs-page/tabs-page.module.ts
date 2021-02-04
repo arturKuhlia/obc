@@ -2,20 +2,15 @@ import { FavoritesModule } from './../favorites/favorites.module';
 import { BookmarkModule } from './../bookmark/bookmark.module';
 import { VoteModule } from './../vote/vote.module';
 import { CommentsModule } from './../comments/comments.module';
-import { DocDetailModule } from './../doc-detail/doc-detail.module';
-import { PopComponent } from './../pop/pop.component';
-import { BookmarkComponent } from './../bookmark/bookmark.component';
+import { DocDetailModule } from './../doc-detail/doc-detail.module'; 
 import { BookmarkService } from './../../services/bookmark.service';
 import { SearchComponent } from './../search/search.component';
- 
-import { VoteComponent } from './../vote/vote.component';
+  
 import { VoteService } from './../../services/vote.service';
  
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import {  MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgMaterialModule } from './../ng-material/ng-material.module';
-import { CommentsComponent } from './../comments/comments.component';
 import { ExcerptPipe } from './../../customPipes/excerpt.pipe';
-import { SlugPipe } from './../../customPipes/slug.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PaginatorComponent } from './../paginator/paginator.component';
   import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -53,11 +48,18 @@ import { AboutModule } from '../about/about.module';
 import { DocModule } from '../doc/doc.module';
 import { SlugModule } from '../../customPipes/slug.module';
 import { AccountComponent } from '../account/account.component';
+<<<<<<< HEAD
 import { SignInComponent } from '../admin/sign-in/sign-in.component';
 import { SignUpComponent } from '../admin/sign-up/sign-up.component';
 import { DashboardComponent } from '../admin/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from '../admin/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from '../admin/verify-email/verify-email.component';
+=======
+import { SignInComponent } from '../sign-in/sign-in.component';
+import { SignUpComponent } from '../sign-up/sign-up.component';
+import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from '../verify-email/verify-email.component';
+>>>>>>> tmp
  
 @NgModule({
   imports: [ 
@@ -91,13 +93,17 @@ import { VerifyEmailComponent } from '../admin/verify-email/verify-email.compone
   ],
   declarations: [
     ExcerptPipe,
-     AccountComponent,
+    AccountComponent,
     TabsPage,
     SearchComponent,
     BlogCardComponent,
     BlogEditorComponent,
     BlogComponent, 
     PaginatorComponent, 
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent
     
     SignInComponent,
     SignUpComponent,

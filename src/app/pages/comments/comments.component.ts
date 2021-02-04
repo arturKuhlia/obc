@@ -45,7 +45,7 @@ export class CommentsComponent implements OnInit, OnDestroy {
   }
 
   onCommentPost(commentForm) {
-    this.comments.commentDate = this.datePipe.transform(Date.now(), 'MM-dd-yyyy HH:mm:ss');
+    this.comments.commentDate =  Date.now();
     this.comments.blogId = this.blogId;
     this.comments.email = this.appUser.email;
     this.comments.commentedBy= this.appUser.name;
@@ -58,7 +58,13 @@ export class CommentsComponent implements OnInit, OnDestroy {
     this.commentService.getAllCommentsForBlog(this.blogId)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(result => {
-        this.commentList = result;
+
+
+        this.commentList= result.sort((a, b) =>
+           a.commentDate   -
+           b.commentDate )
+   
+
       });
       
 

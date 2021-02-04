@@ -9,11 +9,19 @@ import { TabsPage } from "./tabs-page";
 import { AuthGuard } from "../../guards/auth.guard";
 import { AdminAuthGuard } from "../../guards/admin-auth.guard";
 import { AccountComponent } from '../account/account.component';
+<<<<<<< HEAD
 import { SignInComponent } from '../admin/sign-in/sign-in.component';
 import { SignUpComponent } from '../admin/sign-up/sign-up.component';
 import { DashboardComponent } from '../admin/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from '../admin/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from '../admin/verify-email/verify-email.component';
+=======
+import { SignInComponent } from '../sign-in/sign-in.component';
+import { SignUpComponent } from '../sign-up/sign-up.component';
+import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from '../verify-email/verify-email.component';
+import { SearchComponent } from '../search/search.component';
+>>>>>>> tmp
 
 const routes: Routes = [
 
@@ -27,10 +35,18 @@ const routes: Routes = [
       { path: 'forgot-password', component: ForgotPasswordComponent },
       { path: 'verify-email-address', component: VerifyEmailComponent},
             
+
+      { path: 'sign-in', component: SignInComponent},
+      { path: 'register-user', component: SignUpComponent}, 
+      { path: 'forgot-password', component: ForgotPasswordComponent },
+
+      { path: 'search', component: SearchComponent },
+      { path: 'verify-email-address', component: VerifyEmailComponent },
       {
         path: "account",
         component: AccountComponent, 
       },
+      
       {
         path: "addpost",
         component: BlogEditorComponent,

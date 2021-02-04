@@ -6,30 +6,32 @@ import { AppUser } from '../../models/appuser';
 import { AuthService } from '../../services/auth.service';
 import { CommentService } from '../../services/comment.service';
 import { SnackbarService } from '../../services/snackbar.service';
-import { Subject, Observable } from 'rxjs'; 
- 
+import { Subject, Observable } from 'rxjs';
+import { DatePipe } from '@angular/common';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-blog-card',
   templateUrl: './blog-card.component.html',
-  styleUrls: ['./blog-card.component.scss']
+  styleUrls: ['./blog-card.component.scss'],
+  providers: [DatePipe]
 })
 export class BlogCardComponent implements OnInit, OnDestroy {
-  
-  
+
+
 
   config: any;
   pageSizeOptions = [];
-  
+
   blogPost: Post[] = [];
   appUser: AppUser;
   private unsubscribe$ = new Subject<void>();
- one$;
+  one$;
   constructor(private blogService: BlogService,
     private commentService: CommentService,
     private authService: AuthService,
     private route: ActivatedRoute,
-     
+    private datePipe: DatePipe,
     private snackBarService: SnackbarService) {
     this.pageSizeOptions = [10, 20, 30];
     const pageSize = sessionStorage.getItem('pageSize');
@@ -39,29 +41,32 @@ export class BlogCardComponent implements OnInit, OnDestroy {
     };
   }
 
+
   ngOnInit() {
-     
+
     this.authService.appUser$.subscribe(appUser => this.appUser = appUser);
 
     this.route.params.subscribe(
       params => {
         this.config.currentPage = +params['pagenum'];
         this.getBlogPosts();
-      
+
       }
 
     );
-  
 
-    
+
+
   }
-  
+
 
   getBlogPosts() {
-   this.one$=  this.blogService.getAllPosts()
+    this.one$ = this.blogService.getAllPosts()
       .pipe()
       .subscribe(result => {
-        this.blogPost = result
+        this.blogPost = result.sort((a, b) =>
+           a.createdDate   -
+           b.createdDate )
       });
   }
 
@@ -77,6 +82,6 @@ export class BlogCardComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.one$.unsubscribe(); 
+    this.one$.unsubscribe();
   }
 }

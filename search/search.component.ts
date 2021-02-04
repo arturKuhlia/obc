@@ -5,11 +5,9 @@ import { AppUser } from './../../models/appuser';
 import { Post } from './../../models/post';
 import { BlogService } from './../../services/blog.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';  
+  import { ActivatedRoute } from '@angular/router';  
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
- 
- 
  
 
 @Component({
@@ -18,13 +16,11 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit, OnDestroy {
-  
+
   config: any;
   pageSizeOptions = [];
  
   term: string;
-  comments =[]
-
   blogPost: Post[] = [];
   appUser: AppUser;
   private unsubscribe$ = new Subject<void>();
@@ -42,8 +38,7 @@ export class SearchComponent implements OnInit, OnDestroy {
     };
   }
 
-  ngOnInit() { 
-  
+  ngOnInit() {
 
     this.authService.appUser$.subscribe(appUser => this.appUser = appUser);
 
@@ -54,7 +49,7 @@ export class SearchComponent implements OnInit, OnDestroy {
       }
     );
   }
- 
+
   getBlogPosts() {
     this.blogService.getAllPosts()
       .pipe(takeUntil(this.unsubscribe$))

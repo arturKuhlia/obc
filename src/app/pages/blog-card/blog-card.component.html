@@ -26,7 +26,7 @@
           <h3 *ngIf="post.hasOwnProperty('codeId')">
             {{post.codeId}}
           </h3>
-          <h4>by {{post.author}}</h4>
+          <h4>{{ post.createdDate | date }} {{post.author}}</h4>
 
 
           <p *ngIf="appUser?.isAdmin || post && post.author == appUser?.name">

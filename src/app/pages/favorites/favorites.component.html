@@ -1,62 +1,58 @@
 <ion-item translucent>
   <ion-menu-button></ion-menu-button>
-
-  <ion-buttons slot="end">
-
-  </ion-buttons>
-
+  <ion-title>Bookmarks</ion-title>
 </ion-item>
 
 <ion-toolbar>
-  <ion-segment   [(ngModel)]="type"   scrollable>
+  <ion-segment [(ngModel)]="type" scrollable>
     <ion-segment-button value="doc">
-      Documents
+      Sections
     </ion-segment-button>
     <ion-segment-button value="qs">
       Questions
     </ion-segment-button>
-    <ion-segment-button value="com">
+    <!-- <ion-segment-button value="com">
       Comments
-    </ion-segment-button>
+    </ion-segment-button> -->
   </ion-segment>
 </ion-toolbar>
 <ion-content>
 
 
-  <div [ngSwitch]="type"> 
-      <ion-list  *ngSwitchCase="'doc'">
-        <ion-item *ngFor="let item of allDocs"> 
-          <ion-label    routerLink="/app/tabs/doc/{{item}}">
-            <p>{{item}} </p>
-          </ion-label>
-        </ion-item>
-      </ion-list>
+  <div [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'doc'">
+      <ion-item *ngFor="let item of allDocs">
+        <ion-label routerLink="/app/tabs/doc/{{item}}">
+          <p>{{item}} </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
 
-      <ion-list  *ngSwitchCase="'qs'">
-        <ion-item *ngFor="let post of allQuestions">
-   
-      <ion-label>
-        <h2 routerLink="/app/tabs/allblogs/{{post.postId}}/{{post.title | slug}}" style=" white-space: break-spaces;">
-          {{post.title}}</h2>
-        <ion-text color="medium">
-          <h3 *ngIf="post.hasOwnProperty('codeId')">
-            {{post.codeId}}
-          </h3>
-          <h4>by {{post.author}}</h4>
-        </ion-text>
+    <ion-list *ngSwitchCase="'qs'">
+      <ion-item *ngFor="let post of allQuestions">
 
-      </ion-label>
-        </ion-item>
-      </ion-list>
+        <ion-label>
+          <h2 routerLink="/app/tabs/allblogs/{{post.postId}}/{{post.title | slug}}" style=" white-space: break-spaces;">
+            {{post.title}}</h2>
+          <ion-text color="medium">
+            <h3 *ngIf="post.hasOwnProperty('codeId')">
+              {{post.codeId}}
+            </h3>
+            <h4>by {{post.author}}</h4>
+          </ion-text>
 
-      <ion-list  *ngSwitchCase="'com'">
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <!-- <ion-list  *ngSwitchCase="'com'">
         <ion-item *ngFor="let item of allComments">
           <ion-icon name="document-text"></ion-icon>
           <ion-label    routerLink="/app/tabs/doc/{{item.itemId}}">
             <p>{{item.itemId}} →</p>
           </ion-label>
         </ion-item>
-      </ion-list>
+      </ion-list> -->
 
 
   </div>

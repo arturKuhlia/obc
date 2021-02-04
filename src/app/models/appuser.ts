@@ -6,5 +6,9 @@ export class AppUser {
     name: string;
     displayName: string;
     photoURL: string;
+<<<<<<< HEAD
     emailVerified: boolean;
+=======
+    uid:string;
+>>>>>>> tmp
 }

@@ -1,71 +1,56 @@
-<ng-template #emptyblog>
-  <div class="spinner-container">
-    <ion-spinner name="dots"></ion-spinner>
-  </div>
-</ng-template>
+<ion-item translucent>
+  <ion-menu-button></ion-menu-button>
+  <ion-title>Search</ion-title>
+</ion-item>
 
-<ion-header [translucent]="false">
-  <ion-toolbar>
+<ion-toolbar>
+  <ion-segment [(ngModel)]="type" scrollable>
+    <ion-segment-button value="doc">
+      OBC
+    </ion-segment-button>
+    <ion-segment-button value="qs">
+      Questions
+    </ion-segment-button>
 
-    <ion-title>Search</ion-title>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+  </ion-segment>
+</ion-toolbar>
+ 
+  
+<ion-content>
 
 
 
-<ion-content [fullscreen]="true">
-<!-- 
   <ion-searchbar type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term"></ion-searchbar>
 
- 
- 
-  <div *ngFor="let post of (blogPost | ngFuse:term:{keys: ['title', 'content']})">
-    <ion-card>
-      <ion-item>
-        <ion-icon name="help" slot="start"></ion-icon>
-        <ion-label>{{ post.title}} <p *ngIf="post.hasOwnProperty('codeId')">Section: {{post.codeId}}</p>
+  <div [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'doc'">
+      <ion-item *ngFor="let item of (allDocs | filter:{'title':term} )">
+        <ion-label routerLink="/app/tabs/doc/{{item}}">
+          <p>{{item}} </p>
         </ion-label>
-        <ion-button [routerLink]="['/blog/', post.postId, post.title | slug]" fill="outline" slot="end">View
-        </ion-button>
       </ion-item>
-      <ion-card-content>
-        <p [innerHTML]="post.content | excerpt"></p>
-      </ion-card-content>
-      <ng-container *ngIf="appUser?.isAdmin">
-        <ion-button fill="outline" slot="end" size="small" [routerLink]="['/editpost',post.postId]">Edit</ion-button>
-        <ion-button fill="outline" slot="end" size="small" color="danger" (click)="delete(post.postId)">Delete
-        </ion-button>
-      </ng-container>
-    </ion-card>
-  </div>   -->
+    </ion-list>
 
+    <ion-list *ngSwitchCase="'qs'">
+      <ion-item *ngFor="let post of (allQuestions | filter:term )">
 
-  <div class="row">
-    <div class="input-field col s12 m4">
-      <input id="fuzzy-player" type="text" (input)="search($event)">
-      <label for="fuzzy-player">Search...</label>
-    </div>
+        <ion-label>
+          <h2 routerLink="/app/tabs/allblogs/{{post.postId}}/{{post.title | slug}}" style=" white-space: break-spaces;">
+            {{post.title}}</h2>
+          <ion-text color="medium">
+            <h3 *ngIf="post.hasOwnProperty('codeId')">
+              {{post.codeId}}
+            </h3>
+            <h4>by {{post.author}}</h4>
+          </ion-text>
+
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    
+
   </div>
-  
-  //displaying results
-  <div id="search-results" class="row left">
-    <div class="collection col s12" 
-         [ngClass]="fuseResults && fuseResults.length > 0 ? '' : 'hide'">
-  
-      <ng-template [ngIf]="fuseResults && fuseResults.length > 0">
-  //showing top 5 results but can be changed to "let i of fuseResults"
-        <a class='collection-item sortable' *ngFor="let i of [0, 1, 2, 3, 4]" (click)="filteredSelected($event)">
-          {{ fuseResults[i].title }}
-        </a>
-      </ng-template>
-    </div>
-  </div>
-  <div style="clear: both"></div>
-  
-
 
 
 

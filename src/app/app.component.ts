@@ -97,9 +97,9 @@ this.statusBar.backgroundColorByName("white");
         .then(() => this.swUpdate.activateUpdate())
         .then(() => window.location.reload());
     });
-    this.authService.appUser$.subscribe(appUser => this.appUser = appUser);
-  
+
     this.authService.appUser$.subscribe(user => {
+    this.appUser = user
       if (!user) {
         return;
       } else {
