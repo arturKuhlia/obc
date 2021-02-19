@@ -1,6 +1,4 @@
-import { PopComponent } from './../pop/pop.component';
-import { PopoverController } from '@ionic/angular';
- 
+
 import { Component,ViewEncapsulation, OnInit } from '@angular/core';
 
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
@@ -28,7 +26,7 @@ export class DocDetailPage  implements OnInit  {
 
   constructor(private _location: Location,
     private route: ActivatedRoute,
-    public popoverController: PopoverController ) {
+      ) {
      
   }
 
@@ -41,15 +39,7 @@ export class DocDetailPage  implements OnInit  {
   this.CommentSectionId = this.SectionId.replace(/\s/g, '');
  }
 
-  async presentPopover(ev: any) {
-    const popover = await this.popoverController.create({
-      component: PopComponent,
-      componentProps:{docId:this.SectionId},
-      event: ev,
-      translucent: true
-    });
-    return await popover.present();
-  }
+ 
  
 
   ionViewDidEnter() {

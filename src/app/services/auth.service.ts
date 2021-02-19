@@ -70,9 +70,14 @@ export class AuthService {
   emailSignIn(email: string, password: string) {
     const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || this.router.url;
     localStorage.setItem('returnUrl', returnUrl);
-    console.log(email, password)
+   
     return this.afAuth.auth.signInWithEmailAndPassword(email.toString().trim(), password)
+    .then(() => { 
+      console.log("Logged in");
       
+    }).catch((error) => {
+      window.alert(error)
+    })
   }
 
   async checkUsername(username: string): Promise<boolean> {

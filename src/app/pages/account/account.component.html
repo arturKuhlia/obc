@@ -3,47 +3,5 @@
   <ion-title>ACCOUNT</ion-title>
 </ion-item>
 <ion-content >
-  
-  
-
-
-  <div  >
-    <h3>Login</h3>
-      <input type="email"   placeholder="Email Address" #userEmail required>
-      <input type="password"   placeholder="Password" #userPwd required> 
-      <input type="button"  value="Log in" (click)="authService.emailSignIn(userEmail.value, userPwd.value)">
-     
-  </div>
-
-
-
-
-
-  <div  >
-    <h3>Register</h3>
-      <input type="email"   placeholder="Email Address" #userEmail required>
-      <input type="password"   placeholder="Password" #userPwd required>
-      <input type="username"   placeholder="username" #userName required>
-      <input type="button"  value="Sign Up" (click)="authService.emailSignUp  (userEmail.value, userPwd.value,userName.value)">
-      <span > Or </span>
     
-
-      <button   (click)="authService.login()">     
-        Continue with Google
-      </button>
-     
-    
-  </div>
-
-
-  <div  >
-    <h3>Forgot Password</h3>
-      <input type="email"   placeholder="Email Address" #userEmail required>
-     
-      <input type="button"  value="Sign Up" (click)="authService.ForgotPassword  (userEmail.value)">
-     
-  </div>
-
-
-
 </ion-content>

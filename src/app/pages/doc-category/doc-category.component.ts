@@ -18,8 +18,7 @@ export class DocCategoryComponent implements OnInit {
     
     this.tabIndex = NaN;
   } else {
-      
-   
+
     this.tabIndex = index;
   }
   

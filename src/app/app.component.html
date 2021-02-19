@@ -32,7 +32,14 @@
           </ion-menu-toggle> 
           
        
-
+<ion-menu-toggle   autoHide="false">
+            <ion-item routerLink="app/tabs/search" routerLinkActive="active" routerDirection="root" detail="false">
+              <ion-icon slot="start" name="search"></ion-icon>
+              <ion-label>
+                Search
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
 
           <ion-menu-toggle *ngIf="!appUser" autoHide="false">
             <ion-item routerLink="app/tabs/sign-in" routerLinkActive="active" routerDirection="root" detail="false">

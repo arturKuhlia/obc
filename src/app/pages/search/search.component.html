@@ -3,39 +3,37 @@
   <ion-title>Search</ion-title>
 </ion-item>
 
+
+
+<ion-content >
+
 <ion-toolbar>
-  <ion-segment [(ngModel)]="type" scrollable>
+  <ion-segment [(ngModel)]="type" scrollable  >
     <ion-segment-button value="doc">
-      OBC
+      Sections
     </ion-segment-button>
     <ion-segment-button value="qs">
       Questions
     </ion-segment-button>
-
   </ion-segment>
 </ion-toolbar>
- 
-  
-<ion-content>
-
-
 
   <ion-searchbar type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term"></ion-searchbar>
 
   <div [ngSwitch]="type">
-    <ion-list *ngSwitchCase="'doc'">
-      <ion-item *ngFor="let item of (allDocs | filter:{'title':term} )">
-        <ion-label routerLink="/app/tabs/doc/{{item}}">
-          <p>{{item}} </p>
+    <ion-list *ngSwitchCase="'doc'" >
+      <ion-item *ngFor="let item of Sections | filter:term  | slice:0:20"   routerLink="/app/tabs/doc/{{item.id}}">
+        <ion-label >
+          <p>{{item.id}} </p>
         </ion-label>
       </ion-item>
     </ion-list>
 
     <ion-list *ngSwitchCase="'qs'">
-      <ion-item *ngFor="let post of (allQuestions | filter:term )">
+      <ion-item *ngFor="let post of blogPost | filter:term  | slice:0:10"   routerLink="/app/tabs/allblogs/{{post.postId}}/{{post.title | slug}}">
 
         <ion-label>
-          <h2 routerLink="/app/tabs/allblogs/{{post.postId}}/{{post.title | slug}}" style=" white-space: break-spaces;">
+          <h2  style=" white-space: break-spaces;">
             {{post.title}}</h2>
           <ion-text color="medium">
             <h3 *ngIf="post.hasOwnProperty('codeId')">
@@ -47,10 +45,9 @@
         </ion-label>
       </ion-item>
     </ion-list>
-
-    
-
   </div>
+
+
 
 
 

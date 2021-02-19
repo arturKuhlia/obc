@@ -60,7 +60,7 @@ export class CommentsComponent implements OnInit, OnDestroy {
       .subscribe(result => {
 
 
-        this.commentList= result.sort((a, b) =>
+        this.commentList= result.sort((b, a) =>
            a.commentDate   -
            b.commentDate )
    

@@ -45,6 +45,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule
   ],
   declarations: [AppComponent,    
+    
     // ExcerptPipe,
     // SlugPipe,
     // PaginatorComponent,

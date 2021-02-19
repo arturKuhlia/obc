@@ -8,31 +8,35 @@
 </ion-item>
 
 
+<ion-content   >
 
-<ion-content>
+  <ion-item>
+    <ion-label class="ion-text-wrap"  color="medium">
+      {{postData.createdDate | date }}
 
-  <ion-item lines="none">
-    <app-vote [movieId]='postId' [userId]='appUser?.name'></app-vote>
-    <div>
-      <h1>{{postData.title}}</h1>
-     
-    </div>
-
-
-  </ion-item>
-  <ion-item >
-    <ion-text color="medium">
-      {{postData.createdDate }}
-  
-      <ion-chip outline ><ion-icon name="person-circle-outline"></ion-icon>
-        <ion-label>    {{postData.author}}</ion-label>
-      </ion-chip>
+      <span>
+        by {{postData.author}} 
+      </span>
       <ion-chip outline *ngIf="postData.hasOwnProperty('codeId')" routerLink="/app/tabs/doc/{{postData.codeId}}">
         <ion-icon name="open-outline"></ion-icon>
         <ion-label>{{ postData.codeId}}</ion-label>
       </ion-chip>
-    </ion-text>
+   
+
+    </ion-label>
   </ion-item>
+
+
+  <ion-item lines="none">
+    <app-vote [movieId]='postId' [userId]='appUser?.name'></app-vote>
+    <ion-label >
+      <h1>  {{postData.title}} </h1>
+       </ion-label>
+
+
+  </ion-item>
+
+
   <ion-item>
     <div *ngIf="postData" class="ion-padding">
 
@@ -45,7 +49,5 @@
 
     </div>
   </ion-item>
-   <app-comments [blogId]="postId"></app-comments>
-   
-
+  <app-comments [blogId]="postId"></app-comments>
 </ion-content>

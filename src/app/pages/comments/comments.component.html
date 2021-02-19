@@ -1,4 +1,4 @@
-<ion-content scrollY="false">
+ 
   <ng-template #anonymousUser>
   <ion-item   class="comment-card ion-elevation-z2">
     <div><a (click)="login()">Login with Google</a> to post comments</div>
@@ -19,16 +19,10 @@
 <ion-item lines= "inset"  *ngFor="let comment of commentList"  >
   <app-vote [movieId]='comment.commentId' [userId]='appUser?.name'></app-vote>
   <ion-label>
-    <p>
-      <ion-chip> 
-        <ion-label>{{comment.commentedBy}}  </ion-label>
-      </ion-chip>
      
-    </p>
-    <p>{{
-      comment.commentDate | date
-    }}</p>
-    <p color="full" style = " white-space: break-spaces;"> {{ comment.content }} </p>
+        <p >  {{ comment.commentDate | date }} by {{comment.commentedBy}}  </p>
+      
+    <span   style = " white-space: break-spaces;"> {{ comment.content }} </span>
    
     <p *ngIf="appUser?.isAdmin || userEmail == comment.email">
         <ion-icon color="danger" size="small"
@@ -36,4 +30,5 @@
     </p>
   </ion-label>
   </ion-item>
- </ion-content>
+
+   
