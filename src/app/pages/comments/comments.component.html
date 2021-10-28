@@ -1,0 +1,34 @@
+ 
+  <ng-template #anonymousUser>
+  <ion-item   class="comment-card ion-elevation-z2">
+    <div><a (click)="login()">Login with Google</a> to post comments</div>
+  </ion-item>
+</ng-template>
+<ion-item lines="full" *ngIf="appUser; else anonymousUser" class="comment-card ion-elevation-z2">
+  <ion-label>
+   </ion-label>
+   <form #commentForm="ngForm" (ngSubmit)="commentForm.form.valid && onCommentPost(commentForm)" novalidate>
+   <ion-textarea ionInput placeholder="Comment" name="content" [(ngModel)]="comments.content" #content="ngModel"
+        required></ion-textarea>
+      <p *ngIf="commentForm.submitted && content.errors?.required">Comment is required</p>
+      <ion-button  type="submit"  shape="round"  color="secondary"  >
+       Post Comment 
+      </ion-button>
+  </form>
+</ion-item>
+<ion-item lines= "inset"  *ngFor="let comment of commentList"  >
+  <app-vote [movieId]='comment.commentId' [userId]='appUser?.name'></app-vote>
+  <ion-label>
+     
+        <p >  {{ comment.commentDate | date }} by {{comment.commentedBy}}  </p>
+      
+    <span   style = " white-space: break-spaces;"> {{ comment.content }} </span>
+   
+    <p *ngIf="appUser?.isAdmin || userEmail == comment.email">
+        <ion-icon color="danger" size="small"
+        (click)="deleteComment(comment.commentId)" name="trash-outline"></ion-icon>
+    </p>
+  </ion-label>
+  </ion-item>
+
+   

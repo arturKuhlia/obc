@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{SectionId}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button  (click)= "backClicked()"  ><ion-icon name="chevron-back-outline"></ion-icon></ion-button>
+  </ion-buttons>
+  <ion-buttons slot="end">
+      <app-bookmark [type]="'doc'" [itemId]="SectionId"></app-bookmark>
+     
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<ion-item><div *ngIf="doc"  >
+  <ion-text [outerHTML]="doc">
+  </ion-text>
+</div></ion-item>
+ 
+  <app-comments [blogId]="CommentSectionId"></app-comments>
+  
+</ion-content>
+ 

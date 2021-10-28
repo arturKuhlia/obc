@@ -1,0 +1,53 @@
+<ion-item translucent>
+  <ion-menu-button></ion-menu-button>
+
+  <ion-buttons slot="end">
+    <app-bookmark [type]="'post'" [itemId]="postId"></app-bookmark>
+  </ion-buttons>
+
+</ion-item>
+
+
+<ion-content   >
+
+  <ion-item>
+    <ion-label class="ion-text-wrap"  color="medium">
+      {{postData.createdDate | date }}
+
+      <span>
+        by {{postData.author}} 
+      </span>
+      <ion-chip outline *ngIf="postData.hasOwnProperty('codeId')" routerLink="/app/tabs/doc/{{postData.codeId}}">
+        <ion-icon name="open-outline"></ion-icon>
+        <ion-label>{{ postData.codeId}}</ion-label>
+      </ion-chip>
+   
+
+    </ion-label>
+  </ion-item>
+
+
+  <ion-item lines="none">
+    <app-vote [movieId]='postId' [userId]='appUser?.name'></app-vote>
+    <ion-label >
+      <h1>  {{postData.title}} </h1>
+       </ion-label>
+
+
+  </ion-item>
+
+
+  <ion-item>
+    <div *ngIf="postData" class="ion-padding">
+
+      <ion-text>
+
+
+        <p [innerHTML]="postData.content">
+      </ion-text>
+
+
+    </div>
+  </ion-item>
+  <app-comments [blogId]="postId"></app-comments>
+</ion-content>

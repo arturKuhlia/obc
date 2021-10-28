@@ -1,0 +1,26 @@
+ 
+  .vote {
+    margin-left: 2px;
+    margin-right: 5px;
+    cursor: pointer;
+    &:hover {
+      color: orange;
+    }
+  }
+
+  .active.up {
+      color: green;
+      font-weight: bold;
+    }
+
+  .active.down {
+     color: red;
+     font-weight: bold;
+   }
+
+   .border{
+     border-right: 2px solid lightgray;
+     margin-right: 8px;
+     margin-left: -4px;
+   }
+ 
