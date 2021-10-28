@@ -1,0 +1,46 @@
+<ion-item translucent>
+  <ion-menu-button></ion-menu-button>
+  <ion-title>Questions</ion-title>
+</ion-item>
+
+<ion-content>
+
+
+  <ion-fab vertical="top" edge="true" horizontal="end" slot="fixed">
+    <ion-fab-button color="light" href="/app/tabs/addpost">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-item lines= "false">  <br /></ion-item>
+
+  <div *ngIf="blogPost && blogPost.length>0;">
+    <ion-item lines="inset" *ngFor="let post of blogPost | paginate: config">
+
+      <app-vote [movieId]='post.postId' [userId]='appUser?.name'></app-vote>
+
+      <ion-label routerLink="/app/tabs/allblogs/{{post.postId}}/post" >
+        <h2 style=" white-space: break-spaces;">
+          {{post.title}}</h2>
+
+        <ion-text color="medium">
+          <h3 *ngIf="post.hasOwnProperty('codeId')">
+            {{post.codeId}}
+          </h3>
+          <h4>{{ post.createdDate | date }} {{post.author}}</h4>
+
+
+          <p *ngIf="appUser?.isAdmin || post && post.author == appUser?.name">
+
+            <ion-chip size="small" [routerLink]="['/editpost',post.postId]">Edit</ion-chip>
+            <ion-chip size="small" color="danger" (click)="delete(post.postId)">Delete</ion-chip>
+
+          </p>
+        </ion-text>
+
+      </ion-label>
+    </ion-item>
+    <app-paginator [pageSizeOptions]="pageSizeOptions" [config]="config"></app-paginator>
+  </div>
+  <ion-list-header [hidden]="blogPost && blogPost.length > 0">
+    No Posts Found
+  </ion-list-header>

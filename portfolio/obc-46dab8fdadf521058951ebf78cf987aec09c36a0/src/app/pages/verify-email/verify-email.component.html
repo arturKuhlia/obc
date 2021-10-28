@@ -1,0 +1,30 @@
+<ion-item translucent>
+  <ion-menu-button></ion-menu-button>
+  <ion-title>ACCOUNT</ion-title>
+</ion-item>
+<ion-content >
+  
+  
+
+
+  <ion-item lines= "none" *ngIf="user">
+    <ion-label> 
+      
+     <h3>Thank You for Registering</h3>
+      <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
+      <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
+     
+        <ion-button   (click)="authService.SendVerificationMail()">
+          Resend Verification Email
+        </ion-button>
+     
+   </ion-label>
+  </ion-item>
+ 
+  
+
+<ion-item lines="none">
+  <ion-label>Go back to?<a  routerLink="/app/tabs/sign-in"> Sign in</a></ion-label>
+</ion-item>
+</ion-content>
+ 

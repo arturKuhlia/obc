@@ -1,0 +1,21 @@
+
+
+
+<ion-tabs  >
+
+ 
+
+
+  <ion-tab-bar  slot="bottom" [hidden]="devWidth > 992">
+    <ion-tab-button detail="false"    *ngFor="let p of appPages; let i = index"  [tab]="p.tab">
+      <ion-icon   [name]="p.icon"></ion-icon>
+       
+      <ion-label [hidden]="devWidth < 540">
+        {{p.title}} 
+      </ion-label>
+    </ion-tab-button>
+
+     
+  </ion-tab-bar>
+
+</ion-tabs>
