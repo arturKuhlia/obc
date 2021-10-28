@@ -1,16 +1,53 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+
 import { ActivatedRoute, Router } from '@angular/router';
 import * as firebase from 'firebase/app';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { AppUser } from '../models/appuser';
 import { AngularFirestore } from '@angular/fire/firestore';
+<<<<<<< HEAD
+import { async } from '@angular/core/testing';
+import { BehaviorSubject } from 'rxjs';
+
+
+
+export class User {
+
+  uid: string;
+  username: string = "";
+
+  constructor(auth) {
+    this.uid = auth.uid
+  }
+
+}
+
+=======
+>>>>>>> tmp
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+<<<<<<< HEAD
+
+
+
+
+  currentUser: User;
   appUser$: Observable<AppUser>;
+
+
+  private eventAuthError = new BehaviorSubject<string>("");
+  eventAuthError$ = this.eventAuthError.asObservable();
+
+  newUser: any;
+
+
+=======
+  appUser$: Observable<AppUser>;
+>>>>>>> tmp
   constructor(
     public afAuth: AngularFireAuth,
     private route: ActivatedRoute,
@@ -20,8 +57,13 @@ export class AuthService {
     this.appUser$ = this.afAuth.authState.pipe(
       switchMap(user => {
         if (user) {
+<<<<<<< HEAD
+        
+=======
           this.db.doc<AppUser>(`appusers/${user.uid}`).valueChanges().forEach(result => console.log(result));
+>>>>>>> tmp
           return this.db.doc<AppUser>(`appusers/${user.uid}`).valueChanges();
+          
         } else {
           return of(null);
         }
@@ -32,6 +74,29 @@ export class AuthService {
     const returnUrl = "/app/tabs/verify-email-address";
     localStorage.setItem('returnUrl', returnUrl);
 
+<<<<<<< HEAD
+
+  get hasUsername() {
+    return this.appUser$.subscribe(usr=> usr.displayName) ? true : false
+  }
+
+  checkUsername(username: string) {
+    username = username.toLowerCase()
+    return this.db.doc(`usernames/${username}`)
+  }
+
+  updateUsername(username: string) {
+
+    let data = {}
+    data[username] = this.appUser$.subscribe(usr=> usr)
+
+    this.db.doc(`/users/${this.appUser$.subscribe(usr=> usr.uid)}`).update({"username": username})
+    this.db.doc(`/usernames`).update(data)
+  }
+
+  async googleLogin() {
+    // Store the return URL in localstorage, to be used once the user logs in successfully
+=======
     var nameAvailable: boolean
     this.checkUsername(name).then(res => {
       if (res) {
@@ -68,6 +133,7 @@ export class AuthService {
   }
 
   emailSignIn(email: string, password: string) {
+>>>>>>> tmp
     const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || this.router.url;
     localStorage.setItem('returnUrl', returnUrl);
    
@@ -118,6 +184,84 @@ export class AuthService {
     localStorage.setItem('returnUrl', returnUrl);
     const credential = await this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
     return this.updateUserData(credential.user);
+
+  }
+ 
+
+ 
+
+    async signup(user) {
+    console.log(user);
+    this.afAuth.auth.createUserWithEmailAndPassword( user.email, user.password)
+      .then( userCredential => {
+        this.newUser = user;
+        console.log(userCredential);
+        userCredential.user.updateProfile( {
+          displayName: user.displayName
+        });
+
+        this.insertUserData(userCredential)
+          .then(() => {
+            this.router.navigate(['/home']);
+          });
+      })
+      .catch( error => {
+        this.eventAuthError.next(error);
+      });
+  }
+
+  insertUserData(userCredential: firebase.auth.UserCredential) {
+    return this.db.doc(`appusers/${userCredential.user.uid}`).set({
+      email: this.newUser.email,
+      displayName: this.newUser.displayName
+  
+    })
+  }
+
+
+
+
+
+
+
+
+  async signIn(email: string, password: string) {
+
+    const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || this.router.url;
+    localStorage.setItem('returnUrl', returnUrl);
+
+    const credential = await   this.afAuth.auth
+    .signInWithEmailAndPassword(email, password)
+    
+    this.updateUserData(credential.user);
+
+  
+  }
+
+
+
+  async resetPassword(email: string) {
+
+    const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || this.router.url;
+    localStorage.setItem('returnUrl', returnUrl);
+
+    const credential = await   this.afAuth.auth
+    .sendPasswordResetEmail(email)
+    
+
+  
+  }
+
+
+
+
+  async login() {
+    // Store the return URL in localstorage, to be used once the user logs in successfully
+    const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || this.router.url;
+    localStorage.setItem('returnUrl', returnUrl);
+
+    const credential = await this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    this.updateUserData(credential.user);
   }
 
   async logout() {
