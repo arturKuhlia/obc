@@ -6,6 +6,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "ng": "ng",
+    "run": "ng serve",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
@@ -43,12 +44,11 @@
     "angular": "^1.8.2",
     "angular-cli": "^1.0.0-beta.28.3",
     "angularfire2": "^5.4.2",
-   
     "core-js": "^3.6.4",
     "firebase": "^6.1.0",
     "fuse.js": "^6.4.4",
     "hammerjs": "^2.0.8",
-    "ionic": "^4.12.0",
+    "ionic": "^5.4.16",
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
     "nested-accordion": "^2.0.2",
@@ -74,7 +74,6 @@
     "@types/jasminewd2": "2.0.8",
     "@types/node": "^12.12.26",
     "codelyzer": "^5.2.1",
-    "cordova-plugin-navigationbar-color": "^0.1.0",
     "jasmine-core": "^3.5.0",
     "jasmine-spec-reporter": "4.2.1",
     "karma": "4.4.1",
@@ -89,11 +88,7 @@
     "typescript": "~3.5.3"
   },
   "cordova": {
-    "platforms": [
-      
-    ],
-    "plugins": {
-     
-    }
+    "platforms": [],
+    "plugins": {}
   }
 }

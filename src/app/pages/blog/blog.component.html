@@ -14,24 +14,9 @@
     <ion-label class="ion-text-wrap"  color="medium">
       {{postData.createdDate | date }}
 
-<<<<<<< HEAD
       <span>
         by {{postData.author}} 
       </span>
-=======
-  </ion-item>
-  <ion-item >
-    <ion-text color="medium">
-<<<<<<< HEAD
-      {{postData.createdDate  }}
-=======
-      {{postData.createdDate }}
->>>>>>> tmp
-  
-      <ion-chip outline ><ion-icon name="person-circle-outline"></ion-icon>
-        <ion-label>    {{postData.author}}</ion-label>
-      </ion-chip>
->>>>>>> 4a7f76a189274918fbbc6ecde1036bec6a7a7e49
       <ion-chip outline *ngIf="postData.hasOwnProperty('codeId')" routerLink="/app/tabs/doc/{{postData.codeId}}">
         <ion-icon name="open-outline"></ion-icon>
         <ion-label>{{ postData.codeId}}</ion-label>

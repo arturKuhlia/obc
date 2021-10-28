@@ -20,21 +20,9 @@
   <app-vote [movieId]='comment.commentId' [userId]='appUser?.name'></app-vote>
   <ion-label>
      
-<<<<<<< HEAD
         <p >  {{ comment.commentDate | date }} by {{comment.commentedBy}}  </p>
       
     <span   style = " white-space: break-spaces;"> {{ comment.content }} </span>
-=======
-    </p>
-    <p>{{
-<<<<<<< HEAD
-      comment.commentDate  
-=======
-      comment.commentDate | date
->>>>>>> tmp
-    }}</p>
-    <p color="full" style = " white-space: break-spaces;"> {{ comment.content }} </p>
->>>>>>> 4a7f76a189274918fbbc6ecde1036bec6a7a7e49
    
     <p *ngIf="appUser?.isAdmin || userEmail == comment.email">
         <ion-icon color="danger" size="small"
