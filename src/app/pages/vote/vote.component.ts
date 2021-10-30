@@ -21,7 +21,7 @@ export class VoteComponent implements OnInit, OnDestroy {
   userVote: number = 0;
  
  
- 
+
   constructor(
     private starService: VoteService,
     private snackBarService: SnackbarService
@@ -45,7 +45,7 @@ export class VoteComponent implements OnInit, OnDestroy {
             .find((element) => element.userId == this.userId);
           foundArr ? total = foundArr.value : total = 0;
         }
-        const down = ratings.length
+        let down = ratings.length
           ? ratings.filter((e) => e < 0).reduce((total, val) => total + val, 0)
           : 0;
         if (!this.userId) {
@@ -56,6 +56,7 @@ export class VoteComponent implements OnInit, OnDestroy {
             .find((element) => element.userId == this.userId);
           foundArr ? total = foundArr.value : total = 0;
         }
+        down= Math.abs(down)
         result={up,down, total} ; 
         return result;
       })
