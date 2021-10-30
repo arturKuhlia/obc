@@ -43,6 +43,7 @@ export class BlogEditorComponent implements OnInit, OnDestroy {
     private datePipe: DatePipe,
     private blogService: BlogService,
     private router: Router,
+    
     private authService: AuthService) {
     if (this.route.snapshot.params['id']) {
       this.postId = this.route.snapshot.paramMap.get('id');

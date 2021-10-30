@@ -33,6 +33,10 @@ const routes: Routes = [
         path: "account",
         component: AccountComponent, 
       },
+        {
+    path: 'support',
+    loadChildren: () => import('../support/support.module').then(m => m.SupportModule)
+  },
       
       {
         path: "addpost",

@@ -56,6 +56,49 @@ export class SupportPage {
 
 
 
+ionViewCanLeave() {
+  if (this.supportMessage.length>0) {
+      return new Promise((resolve, reject) => {
+        let alert = this.alertCtrl.create({
+          title: 'Are you sure?',
+          message: 'The form data may be lost',
+          buttons: [
+            {
+              text: 'Stay',
+              role: 'cancel',
+              handler: () => {
+                console.log('User stayed');
+                this.userCanLeave = false;
+                reject();
+              }
+            },
+            {
+              text: 'Leave',
+              handler: () => {
+                console.log('User leaves');
+                this.userCanLeave = true;
+                resolve();
+              }
+            },
+            {
+              text: 'Save',
+              handler: () => {
+                console.log('User saved data');
+                // do saving logic
+                this.userCanLeave = true;
+                resolve();
+              }
+            }
+          ]
+        });
+        alert.present();
+      });
+    } else { return true }
+  }
+
 
  
+
+
+
 }

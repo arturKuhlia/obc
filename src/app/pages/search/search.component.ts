@@ -11,7 +11,7 @@ import { takeUntil } from 'rxjs/operators';
 import {TextData}  from '../../../assets/data/html'; 
 
 import { AlertController, ToastController } from '@ionic/angular';
-
+   
 
 @Component({
   selector: 'app-search',
@@ -63,7 +63,10 @@ export class SearchComponent implements OnInit, OnDestroy {
   async ionViewDidEnter() {
     const toast = await this.toastCtrl.create({
       message: 'Select tabs above to switch between "Sections" or "Questions"',
-      duration: 6000
+      duration: 3000,
+      position: 'middle',
+  translucent: true,
+  animated: true
     });
     await toast.present();
   }
