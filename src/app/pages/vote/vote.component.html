@@ -4,24 +4,30 @@
  
   <p color="success" class="  vote up" (click)="upvote(obs.total )" [ngClass]="{'active' : obs.total  > 0 }">
     <ion-icon name="chevron-up-outline"></ion-icon> 
-    
+     <span    style="color: green;">{{obs.up}}</span>
   </p> 
 
 <div class="total" >
 
 
- <span  *ngIf="obs.total>0" style="color: green;">{{obs.total}}</span>
+<!--  <span  *ngIf="obs.total>0" style="color: green;">{{obs.total}}</span>
 
  <span  *ngIf="obs.total<0" style="color: red;" >{{obs.total}}</span>
 
  <span  *ngIf="obs.total==0" style="color: gray;" >{{obs.total}}</span>
 
+ -->
+
+
+ 
+
+
 
 
 </div>
-  <p color="danger" class="vote down" (click)="downvote(obs.total ) " [ngClass]="{'active' : obs.total < 0 }">
+  <p  color="danger" class="vote down" (click)="downvote(obs.total ) " [ngClass]="{'active' : obs.total < 0 }">
     <ion-icon name="chevron-down-outline"></ion-icon>
-    
+     <span    style="color: red;" >{{obs.down}}</span>
   </p> 
  
 </div>

@@ -21,6 +21,7 @@ export class VoteComponent implements OnInit, OnDestroy {
   userVote: number = 0;
  
  
+ 
   constructor(
     private starService: VoteService,
     private snackBarService: SnackbarService
