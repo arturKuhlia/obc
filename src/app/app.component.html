@@ -9,15 +9,11 @@
       </ion-header>
         
  
-
       <ion-content>
-      
-        <ion-list lines="none">
-        
-          <ion-menu-toggle *ngIf="appUser" autoHide="false" >
+       <ion-list lines="none"><ion-menu-toggle *ngIf="appUser" autoHide="false" >
             <ion-item *ngIf="appUser"  routerLink="/app/tabs/account"  routerLinkActive="active" detail="false">
-            
-              <ion-label>{{appUser.name}} </ion-label>
+            <p style="font-weight: lighter;"> <i>Welcome,</i> <br>
+               {{appUser.name}} </p>
             </ion-item>
           </ion-menu-toggle>
 
@@ -29,7 +25,19 @@
                 Logout
               </ion-label>
             </ion-item>
-          </ion-menu-toggle> 
+          </ion-menu-toggle>  </ion-list>
+
+ <ion-menu-toggle *ngIf="!appUser" autoHide="false">
+            <ion-item routerLink="app/tabs/sign-in" routerLinkActive="active" routerDirection="root" detail="false">
+              <ion-icon slot="start" name="log-in"></ion-icon>
+              <ion-label>
+                Log In
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        <ion-list lines="none">
+        
+         
           
        
 <ion-menu-toggle   autoHide="false">
@@ -41,14 +49,7 @@
             </ion-item>
           </ion-menu-toggle>
 
-          <ion-menu-toggle *ngIf="!appUser" autoHide="false">
-            <ion-item routerLink="app/tabs/sign-in" routerLinkActive="active" routerDirection="root" detail="false">
-              <ion-icon slot="start" name="log-in"></ion-icon>
-              <ion-label>
-                Log In
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
+         
 
 
           <ion-menu-toggle  autoHide="false" *ngFor="let p of appPages; let i = index">
@@ -63,11 +64,6 @@
  
 
           
- 
-      
-
-
-
 
 
 
