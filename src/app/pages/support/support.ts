@@ -3,6 +3,10 @@ import { NgForm } from '@angular/forms';
 
 import { AlertController, ToastController } from '@ionic/angular';
 
+import { AngularFirestore } from '@angular/fire/firestore';
+
+import { AuthService } from '../../services/auth.service';
+
 
 @Component({
   selector: 'page-support',
@@ -12,24 +16,33 @@ import { AlertController, ToastController } from '@ionic/angular';
 export class SupportPage {
   submitted = false;
   supportMessage: string;
-
+  appUser:any
+  
   constructor(
     public alertCtrl: AlertController,
-    public toastCtrl: ToastController
+    public toastCtrl: ToastController,
+    private db: AngularFirestore,
+    private authService: AuthService
   ) { }
 
-  async ionViewDidEnter() {
-    const toast = await this.toastCtrl.create({
-      message: 'This does not actually send a support request.',
-      duration: 3000
-    });
-    await toast.present();
-  }
+
+ ngOnInit() { 
+    this.authService.appUser$.subscribe(appUser => this.appUser = appUser.uid);
+
+     
+}
+
+ 
 
   async submit(form: NgForm) {
     this.submitted = true;
 
+      let usrUid= this.appUser.uid
+
+
     if (form.valid) {
+
+       this.db.collection('support').add({"message":this.supportMessage,"user":usrUid, "time": Date.now()});
       this.supportMessage = '';
       this.submitted = false;
 
@@ -41,25 +54,8 @@ export class SupportPage {
     }
   }
 
-  // If the user enters text in the support question and then navigates
-  // without submitting first, ask if they meant to leave the page
-  // async ionViewCanLeave(): Promise<boolean> {
-  //   // If the support message is empty we should just navigate
-  //   if (!this.supportMessage || this.supportMessage.trim().length === 0) {
-  //     return true;
-  //   }
 
-  //   return new Promise((resolve: any, reject: any) => {
-  //     const alert = await this.alertCtrl.create({
-  //       title: 'Leave this page?',
-  //       message: 'Are you sure you want to leave this page? Your support message will not be submitted.',
-  //       buttons: [
-  //         { text: 'Stay', handler: reject },
-  //         { text: 'Leave', role: 'cancel', handler: resolve }
-  //       ]
-  //     });
 
-  //     await alert.present();
-  //   });
-  // }
+
+ 
 }

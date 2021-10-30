@@ -10,6 +10,9 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import {TextData}  from '../../../assets/data/html'; 
 
+import { AlertController, ToastController } from '@ionic/angular';
+
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -29,6 +32,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   private unsubscribe$ = new Subject<void>();
 
   constructor(private blogService: BlogService,
+      public toastCtrl: ToastController,
     private commentService: CommentService,
     private authService: AuthService,
     private route: ActivatedRoute,
@@ -41,6 +45,7 @@ export class SearchComponent implements OnInit, OnDestroy {
     };
   }
 
+
   ngOnInit() {
 
     this.authService.appUser$.subscribe(appUser => this.appUser = appUser);
@@ -52,6 +57,17 @@ export class SearchComponent implements OnInit, OnDestroy {
       }
     );
   }
+
+
+
+  async ionViewDidEnter() {
+    const toast = await this.toastCtrl.create({
+      message: 'Select tabs above to switch between "Sections" or "Questions"',
+      duration: 6000
+    });
+    await toast.present();
+  }
+
 
   getBlogPosts() {
     this.blogService.getAllPosts()

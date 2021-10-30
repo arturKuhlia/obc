@@ -1,8 +1,12 @@
  
-
+<ion-item translucent>
+  <ion-menu-button></ion-menu-button>
+  <ion-title  >Contact us</ion-title>
+</ion-item>
 <ion-content>
    
-<ion-card> <form #submitForm="ngForm" novalidate (ngSubmit)="submit(submitForm)">
+<ion-card>
+ <form #submitForm="ngForm" novalidate (ngSubmit)="submit(submitForm)">
     <ion-list lines="none">
       <ion-item>
         <ion-label position="stacked" color="primary">Enter your message below</ion-label>
