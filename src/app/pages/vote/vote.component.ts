@@ -20,6 +20,7 @@ export class VoteComponent implements OnInit, OnDestroy {
   voteData = [];
   userVote: number = 0;
  
+ 
   constructor(
     private starService: VoteService,
     private snackBarService: SnackbarService

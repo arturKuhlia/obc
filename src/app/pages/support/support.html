@@ -2,8 +2,7 @@
 
 <ion-content>
    
-
-  <form #submitForm="ngForm" novalidate (ngSubmit)="submit(submitForm)">
+<ion-card> <form #submitForm="ngForm" novalidate (ngSubmit)="submit(submitForm)">
     <ion-list lines="none">
       <ion-item>
         <ion-label position="stacked" color="primary">Enter your message below</ion-label>
@@ -20,5 +19,6 @@
     <div class="ion-padding">
       <ion-button expand="block" type="submit">Submit</ion-button>
     </div>
-  </form>
+  </form></ion-card>
+ 
 </ion-content>
