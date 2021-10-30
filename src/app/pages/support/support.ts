@@ -37,12 +37,11 @@ export class SupportPage {
   async submit(form: NgForm) {
     this.submitted = true;
 
-      let usrUid= this.appUser.uid
 
 
     if (form.valid) {
 
-       this.db.collection('support').add({"message":this.supportMessage,"user":usrUid, "time": Date.now()});
+       this.db.collection('support').add({"message":this.supportMessage,"user":this.appUser, "time": Date.now()});
       this.supportMessage = '';
       this.submitted = false;
 
@@ -56,49 +55,6 @@ export class SupportPage {
 
 
 
-ionViewCanLeave() {
-  if (this.supportMessage.length>0) {
-      return new Promise((resolve, reject) => {
-        let alert = this.alertCtrl.create({
-          title: 'Are you sure?',
-          message: 'The form data may be lost',
-          buttons: [
-            {
-              text: 'Stay',
-              role: 'cancel',
-              handler: () => {
-                console.log('User stayed');
-                this.userCanLeave = false;
-                reject();
-              }
-            },
-            {
-              text: 'Leave',
-              handler: () => {
-                console.log('User leaves');
-                this.userCanLeave = true;
-                resolve();
-              }
-            },
-            {
-              text: 'Save',
-              handler: () => {
-                console.log('User saved data');
-                // do saving logic
-                this.userCanLeave = true;
-                resolve();
-              }
-            }
-          ]
-        });
-        alert.present();
-      });
-    } else { return true }
-  }
-
 
  
-
-
-
 }
