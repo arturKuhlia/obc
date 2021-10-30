@@ -6,6 +6,7 @@ import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { AppUser } from '../models/appuser';
 import { AngularFirestore } from '@angular/fire/firestore';
+ 
 @Injectable({
   providedIn: 'root'
 })
@@ -28,6 +29,7 @@ export class AuthService {
       })
     );
   }
+
   async emailSignUp(email: string, password: string, name: string) {
     const returnUrl = "/app/tabs/verify-email-address";
     localStorage.setItem('returnUrl', returnUrl);
@@ -67,17 +69,16 @@ export class AuthService {
       })
   }
 
-  emailSignIn(email: string, password: string) {
+ async emailSignIn(email: string, password: string) {
     const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || this.router.url;
     localStorage.setItem('returnUrl', returnUrl);
    
-    return this.afAuth.auth.signInWithEmailAndPassword(email.toString().trim(), password)
-    .then(() => { 
-      console.log("Logged in");
+   const credential = await this.afAuth.auth.signInWithEmailAndPassword(email.toString().trim(), password);
+    return this.updateUserData(credential.user);
+
+ 
       
-    }).catch((error) => {
-      window.alert(error)
-    })
+   
   }
 
   async checkUsername(username: string): Promise<boolean> {
@@ -120,6 +121,13 @@ export class AuthService {
     return this.updateUserData(credential.user);
   }
 
+
+
+
+ 
+
+
+
   async logout() {
     this.afAuth.auth.signOut().then(() => {
       this.router.navigate(['/']);
@@ -127,6 +135,8 @@ export class AuthService {
   }
 
   private updateUserData(user) {
+    alert(`You have been successfully logged in as ${user.displayName}!`)
+
     const userRef = this.db.doc(`appusers/${user.uid}`);
     const data = {
       name: user.displayName,
@@ -134,6 +144,8 @@ export class AuthService {
       photoURL: user.photoURL,
       uid: user.uid
     };
-    return userRef.set(data, { merge: true });
+    return userRef.set(data, { merge: true }).then(() => {
+      this.router.navigate(['/']);
+    });
   }
 }

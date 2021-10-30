@@ -10,6 +10,8 @@
 <ion-content  >
   
   <form>
+
+
     <ion-item lines="none">
       <ion-label position="floating">Email</ion-label>
       <ion-input type="email"   placeholder="Email Address" #userEmail required></ion-input>
@@ -28,5 +30,10 @@
         <ion-button size="small" color= "clear" routerLink='/app/tabs/register-user'  >Sign Up</ion-button> 
       </ion-col>
     </ion-row>
+
+  <button type="button" (click)="authService.login()">
+    Log in with Google
+  </button>
+ 
   </form>
 </ion-content> 
