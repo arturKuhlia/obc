@@ -30,6 +30,20 @@ export class CommentService {
     return comments;
   }
 
+
+   getAllCommentsForUser(usr: string): Observable<Comments[]> {
+    const comments = this.db.collection<Comments>('comments',
+      ref => ref.where('commentedBy', '==', usr).orderBy('commentDate', 'desc')).snapshotChanges().pipe(
+        map(actions => {
+          return actions.map(
+            c => ({
+              commentId: c.payload.doc.id,
+              ...c.payload.doc.data()
+            }));
+        }));
+    return comments;
+  }
+
   getCommentById(id: string): Observable<Comments> {
     const blogDetails = this.db.doc<Comments>('blogs/' + id).valueChanges();
     return blogDetails;

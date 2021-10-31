@@ -3,5 +3,69 @@
   <ion-title>ACCOUNT</ion-title>
 </ion-item>
 <ion-content >
-    
+   
+
+    <ion-list lines="none">  
+            <ion-item *ngIf="appUser"  routerLink="/app/tabs/account"  routerLinkActive="active" detail="false">
+            <p style="font-weight: lighter;"> <i>Welcome,</i> <br>
+               {{appUser.name}} </p>
+            </ion-item>
+           
+
+ 
+            <ion-item *ngIf="appUser"  routerLink="" (click)="logout()" routerLinkActive="active" detail="false">
+              <ion-icon slot="start" name="log-in"></ion-icon>
+              <ion-label>
+                Logout
+              </ion-label>
+            </ion-item>
+                      <ion-item  *ngIf="!appUser"   routerLink="app/tabs/sign-in" routerLinkActive="active" routerDirection="root" detail="false">
+              <ion-icon slot="start" name="log-in"></ion-icon>
+              <ion-label>
+                Log In
+              </ion-label>
+            </ion-item>
+          </ion-list>
+
+  
+ <ion-list>
+  <ion-title>Comments</ion-title>
+ 
+
+  <ion-item   routerLink="/app/tabs/allblogs/{{comment.blogId}}" lines= "inset"  *ngFor="let comment of commentList"  >
+  <ion-label>
+     
+        <p >  {{ comment.commentDate | date }} by {{comment.commentedBy}}  </p>
+      
+    <span   style = " white-space: break-spaces;"> {{ comment.content }} </span>
+   
+    <p *ngIf="appUser?.isAdmin || userEmail == comment.email">
+        <ion-icon color="danger" size="small"
+        (click)="deleteComment(comment.commentId)" name="trash-outline"></ion-icon>
+    </p>
+  </ion-label>
+  </ion-item>
+</ion-list>
+ 
+
+
+
+<ion-list >
+   <ion-title>Posts</ion-title>
+      <ion-item *ngFor="let post of blogPosts | filter:term  | slice:0:10"   routerLink="/app/tabs/allblogs/{{post.postId}}">
+
+        <ion-label>
+          <h2  style=" white-space: break-spaces;">
+            {{post.title}}</h2>
+          <ion-text color="medium">
+            <h3 *ngIf="post.hasOwnProperty('codeId')">
+              {{post.codeId}}
+            </h3>
+            <h4>by {{post.author}}</h4>
+          </ion-text>
+
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
 </ion-content>

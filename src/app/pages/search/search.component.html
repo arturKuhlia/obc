@@ -30,7 +30,7 @@
     </ion-list>
 
     <ion-list *ngSwitchCase="'qs'">
-      <ion-item *ngFor="let post of blogPost | filter:term  | slice:0:10"   routerLink="/app/tabs/allblogs/{{post.postId}}/{{post.title | slug}}">
+      <ion-item *ngFor="let post of blogPost | filter:term  | slice:0:10"   routerLink="/app/tabs/allblogs/{{post.postId}}">
 
         <ion-label>
           <h2  style=" white-space: break-spaces;">

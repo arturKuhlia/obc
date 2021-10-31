@@ -53,7 +53,7 @@ const routes: Routes = [
         component: BlogEditorComponent,
         canActivate: [AdminAuthGuard],
       },
-      { path: "allblogs/:id/:slug", component: BlogComponent },
+      { path: "allblogs/:id", component: BlogComponent },
 
       { path: "allblogs",
       children: [

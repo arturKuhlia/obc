@@ -28,6 +28,19 @@ export class BlogService {
     return blogs;
   }
 
+    getAllblogsForUser(usr: string): Observable<Posts[]> {
+    const posts = this.db.collection<Post>('blogs',
+      ref => ref.where('author', '==', usr).orderBy('createdDate', 'desc')).snapshotChanges().pipe(
+        map(actions => {
+          return actions.map(
+            c => ({
+              postId: c.payload.doc.id,
+              ...c.payload.doc.data()
+            }));
+        }));
+    return posts;
+  }
+
   
   getPostbyId(id: string): Observable<Post> {
     const blogDetails = this.db.doc<Post>('blogs/' + id).valueChanges();
