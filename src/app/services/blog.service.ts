@@ -28,7 +28,7 @@ export class BlogService {
     return blogs;
   }
 
-    getAllblogsForUser(usr: string): Observable<Posts[]> {
+    getAllblogsForUser(usr: string): Observable<Post[]> {
     const posts = this.db.collection<Post>('blogs',
       ref => ref.where('author', '==', usr).orderBy('createdDate', 'desc')).snapshotChanges().pipe(
         map(actions => {

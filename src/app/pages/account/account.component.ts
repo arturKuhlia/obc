@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Comments } from '../../models/comment';
 import { CommentService } from '../../services/comment.service';
-
+import { Post } from './../../models/post';
 import { BlogService } from '../../services/blog.service';
 
 @Component({
