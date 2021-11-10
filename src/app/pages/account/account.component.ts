@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { AppUser } from './models/appuser';
+import { AppUser } from '../../models/appuser';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Comments } from '../../models/comment';
@@ -37,12 +37,7 @@ export class AccountComponent implements OnInit {
       } else { 
       this.getAllComments();
       this.getBlogPosts();
-        const returnUrl = localStorage.getItem('returnUrl');
-        if (!returnUrl) {
-          return;
-        }
-        localStorage.removeItem('returnUrl');
-        this.router.navigateByUrl(returnUrl);
+       
       } });
 
   }
