@@ -1,0 +1,1446 @@
+{ "docs" :[
+  {
+    "id": "1.1.",
+    "title": "Section 1.1. Administration",
+    "children": [
+      {
+        "id": "1.1.1.",
+        "title": "1.1.1. Administration",
+        "children": [
+          {
+            "id": "1.1.1.1.",
+            "title": "1.1.1.1. Conformance with Administrative Requirements",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1.2.",
+    "title": "Section 1.2. Design and General Review",
+    "children": [
+      {
+        "id": "1.2.1.",
+        "title": "1.2.1. Design",
+        "children": [
+          { "id": "1.2.1.1.", "title": "1.2.1.1. Application", "children": [] },
+          {
+            "id": "1.2.1.2.",
+            "title": "1.2.1.2. Design by Architect or Professional Engineer",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "1.2.2.",
+        "title": "1.2.2. General Review",
+        "children": [
+          {
+            "id": "1.2.2.1.",
+            "title":
+              "1.2.2.1. General Review by Architect or Professional Engineer",
+            "children": []
+          },
+          {
+            "id": "1.2.2.2.",
+            "title": "1.2.2.2. Restriction for General Review",
+            "children": []
+          },
+          {
+            "id": "1.2.2.3.",
+            "title": "1.2.2.3. Demolition of a Building",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1.3.",
+    "title": "Section 1.3. Permits and Inspections",
+    "children": [
+      {
+        "id": "1.3.1.",
+        "title": "1.3.1. Permits",
+        "children": [
+          {
+            "id": "1.3.1.1.",
+            "title": "1.3.1.1. Requirement for Permits",
+            "children": []
+          },
+          {
+            "id": "1.3.1.2.",
+            "title":
+              "1.3.1.2. Applications for Permits under Section 8 of the Act",
+            "children": []
+          },
+          {
+            "id": "1.3.1.3.",
+            "title": "1.3.1.3. Period Within Which a Permit is Issued or Refused",
+            "children": []
+          },
+          {
+            "id": "1.3.1.4.",
+            "title": "1.3.1.4. Permits Under Section 10 of the Act",
+            "children": []
+          },
+          {
+            "id": "1.3.1.5.",
+            "title": "1.3.1.5. Conditional Permits",
+            "children": []
+          },
+          {
+            "id": "1.3.1.6.",
+            "title":
+              "1.3.1.6. Information to be given to Tarion Warranty Corporation",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "1.3.2.",
+        "title": "1.3.2. Site Documents",
+        "children": [
+          { "id": "1.3.2.1.", "title": "1.3.2.1. Permit Posting", "children": [] },
+          {
+            "id": "1.3.2.2.",
+            "title": "1.3.2.2. Documentation on Site",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "1.3.3.",
+        "title": "1.3.3. Occupancy of Buildings",
+        "children": [
+          {
+            "id": "1.3.3.1.",
+            "title": "1.3.3.1. Occupancy Permit — General",
+            "children": []
+          },
+          {
+            "id": "1.3.3.2.",
+            "title": "1.3.3.2. Conditions for Residential Occupancy",
+            "children": []
+          },
+          { "id": "1.3.3.3.", "title": "1.3.3.3. Notification", "children": [] },
+          {
+            "id": "1.3.3.4.",
+            "title":
+              "1.3.3.4. Occupancy Permit — Certain Buildings of Residential Occupancy",
+            "children": []
+          },
+          {
+            "id": "1.3.3.5.",
+            "title":
+              "1.3.3.5. Occupancy Permit — Buildings within the scope of Article 3.2.2.43A. or 3.2.2.50A.",
+            "children": []
+          },
+          {
+            "id": "1.3.3.6.",
+            "title":
+              "1.3.3.6. Occupancy Permit — Buildings in the Lower Don Area of Toronto",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "1.3.4.",
+        "title": "1.3.4. Fire Department Inspection",
+        "children": [
+          {
+            "id": "1.3.4.1.",
+            "title": "1.3.4.1. Fire Department Approval",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "1.3.5.",
+        "title": "1.3.5. Notices and Inspections",
+        "children": [
+          {
+            "id": "1.3.5.1.",
+            "title": "1.3.5.1. Prescribed Notices",
+            "children": []
+          },
+          {
+            "id": "1.3.5.2.",
+            "title": "1.3.5.2. Additional Notices",
+            "children": []
+          },
+          {
+            "id": "1.3.5.3.",
+            "title": "1.3.5.3. Prescribed Inspections",
+            "children": []
+          },
+          {
+            "id": "1.3.5.4.",
+            "title": "1.3.5.4. Construction of Sewage Systems",
+            "children": []
+          },
+          { "id": "1.3.5.5.", "title": "1.3.5.5. Orders", "children": [] }
+        ]
+      },
+      {
+        "id": "1.3.6.",
+        "title": "1.3.6. As Constructed Plans",
+        "children": [
+          { "id": "1.3.6.1.", "title": "1.3.6.1. Application", "children": [] }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1.4.",
+    "title": "Section 1.4. Search Warrant",
+    "children": [
+      {
+        "id": "1.4.1.",
+        "title": "1.4.1. Forms",
+        "children": [
+          {
+            "id": "1.4.1.1.",
+            "title": "1.4.1.1. Information & Warrant Forms",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1.5.",
+    "title": "Section 1.5. Designated Persons and Powers",
+    "children": [
+      {
+        "id": "1.5.1.",
+        "title": "1.5.1. General",
+        "children": [{ "id": "1.5.1.1.", "title": "1.5.1.1. General", "children": [] }]
+      }
+    ]
+  },
+  {
+    "id": "1.6.",
+    "title": "Section 1.6. Prescribed Person",
+    "children": [
+      {
+        "id": "1.6.1.",
+        "title": "1.6.1. General",
+        "children": [{ "id": "1.6.1.1.", "title": "1.6.1.1. General", "children": [] }]
+      }
+    ]
+  },
+  {
+    "id": "1.7.",
+    "title":
+      "Section 1.7. Enforcement of the Provisions of the Act and this Code Related to Sewage Systems",
+    "children": [
+      {
+        "id": "1.7.1.",
+        "title": "1.7.1. General",
+        "children": [{ "id": "1.7.1.1.", "title": "1.7.1.1. General", "children": [] }]
+      }
+    ]
+  },
+  {
+    "id": "1.8.",
+    "title": "Section 1.8. Language",
+    "children": [
+      {
+        "id": "1.8.1.",
+        "title": "1.8.1. Language",
+        "children": [
+          {
+            "id": "1.8.1.1.",
+            "title": "1.8.1.1. Language Used on Required Signs",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1.9.",
+    "title": "Section 1.9. Fees",
+    "children": [
+      {
+        "id": "1.9.1.",
+        "title": "1.9.1. Fees",
+        "children": [
+          { "id": "1.9.1.1.", "title": "1.9.1.1. Annual Report", "children": [] },
+          { "id": "1.9.1.2.", "title": "1.9.1.2. Change of Fees", "children": [] }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1.10.",
+    "title": "Section 1.10. Sewage System Maintenance Inspection Programs",
+    "children": [
+      {
+        "id": "1.10.1.",
+        "title": "1.10.1. Discretionary Maintenance Inspection Programs",
+        "children": [
+          { "id": "1.10.1.1.", "title": "1.10.1.1. Scope", "children": [] },
+          {
+            "id": "1.10.1.2.",
+            "title": "1.10.1.2. Application and Inspections",
+            "children": []
+          },
+          {
+            "id": "1.10.1.3.",
+            "title":
+              "1.10.1.3. Certificate as Alternative to Maintenance Inspection",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "1.10.2.",
+        "title": "1.10.2. Mandatory Maintenance Inspection Program",
+        "children": [
+          { "id": "1.10.2.1.", "title": "1.10.2.1. Scope", "children": [] },
+          {
+            "id": "1.10.2.2.",
+            "title": "1.10.2.2. Administration of Maintenance Inspection Program",
+            "children": []
+          },
+          {
+            "id": "1.10.2.3.",
+            "title": "1.10.2.3. Maintenance Inspection Program",
+            "children": []
+          },
+          {
+            "id": "1.10.2.4.",
+            "title": "1.10.2.4. Time Periods for Maintenance Inspections",
+            "children": []
+          },
+          {
+            "id": "1.10.2.5.",
+            "title":
+              "1.10.2.5. Certificate as Alternative to Maintenance Inspection",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2.1.",
+    "title": "Section 2.1. Alternative Solutions",
+    "children": [
+      {
+        "id": "2.1.1.",
+        "title": "2.1.1. Documentation of Alternative Solutions",
+        "children": [
+          { "id": "2.1.1.1.", "title": "2.1.1.1. Documentation", "children": [] },
+          { "id": "2.1.1.2.", "title": "2.1.1.2. Tests", "children": [] }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2.2.",
+    "title": "Section 2.2. Building Code Commission",
+    "children": [
+      {
+        "id": "2.2.1.",
+        "title": "2.2.1. Hearings",
+        "children": [
+          { "id": "2.2.1.1.", "title": "2.2.1.1. Divisions", "children": [] },
+          { "id": "2.2.1.2.", "title": "2.2.1.2. Single Member", "children": [] },
+          { "id": "2.2.1.3.", "title": "2.2.1.3. Time Period", "children": [] },
+          { "id": "2.2.1.4.", "title": "2.2.1.4. Eligibility", "children": [] },
+          { "id": "2.2.1.5.", "title": "2.2.1.5. Application Fee", "children": [] }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2.3.",
+    "title": "Section 2.3. Building Materials Evaluation Commission",
+    "children": [
+      {
+        "id": "2.3.1.",
+        "title": "2.3.1. Application Fee",
+        "children": [
+          { "id": "2.3.1.1.", "title": "2.3.1.1. Application Fee", "children": [] }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2.4.",
+    "title": "Section 2.4. Rulings and Interpretations",
+    "children": [
+      {
+        "id": "2.4.1.",
+        "title":
+          "2.4.1. Minister’s Rulings — Innovative Materials, Systems or Building Designs",
+        "children": [
+          {
+            "id": "2.4.1.1.",
+            "title": "2.4.1.1. Designated Materials Evaluation Bodies",
+            "children": []
+          },
+          { "id": "2.4.1.2.", "title": "2.4.1.2. Fee", "children": [] }
+        ]
+      },
+      {
+        "id": "2.4.2.",
+        "title":
+          "2.4.2. Minister’s Rulings — Alternative Materials, Systems or Building Designs",
+        "children": [
+          { "id": "2.4.2.1.", "title": "2.4.2.1. Criteria", "children": [] }
+        ]
+      },
+      {
+        "id": "2.4.3.",
+        "title": "2.4.3. Interpretations By Minister",
+        "children": [
+          {
+            "id": "2.4.3.1.",
+            "title": "2.4.3.1. Interpretations By Minister",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3.1.",
+    "title":
+      "Section 3.1. Qualifications for Chief Building Officials and Inspectors",
+    "children": [
+      {
+        "id": "3.1.1.",
+        "title": "3.1.1. Scope and Definition",
+        "children": [
+          { "id": "3.1.1.1.", "title": "3.1.1.1. Scope", "children": [] },
+          { "id": "3.1.1.2.", "title": "3.1.1.2. Definition", "children": [] }
+        ]
+      },
+      {
+        "id": "3.1.2.",
+        "title": "3.1.2. Chief Building Officials",
+        "children": [
+          { "id": "3.1.2.1.", "title": "3.1.2.1. Qualifications", "children": [] },
+          {
+            "id": "3.1.2.2.",
+            "title": "3.1.2.2. Registration and Renewal of a Registration",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "3.1.3.",
+        "title": "3.1.3. Supervisors and Managers",
+        "children": [
+          { "id": "3.1.3.1.", "title": "3.1.3.1. Qualifications", "children": [] },
+          {
+            "id": "3.1.3.2.",
+            "title": "3.1.3.2. Registration and Renewal of a Registration",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "3.1.4.",
+        "title": "3.1.4. Inspectors",
+        "children": [
+          { "id": "3.1.4.1.", "title": "3.1.4.1. Qualifications", "children": [] },
+          {
+            "id": "3.1.4.2.",
+            "title": "3.1.4.2. Registration and Renewal of a Registration",
+            "children": []
+          },
+          {
+            "id": "3.1.4.3.",
+            "title": "3.1.4.3. Qualifications for Intern Inspectors",
+            "children": []
+          },
+          {
+            "id": "3.1.4.4.",
+            "title": "3.1.4.4. Qualifications for Maintenance Program Inspectors",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "3.1.5.",
+        "title":
+          "3.1.5. Qualifications — Chief Building Officials, Supervisors and Managers, and Inspectors",
+        "children": [
+          {
+            "id": "3.1.5.1.",
+            "title":
+              "3.1.5.1. Application for Registration or Renewal of a Registration",
+            "children": []
+          },
+          { "id": "3.1.5.2.", "title": "3.1.5.2. Term", "children": [] },
+          { "id": "3.1.5.3.", "title": "3.1.5.3. Fees", "children": [] },
+          { "id": "3.1.5.4.", "title": "3.1.5.4. Not Transferable", "children": [] },
+          { "id": "3.1.5.5.", "title": "3.1.5.5. Conditions", "children": [] },
+          {
+            "id": "3.1.5.6.",
+            "title": "3.1.5.6. Knowledge Maintenance",
+            "children": []
+          },
+          {
+            "id": "3.1.5.7.",
+            "title":
+              "3.1.5.7. Suspension, Revocation, Refusal to Register or Renew a Registration",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "3.1.6.",
+        "title": "3.1.6. Public Register",
+        "children": [
+          { "id": "3.1.6.1.", "title": "3.1.6.1. Public Register", "children": [] }
+        ]
+      },
+      {
+        "id": "3.1.7.",
+        "title":
+          "3.1.7. Classes of Registration and Categories of Qualifications",
+        "children": [
+          {
+            "id": "3.1.7.1.",
+            "title": "3.1.7.1. Classes and Categories",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3.2.",
+    "title": "Section 3.2. Qualifications for Designers",
+    "children": [
+      {
+        "id": "3.2.1.",
+        "title": "3.2.1. Scope",
+        "children": [{ "id": "3.2.1.1.", "title": "3.2.1.1. Scope", "children": [] }]
+      },
+      { "id": "3.2.2.2.", "title": "3.2.2.2. Other Designers", "children": [] },
+      {
+        "id": "3.2.3.",
+        "title": "3.2.3. Definition",
+        "children": [
+          { "id": "3.2.3.1.", "title": "3.2.3.1. Definition", "children": [] }
+        ]
+      },
+      {
+        "id": "3.2.4.",
+        "title":
+          "3.2.4. Qualifications – Persons Engaged in the Business of Providing Design Activities to the Public",
+        "children": [
+          { "id": "3.2.4.1.", "title": "3.2.4.1. General", "children": [] },
+          {
+            "id": "3.2.4.2.",
+            "title": "3.2.4.2. Registration and Renewal of a Registration",
+            "children": []
+          },
+          {
+            "id": "3.2.4.3.",
+            "title":
+              "3.2.4.3. Application for Registration or Renewal of a Registration",
+            "children": []
+          },
+          { "id": "3.2.4.4.", "title": "3.2.4.4. Term", "children": [] },
+          { "id": "3.2.4.5.", "title": "3.2.4.5. Fees", "children": [] },
+          { "id": "3.2.4.6.", "title": "3.2.4.6. Not Transferable", "children": [] },
+          { "id": "3.2.4.7.", "title": "3.2.4.7. Conditions", "children": [] },
+          {
+            "id": "3.2.4.8.",
+            "title": "3.2.4.8. Knowledge Maintenance",
+            "children": []
+          },
+          {
+            "id": "3.2.4.9.",
+            "title":
+              "3.2.4.9. Suspension, Revocation, Refusal to Register or Renew a Registration",
+            "children": []
+          },
+          {
+            "id": "3.2.4.10.",
+            "title":
+              "3.2.4.10. Mandatory Suspension or Revocation of Registration or Refusal to Register or Renew Registration",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "3.2.5.",
+        "title": "3.2.5. Qualifications — Other Designers",
+        "children": [
+          { "id": "3.2.5.1.", "title": "3.2.5.1. General", "children": [] },
+          {
+            "id": "3.2.5.2.",
+            "title": "3.2.5.2. Registration and Renewal of a Registration",
+            "children": []
+          },
+          {
+            "id": "3.2.5.3.",
+            "title":
+              "3.2.5.3. Application for Registration or Renewal of a Registration",
+            "children": []
+          },
+          { "id": "3.2.5.4.", "title": "3.2.5.4. Term", "children": [] },
+          { "id": "3.2.5.5.", "title": "3.2.5.5. Fees", "children": [] },
+          { "id": "3.2.5.6.", "title": "3.2.5.6. Conditions", "children": [] },
+          {
+            "id": "3.2.5.7.",
+            "title": "3.2.5.7. Knowledge Maintenance",
+            "children": []
+          },
+          {
+            "id": "3.2.5.8.",
+            "title":
+              "3.2.5.8. Suspension, Revocation, Refusal to Register or Renew a Registration",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "3.2.6.",
+        "title": "3.2.6. Public Register",
+        "children": [
+          { "id": "3.2.6.1.", "title": "3.2.6.1. Public Register", "children": [] }
+        ]
+      },
+      {
+        "id": "3.2.7.",
+        "title":
+          "3.2.7. Classes of Registration and Categories of Qualifications",
+        "children": [
+          {
+            "id": "3.2.7.1.",
+            "title": "3.2.7.1. Classes and Categories",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3.3.",
+    "title":
+      "Section 3.3. Qualifications for Persons Engaged in the Business of Constructing On Site, Installing, Repairing, Servicing, Cleaning or Emptying Sewage Systems",
+    "children": [
+      {
+        "id": "3.3.1.",
+        "title": "3.3.1. Scope",
+        "children": [{ "id": "3.3.1.1.", "title": "3.3.1.1. Scope", "children": [] }]
+      },
+      {
+        "id": "3.3.2.",
+        "title": "3.3.2. Definition",
+        "children": [
+          { "id": "3.3.2.1.", "title": "3.3.2.1. Definition", "children": [] }
+        ]
+      },
+      {
+        "id": "3.3.3.",
+        "title": "3.3.3. Qualifications",
+        "children": [
+          { "id": "3.3.3.1.", "title": "3.3.3.1. General", "children": [] },
+          {
+            "id": "3.3.3.2.",
+            "title": "3.3.3.2. Registration and Renewal of a Registration",
+            "children": []
+          },
+          {
+            "id": "3.3.3.3.",
+            "title":
+              "3.3.3.3. Application for Registration or Renewal of a Registration",
+            "children": []
+          },
+          { "id": "3.3.3.4.", "title": "3.3.3.4. Term", "children": [] },
+          { "id": "3.3.3.5.", "title": "3.3.3.5. Fees", "children": [] },
+          { "id": "3.3.3.6.", "title": "3.3.3.6. Not Transferable", "children": [] },
+          { "id": "3.3.3.7.", "title": "3.3.3.7. Conditions", "children": [] },
+          {
+            "id": "3.3.3.8.",
+            "title": "3.3.3.8. Knowledge Maintenance",
+            "children": []
+          },
+          {
+            "id": "3.3.3.9.",
+            "title":
+              "3.3.3.9. Suspension, Revocation, Refusal to Register or Renew a Registration",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "3.3.4.",
+        "title": "3.3.4. Public Register",
+        "children": [
+          { "id": "3.3.4.1.", "title": "3.3.4.1. Public Register", "children": [] }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3.4.",
+    "title": "Section 3.4. Qualifications for Registered Code Agencies",
+    "children": [
+      {
+        "id": "3.4.1.",
+        "title": "3.4.1. Scope",
+        "children": [{ "id": "3.4.1.1.", "title": "3.4.1.1. Scope", "children": [] }]
+      },
+      {
+        "id": "3.4.2.",
+        "title": "3.4.2. Definition",
+        "children": [
+          { "id": "3.4.2.1.", "title": "3.4.2.1. Definition", "children": [] }
+        ]
+      },
+      {
+        "id": "3.4.3.",
+        "title": "3.4.3. Qualifications",
+        "children": [
+          { "id": "3.4.3.1.", "title": "3.4.3.1. General", "children": [] },
+          {
+            "id": "3.4.3.2.",
+            "title": "3.4.3.2. Registration and Renewal of a Registration",
+            "children": []
+          },
+          {
+            "id": "3.4.3.3.",
+            "title":
+              "3.4.3.3. Application for Registration or Renewal of a Registration",
+            "children": []
+          },
+          { "id": "3.4.3.4.", "title": "3.4.3.4. Term", "children": [] },
+          { "id": "3.4.3.5.", "title": "3.4.3.5. Fees", "children": [] },
+          { "id": "3.4.3.6.", "title": "3.4.3.6. Not Transferable", "children": [] },
+          { "id": "3.4.3.7.", "title": "3.4.3.7. Conditions", "children": [] },
+          {
+            "id": "3.4.3.8.",
+            "title": "3.4.3.8. Knowledge Maintenance",
+            "children": []
+          },
+          {
+            "id": "3.4.3.9.",
+            "title":
+              "3.4.3.9. Suspension, Revocation, Refusal to Register or Renew a Registration",
+            "children": []
+          },
+          {
+            "id": "3.4.3.10.",
+            "title":
+              "3.4.3.10. Mandatory Suspension or Revocation of Registration or Refusal to Register or Renew a Registration",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "3.4.4.",
+        "title": "3.4.4. Public Register",
+        "children": [
+          { "id": "3.4.4.1.", "title": "3.4.4.1. Public Register", "children": [] }
+        ]
+      },
+      {
+        "id": "3.4.5.",
+        "title":
+          "3.4.5. Classes of Registration and Categories of Qualifications",
+        "children": [
+          {
+            "id": "3.4.5.1.",
+            "title": "3.4.5.1. Classes and Categories",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3.5.",
+    "title":
+      "Section 3.5. Classes of Registration and Categories of Qualifications",
+    "children": [
+      {
+        "id": "3.5.1.",
+        "title": "3.5.1. Scope",
+        "children": [{ "id": "3.5.1.1.", "title": "3.5.1.1. Scope", "children": [] }]
+      },
+      {
+        "id": "3.5.2.",
+        "title":
+          "3.5.2. Classes of Registration and Categories of Qualifications",
+        "children": [
+          {
+            "id": "3.5.2.1.",
+            "title":
+              "3.5.2.1. Inspectors and Persons Who Carry out Design Activities",
+            "children": []
+          },
+          {
+            "id": "3.5.2.2.",
+            "title": "3.5.2.2. Registered Code Agencies",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3.6.",
+    "title": "Section 3.6. Insurance",
+    "children": [
+      {
+        "id": "3.6.1.",
+        "title": "3.6.1. Scope",
+        "children": [{ "id": "3.6.1.1.", "title": "3.6.1.1. Scope", "children": [] }]
+      },
+      {
+        "id": "3.6.2.",
+        "title":
+          "3.6.2. Insurance for Registered Code Agencies and Persons Referred to in Subsection 15.11 (5) of the Act",
+        "children": [
+          { "id": "3.6.2.1.", "title": "3.6.2.1. Definition", "children": [] },
+          { "id": "3.6.2.2.", "title": "3.6.2.2. Scope", "children": [] },
+          {
+            "id": "3.6.2.3.",
+            "title": "3.6.2.3. Insurance Coverage",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3.7.",
+    "title": "Section 3.7. Registered Code Agencies",
+    "children": [
+      {
+        "id": "3.7.1.",
+        "title":
+          "3.7.1. When a Registered Code Agency may not be Appointed under Section 4.1 of the Act",
+        "children": [
+          { "id": "3.7.1.1.", "title": "3.7.1.1. Agreements", "children": [] },
+          { "id": "3.7.1.2.", "title": "3.7.1.2. Appointments", "children": [] }
+        ]
+      },
+      {
+        "id": "3.7.2.",
+        "title":
+          "3.7.2. When a Registered Code Agency may not be Appointed or Continue to Act under an Appointment",
+        "children": [{ "id": "3.7.2.1.", "title": "3.7.2.1. General", "children": [] }]
+      },
+      {
+        "id": "3.7.3.",
+        "title":
+          "3.7.3. Additional Functions that Registered Code Agencies may be Appointed to Perform",
+        "children": [{ "id": "3.7.3.1.", "title": "3.7.3.1. General", "children": [] }]
+      },
+      {
+        "id": "3.7.4.",
+        "title":
+          "3.7.4. Manner in Which Registered Code Agency Shall Perform Functions",
+        "children": [
+          { "id": "3.7.4.1.", "title": "3.7.4.1. General", "children": [] },
+          {
+            "id": "3.7.4.2.",
+            "title": "3.7.4.2. Plans Review and Inspection Activities",
+            "children": []
+          },
+          {
+            "id": "3.7.4.3.",
+            "title":
+              "3.7.4.3. Issuance of Certificates by Registered Code Agencies",
+            "children": []
+          },
+          {
+            "id": "3.7.4.4.",
+            "title": "3.7.4.4. Issuance of Orders by Registered Code Agencies",
+            "children": []
+          },
+          {
+            "id": "3.7.4.5.",
+            "title": "3.7.4.5. Authorized Persons",
+            "children": []
+          },
+          { "id": "3.7.4.6.", "title": "3.7.4.6. Prohibition", "children": [] },
+          {
+            "id": "3.7.4.7.",
+            "title": "3.7.4.7. Information and Records",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "3.7.5.",
+        "title": "3.7.5. Termination of Appointment of a Registered Code Agency",
+        "children": [
+          {
+            "id": "3.7.5.1.",
+            "title":
+              "3.7.5.1. Termination of an Appointment Made under Subsection 4.1 (2) of the Act",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "3.7.6.",
+        "title": "3.7.6. Information to be Provided",
+        "children": [
+          {
+            "id": "3.7.6.1.",
+            "title":
+              "3.7.6.1. Information to be Provided by a Principal Authority to the Director",
+            "children": []
+          },
+          {
+            "id": "3.7.6.2.",
+            "title":
+              "3.7.6.2. Information to be Provided by a Registered Code Agency to the Director",
+            "children": []
+          },
+          {
+            "id": "3.7.6.3.",
+            "title":
+              "3.7.6.3. Information to be Provided by a Registered Code Agency to the Chief Building Official",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "3.7.7.",
+        "title": "3.7.7. Referral of Stop Work Order",
+        "children": [
+          { "id": "3.7.7.1.", "title": "3.7.7.1. Referral", "children": [] }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "4.1.",
+    "title": "Section 4.1. Transition Rule",
+    "children": [
+      {
+        "id": "4.1.1.",
+        "title": "4.1.1. Transition, January 2014",
+        "children": [
+          { "id": "4.1.1.1.", "title": "4.1.1.1. Transition Rule", "children": [] }
+        ]
+      },
+      {
+        "id": "4.1.2.",
+        "title": "4.1.2. Transition, January 2015",
+        "children": [
+          { "id": "4.1.2.1.", "title": "4.1.2.1. Transition Rule", "children": [] }
+        ]
+      },
+      {
+        "id": "4.1.3.",
+        "title": "4.1.3. Transition, January 2017",
+        "children": [
+          { "id": "4.1.3.1.", "title": "4.1.3.1. Transition Rule", "children": [] }
+        ]
+      },
+      {
+        "id": "4.1.4.",
+        "title": "4.1.4. Transition, July 2017",
+        "children": [
+          { "id": "4.1.4.1.", "title": "4.1.4.1. Transition Rule", "children": [] }
+        ]
+      },
+      {
+        "id": "4.1.5.",
+        "title": "4.1.5. Transition, January 2018",
+        "children": [
+          { "id": "4.1.5.1.", "title": "4.1.5.1. Transition Rule", "children": [] }
+        ]
+      },
+      {
+        "id": "4.1.6.",
+        "title": "4.1.6. Transition, January 2020",
+        "children": [
+          { "id": "4.1.6.1.", "title": "4.1.6.1. Transition Rule", "children": [] }
+        ]
+      },
+      {
+        "id": "4.1.7.",
+        "title": "4.1.7. Transition, January 2022",
+        "children": [
+          { "id": "4.1.7.1.", "title": "4.1.7.1. Transition Rule", "children": [] }
+        ]
+      }
+    ]
+  }
+]
+,
+  "schedule": [
+    {
+      "date": "2047-05-17",
+      "groups": [
+        {
+          "time": "8:00 am",
+          "sessions": [
+            {
+              "name": "Breakfast",
+              "timeStart": "8:00 am",
+              "timeEnd": "9:00 am",
+              "location": "Dining Hall",
+              "tracks": ["Food"],
+              "id": "1"
+            }
+          ]
+        },
+        {
+          "time": "9:15 am",
+          "sessions": [
+            {
+              "name": "Getting Started with Ionic",
+              "location": "Hall 2",
+              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
+              "speakerNames": ["Ted Turtle"],
+              "timeStart": "9:30 am",
+              "timeEnd": "9:45 am",
+              "tracks": ["Ionic"],
+              "id": "2"
+            },
+            {
+              "name": "Ionic Tooling",
+              "location": "Executive Ballroom",
+              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
+              "speakerNames": ["Rachel Rabbit"],
+              "timeStart": "9:45 am",
+              "timeEnd": "10:00 am",
+              "tracks": ["Tooling"],
+              "id": "3"
+            },
+            {
+              "name": "University of Ionic",
+              "location": "Hall 3",
+              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
+              "speakerNames": ["Ellie Elephant"],
+              "timeStart": "9:15 am",
+              "timeEnd": "9:30 am",
+              "tracks": ["Ionic"],
+              "id": "4"
+            }
+          ]
+        },
+        {
+          "time": "10:00 am",
+          "sessions": [
+            {
+              "name": "Migrating to Ionic",
+              "location": "Hall 1",
+              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
+              "speakerNames": ["Eva Eagle", "Lionel Lion"],
+              "timeStart": "10:00 am",
+              "timeEnd": "10:15 am",
+              "tracks": ["Ionic"],
+              "id": "5"
+            },
+            {
+              "name": "What's New in Angular",
+              "location": "Hall 3",
+              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
+              "speakerNames": ["Rachel Rabbit"],
+              "timeStart": "10:15 am",
+              "timeEnd": "10:30 am",
+              "tracks": ["Angular"],
+              "id": "6"
+            },
+            {
+              "name": "The Evolution of Ionicons",
+              "location": "Hall 2",
+              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
+              "speakerNames": ["Isabella Iguana", "Eva Eagle"],
+              "timeStart": "10:15 am",
+              "timeEnd": "10:30 am",
+              "tracks": ["Design"],
+              "id": "7"
+            },
+            {
+              "name": "Ionic Pro",
+              "location": "Grand Ballroom A",
+              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
+              "speakerNames": ["Charlie Cheetah"],
+              "timeStart": "10:45 am",
+              "timeEnd": "11:00 am",
+              "tracks": ["Services"],
+              "id": "8"
+            }
+          ]
+        },
+        {
+          "time": "11:00 am",
+          "sessions": [
+            {
+              "name": "Ionic Workshop",
+              "location": "Hall 1",
+              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
+              "speakerNames": ["Karl Kitten", "Lionel Lion"],
+              "timeStart": "11:00 am",
+              "timeEnd": "11:45 am",
+              "tracks": ["Workshop"],
+              "id": "9"
+            },
+            {
+              "name": "Community Interaction",
+              "location": "Hall 3",
+              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
+              "speakerNames": ["Lionel Lion", "Gino Giraffe"],
+              "timeStart": "11:30 am",
+              "timeEnd": "11:50 am",
+              "tracks": ["Communication"],
+              "id": "10"
+            },
+            {
+              "name": "Navigation in Ionic",
+              "location": "Grand Ballroom A",
+              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
+              "speakerNames": ["Rachel Rabbit", "Eva Eagle"],
+              "timeStart": "11:30 am",
+              "timeEnd": "12:00 pm",
+              "tracks": ["Navigation"],
+              "id": "11"
+            }
+          ]
+        },
+        {
+          "time": "12:00 pm",
+          "sessions": [
+            {
+              "name": "Lunch",
+              "location": "Dining Hall",
+              "description": "Come grab lunch with all the Ionic fanatics and talk all things Ionic",
+              "timeStart": "12:00 pm",
+              "timeEnd": "1:00 pm",
+              "tracks": ["Food"],
+              "id": "12"
+            }
+          ]
+        },
+        {
+          "time": "1:00 pm",
+          "sessions": [
+            {
+              "name": "Ionic in the Enterprise",
+              "location": "Hall 1",
+              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
+              "speakerNames": ["Paul Puppy"],
+              "timeStart": "1:00 pm",
+              "timeEnd": "1:15 pm",
+              "tracks": ["Communication"],
+              "id": "13"
+            },
+            {
+              "name": "Ionic Worldwide",
+              "location": "Hall 1",
+              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
+              "speakerNames": ["Gino Giraffe"],
+              "timeStart": "1:15 pm",
+              "timeEnd": "1:30 pm",
+              "tracks": ["Communication"],
+              "id": "14"
+            },
+            {
+              "name": "The Ionic Package",
+              "location": "Grand Ballroom B",
+              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
+              "speakerNames": ["Molly Mouse", "Burt Bear"],
+              "timeStart": "1:30 pm",
+              "timeEnd": "2:00 pm",
+              "tracks": ["Services"],
+              "id": "15"
+            }
+          ]
+        },
+        {
+          "time": "2:00 pm",
+          "sessions": [
+            {
+              "name": "Push Notifications in Ionic",
+              "location": "Hall 2",
+              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
+              "speakerNames": ["Burt Bear", "Charlie Cheetah"],
+              "timeStart": "2:00 pm",
+              "timeEnd": "2:30 pm",
+              "tracks": ["Services"],
+              "id": "16"
+            },
+            {
+              "name": "Ionic Documentation",
+              "location": "Grand Ballroom B",
+              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
+              "speakerNames": ["Donald Duck"],
+              "timeStart": "2:30 pm",
+              "timeEnd": "2:45 pm",
+              "tracks": ["Documentation"],
+              "id": "17"
+            },
+            {
+              "name": "UX in Ionic",
+              "location": "Hall 3",
+              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
+              "speakerNames": ["Isabella Iguana", "Ellie Elephant"],
+              "timeStart": "2:45 pm",
+              "timeEnd": "3:00 pm",
+              "tracks": ["Design"],
+              "id": "18"
+            }
+          ]
+        },
+        {
+          "time": "3:00",
+          "sessions": [
+            {
+              "name": "Angular Directives in Ionic",
+              "location": "Hall 1",
+              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
+              "speakerNames": ["Ted Turtle"],
+              "timeStart": "3:00 pm",
+              "timeEnd": "3:30 pm",
+              "tracks": ["Angular"],
+              "id": "19"
+            },
+            {
+              "name": "Mobile States",
+              "location": "Hall 2",
+              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
+              "speakerNames": ["Rachel Rabbit"],
+              "timeStart": "3:30 pm",
+              "timeEnd": "3:45 pm",
+              "tracks": ["Navigation"],
+              "id": "20"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "speakers": [
+    {
+      "name": "Burt Bear",
+      "profilePic": "/assets/img/speakers/bear.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Burt is a Bear. Burt's interests include poetry, dashing space heroes, and lions.",
+      "title": "Software Engineer",
+      "location": "Everywhere",
+      "email": "burt@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "1"
+    },
+    {
+      "name": "Charlie Cheetah",
+      "profilePic": "/assets/img/speakers/cheetah.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Charlie is a Cheetah. Charlie's interests include country music, plush animals, pyrotechnics, and skeletons.",
+      "title": "Software Engineer",
+      "location": "Everywhere",
+      "email": "charlie@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "2"
+    },
+    {
+      "name": "Donald Duck",
+      "profilePic": "/assets/img/speakers/duck.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Donald is a Duck. Donald's interests include carpentry, superheroes, merpeople, and glam rock.",
+      "title": "Software Engineer",
+      "location": "Everywhere",
+      "email": "donald@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "3"
+    },
+    {
+      "name": "Eva Eagle",
+      "profilePic": "/assets/img/speakers/eagle.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Eva is an Eagle. Eva's interests include ants, seashells, and cupcakes.",
+      "title": "Developer Advocate",
+      "location": "Everywhere",
+      "email": "eva@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "4"
+    },
+    {
+      "name": "Ellie Elephant",
+      "profilePic": "/assets/img/speakers/elephant.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Ellie is an Elephant. Ellie's interests include pocket watches, pool, hand fans, and ninjas.",
+      "title": "Software Engineer",
+      "location": "Everywhere",
+      "email": "ellie@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "5"
+    },
+    {
+      "name": "Gino Giraffe",
+      "profilePic": "/assets/img/speakers/giraffe.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Gino is a Giraffe. Gino's interests include candy-making, unicorns, and birdhouses.",
+      "title": "Software Engineer",
+      "location": "Everywhere",
+      "email": "gino@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "6"
+    },
+    {
+      "name": "Isabella Iguana",
+      "profilePic": "/assets/img/speakers/iguana.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Isabella is an Iguana. Isabella's interests include crystals, architecture, and candle-making.",
+      "title": "Software Engineer",
+      "location": "Everywhere",
+      "email": "isabella@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "7"
+    },
+    {
+      "name": "Karl Kitten",
+      "profilePic": "/assets/img/speakers/kitten.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Karl is a Kitten. Karl's interests include skiing, jewelry, and needlepoint.",
+      "title": "Developer Advocate",
+      "location": "Everywhere",
+      "email": "karl@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "8"
+    },
+    {
+      "name": "Lionel Lion",
+      "profilePic": "/assets/img/speakers/lion.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Lionel is a Lion. Lionel's interests include lizards and mathematics.",
+      "title": "Developer Advocate",
+      "location": "Everywhere",
+      "email": "lionel@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "9"
+    },
+    {
+      "name": "Molly Mouse",
+      "profilePic": "/assets/img/speakers/mouse.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Molly is a Mouse. Molly's interests include werewolves and magic.",
+      "title": "Software Engineer",
+      "location": "Everywhere",
+      "email": "molly@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "10"
+    },
+    {
+      "name": "Paul Puppy",
+      "profilePic": "/assets/img/speakers/puppy.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Paul is a Puppy. Paul's interests include maps, whales, and dragons.",
+      "title": "Software Engineer",
+      "location": "Everywhere",
+      "email": "paul@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "11"
+    },
+    {
+      "name": "Rachel Rabbit",
+      "profilePic": "/assets/img/speakers/rabbit.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Rachel is a Rabbit. Rachel's interests include clowns, skeletons, and yo-yos.",
+      "title": "Senior Software Engineer",
+      "location": "Everywhere",
+      "email": "rachel@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "12"
+    },
+    {
+      "name": "Ted Turtle",
+      "profilePic": "/assets/img/speakers/turtle.jpg",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Ted is a Turtle. Ted's interests include butterflies, skiing, and cupcakes.",
+      "title": "Software Engineer",
+      "location": "Everywhere",
+      "email": "ted@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "13"
+    }
+  ],
+
+  "map": [
+    {
+      "name": "Monona Terrace Convention Center",
+      "lat": 43.071584,
+      "lng": -89.38012,
+      "center": true
+    },
+    {
+      "name": "Ionic HQ",
+      "lat": 43.074395,
+      "lng": -89.381056
+    },
+    {
+      "name": "Afterparty - Brocach Irish Pub",
+      "lat": 43.07336,
+      "lng": -89.38335
+    }
+  ],
+
+  "tracks": [
+    {
+      "name": "Angular",
+      "icon": "logo-angular"
+    },
+    {
+      "name": "Documentation",
+      "icon": "document"
+    },
+    {
+      "name": "Food",
+      "icon": "restaurant"
+    },
+    {
+      "name": "Ionic",
+      "icon": "logo-ionic"
+    },
+    {
+      "name": "Tooling",
+      "icon": "hammer"
+    },
+    {
+      "name": "Design",
+      "icon": "color-palette"
+    },
+    {
+      "name": "Services",
+      "icon": "cog"
+    },
+    {
+      "name": "Workshop",
+      "icon": "construct"
+    },
+    {
+      "name": "Communication",
+      "icon": "call"
+    },
+    {
+      "name": "Navigation",
+      "icon": "compass"
+    }
+  ]
+}

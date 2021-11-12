@@ -52,7 +52,7 @@
 
 <ion-list >
    <ion-title>Posts</ion-title>
-      <ion-item *ngFor="let post of blogPosts | filter:term  | slice:0:10"   routerLink="/app/tabs/allblogs/{{post.postId}}">
+      <ion-item *ngFor="let post of blogPosts  | slice:0:10"   routerLink="/app/tabs/allblogs/{{post.postId}}">
 
         <ion-label>
           <h2  style=" white-space: break-spaces;">
